@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let userPhone = '';
   let calculatedAmount = 4997000;
   let calculatedSyntax = 'TAT';
-  let exitIntentTriggered = false;
-  let formInteracted = false;
   
   // --- DOM ELEMENTS ---
   const priceDisplay = document.getElementById('price-display');
@@ -39,9 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCopySyntax = document.getElementById('btn-copy-syntax');
   
   const toast = document.getElementById('toast');
-  const exitIntentModal = document.getElementById('exit-intent-modal');
-  const modalCloseBtn = document.getElementById('modal-close-btn');
-  const leadForm = document.getElementById('lead-form');
   
   const stickyBar = document.getElementById('sticky-bar');
   const finalCtaSection = document.getElementById('final-cta');
@@ -88,21 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     GLOBAL_SEATS_LEFT = 5;
     updateAllSeatsDisplay();
   }, 150000); // 2.5m giảm xuống 5 và giữ nguyên
-
-  // --- CURRICULUM TABS ---
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const tabPanels = document.querySelectorAll('.tab-panel');
-  
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      tabPanels.forEach(p => p.classList.remove('active'));
-      
-      btn.classList.add('active');
-      const tabId = btn.getAttribute('data-tab');
-      document.getElementById(tabId).classList.add('active');
-    });
-  });
 
   // --- FAQ ACCORDION ---
   const faqQuestions = document.querySelectorAll('.faq-question');
