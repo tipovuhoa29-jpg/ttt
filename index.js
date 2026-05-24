@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- STATE VARIABLES ---
   let selectedPaymentMethod = 'full'; // 'full' or 'split'
-  let isOrderBumpSelected = false;
   let pageMode = 'demo'; // 'demo' (sandbox) or 'real' (production)
   let userPhone = '';
   let calculatedAmount = 4997000;
@@ -21,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const modeDemoRadio = document.getElementById('mode-demo');
   const modeRealRadio = document.getElementById('mode-real');
-  
-  const orderBumpCheckbox = document.getElementById('order-bump-trigger');
   
   const regForm = document.getElementById('reg-form');
   const stepFormContainer = document.getElementById('step-form-container');
@@ -246,10 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pageMode = 'real';
   });
 
-  // --- ORDER BUMP LOGIC ---
-  orderBumpCheckbox.addEventListener('change', (e) => {
-    isOrderBumpSelected = e.target.checked;
-  });
+
 
   // --- FORM SUBMIT & PAYMENT STATE ENGINE ---
   regForm.addEventListener('submit', (e) => {
@@ -315,10 +309,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Calculate pricing amount
     let basePrice = (selectedPaymentMethod === 'full') ? 4997000 : 2500000;
-    calculatedAmount = basePrice + (isOrderBumpSelected ? 500000 : 0);
+    calculatedAmount = basePrice;
     
     // Calculate syntax
-    calculatedSyntax = `TAT ${userPhone}` + (isOrderBumpSelected ? ' BUMP' : '');
+    calculatedSyntax = `TAT ${userPhone}`;
     
     // Format Display amount
     const formattedAmount = calculatedAmount.toLocaleString('vi-VN') + 'đ';

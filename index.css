@@ -538,11 +538,31 @@ a {
   display: flex;
   gap: var(--sp-16);
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.trust-stats strong {
+.trust-stat-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-8);
+}
+
+.stat-number {
   font-size: 24px;
+  font-weight: 700;
   color: var(--accent-orange);
+}
+
+.stat-label {
+  font-size: var(--fs-small);
+  color: var(--primary-purple);
+  font-weight: 500;
+}
+
+.trust-stat-divider {
+  color: rgba(42, 24, 71, 0.2);
+  font-size: 24px;
 }
 
 .trust-description {
@@ -695,11 +715,13 @@ a {
 }
 
 .persona-subtitle {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
   color: var(--accent-orange);
-  margin-top: -8px;
-  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  display: block;
 }
 
 .persona-card h3 {
@@ -709,19 +731,27 @@ a {
 
 .persona-card p {
   font-size: 15px;
-  opacity: 0.8;
+  line-height: 1.75;
+  color: var(--text-dark);
+  margin-bottom: 20px;
   flex-grow: 1;
 }
 
-.persona-tag {
-  align-self: flex-start;
-  background-color: var(--purple-tint);
+.persona-card p strong {
   color: var(--primary-purple);
-  padding: 4px var(--sp-12);
-  border-radius: 20px;
+  font-weight: 700;
+}
+
+.persona-tag {
+  background: rgba(255, 107, 53, 0.08);
+  color: var(--accent-orange);
+  padding: 8px 14px;
+  border-radius: 6px;
   font-size: 12px;
-  font-weight: 600;
-  border: 1px solid var(--border-color);
+  font-weight: 700;
+  display: inline-block;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  align-self: flex-start;
 }
 
 /* Story & Pain Section */
@@ -823,22 +853,76 @@ a {
   border-bottom: 1px solid var(--border-color);
 }
 
-.pain-num {
+.pain-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pain-number {
   font-family: 'Outfit', sans-serif;
   font-size: 32px;
   font-weight: 800;
-  color: var(--border-color);
+  color: rgba(42, 24, 71, 0.15);
   line-height: 1;
+}
+
+.pain-tag {
+  background: rgba(255, 107, 53, 0.08);
+  color: var(--accent-orange);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(255, 107, 53, 0.2);
 }
 
 .pain-item h4 {
   font-size: 18px;
   color: var(--primary-purple);
+  line-height: var(--lh-tight);
 }
 
 .pain-item p {
   font-size: 14px;
   opacity: 0.8;
+  line-height: var(--lh-normal);
+  flex-grow: 1;
+}
+
+.pain-item p strong {
+  color: var(--primary-purple);
+  font-weight: 700;
+}
+
+.pain-consequence {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: rgba(255, 107, 53, 0.06);
+  border-left: 3px solid var(--accent-orange);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.consequence-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.consequence-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.consequence-text strong {
+  color: var(--accent-orange);
+  font-weight: 700;
 }
 
 /* Epiphany Section */
@@ -1864,107 +1948,7 @@ th.highlight-col {
   color: rgba(226, 217, 240, 0.3);
 }
 
-/* Checkbox (Touch Target >= 24x24px) (Wroblewski) */
-.order-bump-container {
-  background-color: rgba(255, 119, 51, 0.04);
-  border: 1px dashed rgba(255, 119, 51, 0.3);
-  border-radius: var(--radius-sm);
-  padding: var(--sp-16);
-  margin-bottom: var(--sp-24);
-  position: relative;
-}
 
-.order-bump-checkbox-label {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--sp-12);
-  cursor: pointer;
-  user-select: none;
-}
-
-.order-bump-checkbox-label input[type="checkbox"] {
-  display: none;
-}
-
-.checkbox-custom {
-  width: 24px; /* Touch target minimum */
-  height: 24px;
-  border: 2px solid rgba(226, 217, 240, 0.4);
-  border-radius: 4px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition-smooth);
-}
-
-.order-bump-checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
-  background-color: var(--accent-orange);
-  border-color: var(--accent-orange);
-}
-
-.order-bump-checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
-  content: "✓";
-  color: #FFFFFF;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.order-bump-text {
-  font-size: 13px;
-  line-height: 1.4;
-  position: relative;
-}
-
-.bump-tag {
-  background-color: var(--accent-orange);
-  color: #FFFFFF;
-  padding: 1px 4px;
-  border-radius: 3px;
-  font-size: 9px;
-  font-weight: 700;
-  margin-right: 4px;
-  display: inline-block;
-}
-
-.bump-pricing {
-  opacity: 0.6;
-  text-decoration: line-through;
-}
-
-.tooltip-trigger {
-  color: var(--accent-orange);
-  cursor: pointer;
-  margin-left: 2px;
-  font-size: 14px;
-}
-
-.tooltip-bubble {
-  display: none;
-  background-color: #FFFFFF;
-  color: var(--text-dark);
-  border: 2px solid var(--accent-orange);
-  padding: var(--sp-12);
-  border-radius: var(--radius-sm);
-  font-size: 11px;
-  position: absolute;
-  bottom: 100%;
-  left: var(--sp-16);
-  right: var(--sp-16);
-  margin-bottom: var(--sp-8);
-  box-shadow: var(--shadow-md);
-  z-index: 10;
-  animation: fadeIn 0.2s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.order-bump-container:hover .tooltip-bubble {
-  display: block;
-}
 
 /* Payment pending Step */
 .payment-panel-box {
@@ -2809,6 +2793,31 @@ th.highlight-col {
   font-size: 11px;
   font-weight: 600;
   border: 1px solid var(--border-color);
+}
+
+.deliverable-tag {
+  align-self: flex-start;
+  background-color: var(--purple-tint);
+  color: var(--primary-purple);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--border-color);
+  margin-bottom: 4px;
+}
+
+.outcome-tag {
+  margin-top: auto;
+  padding: 12px 16px;
+  background: rgba(16, 185, 129, 0.08);
+  border-left: 3px solid #10B981;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #059669;
+  text-align: left;
 }
 
 .total-value-box {
