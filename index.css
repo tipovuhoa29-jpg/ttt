@@ -441,7 +441,8 @@ a {
 }
 
 .check-icon {
-  font-size: 24px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   color: var(--success-green);
 }
@@ -1645,16 +1646,22 @@ th.highlight-col {
 
 .pricing-features li {
   font-size: 15px;
-  padding-left: var(--sp-24);
-  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-12);
+  line-height: var(--lh-normal);
 }
 
 .pricing-features li::before {
-  content: "✓";
-  color: var(--accent-orange);
-  font-weight: 700;
-  position: absolute;
-  left: 0;
+  content: none !important;
+}
+
+.pricing-features li .check-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--success);
+  flex-shrink: 0;
+  margin-top: 3px;
 }
 
 .seats-remaining-box {
@@ -2356,7 +2363,8 @@ th.highlight-col {
 }
 
 .check-icon {
-  font-size: 16px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
 }
 
