@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRAIN THE TRAINER: AI-Native Trainer | Đóng gói bài giảng & Xây giáo án bằng AI cùng Sunext</title>
+  <meta name="description" content="Khóa học Train The Trainer 2 ngày thực chiến dành cho chuyên gia. Đóng gói chuyên môn thành workshop B2B/B2C, làm chủ trợ lý AI soạn bài tự động và nhận lộ trình giảng dạy tại Sunext.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-notification">Đã sao chép vào bộ nhớ tạm!</div>
+
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="brand-text">SUNEXT</span>
+        <span class="program-badge">TAT</span>
+      </div>
+      <nav class="desktop-nav">
+        <a href="#persona" class="nav-link">Đối tượng</a>
+        <a href="#framework" class="nav-link">Khác biệt</a>
+        <a href="#curriculum" class="nav-link">Lịch học</a>
+        <a href="#offer" class="nav-link">Học phí</a>
+        <a href="#faq" class="nav-link">Hỏi đáp</a>
+      </nav>
+      <a href="#final-cta" class="header-cta-btn">Đăng ký ngay</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-gradient-overlay"></div>
+    <div class="section-container hero-container">
+      <div class="hero-scarcity-badge">
+        ⚡ Giới hạn 15 trainers/đợt — <span class="seat-count">7</span> suất còn trống
+      </div>
+      
+      <h1 class="hero-headline">
+        Dành Cho <span class="highlight-persona">Corporate Trainers & Giảng Viên Doanh Nghiệp:</span><br>
+        Thiết Kế 10 Bài Giảng AI Tương Tác Trong 1 Giờ<br>
+        <span class="benefit-line">Thay Vì Mất 3 Ngày Soạn Slide PowerPoint Nhàm Chán</span>
+      </h1>
+      
+      <p class="hero-subheadline">
+        <span class="check-icon">✅</span> 
+        Phương pháp đã giúp 500+ trainers tại 
+        <strong>Viettel, FPT, VinGroup, Manulife</strong> 
+        tăng gấp 10x tốc độ soạn bài — trong 2 ngày intensive workshop
+      </p>
+      
+      <p class="hero-definition">
+        <strong>AI-Native Trainer là gì?</strong> Là giảng viên biết kết hợp kinh nghiệm thực chiến cá nhân với các trợ lý AI (Claude) để tự động hóa 80% công đoạn soạn bài (outline, slide, quiz, bài tập), giải phóng thời gian thiết kế để tập trung 100% vào tương tác và giải quyết bài toán thực tế của học viên.
+      </p>
+
+      <p class="hero-promise">
+        Trong 2 ngày thực chiến tại lớp, đóng gói chuyên môn của bạn thành 2 phiên bản workshop B2B & B2C chạy thật, làm chủ trợ lý Claude thiết kế đào tạo và nhận lộ trình đứng lớp trong hệ sinh thái Sunext.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#final-cta" class="cta-button primary-cta">Đăng ký nhận ưu đãi Early Bird</a>
+        <div class="hero-urgency-text">
+          <span class="fire-icon">🔥</span> Còn <strong class="seat-count">7</strong>/15 suất trống cho đợt tháng 6
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <section class="trust-strip">
+    <div class="section-container trust-container">
+      <div class="trust-stats">
+        <span class="stat-item"><strong>+500</strong> Chuyên gia đã tốt nghiệp</span>
+        <span class="stat-divider">|</span>
+        <span class="stat-item"><strong>+30</strong> Doanh nghiệp đối tác</span>
+      </div>
+      <p class="trust-description">Chương trình được bảo chứng chuyên môn và vận hành bởi Sunext - hệ sinh thái tiên phong trong đào tạo và ứng dụng AI</p>
+      <div class="logo-grid">
+        <!-- SVG logos simulating corporate partners -->
+        <div class="partner-logo">VNPT</div>
+        <div class="partner-logo">FPT Group</div>
+        <div class="partner-logo">Vingroup</div>
+        <div class="partner-logo">Viettel</div>
+        <div class="partner-logo">Techcombank</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Persona Section -->
+  <section id="persona" class="persona-section">
+    <div class="section-container">
+      <h2 class="section-title">Ai nên tham gia khóa học này?</h2>
+      <p class="section-subtitle">TAT được thiết kế dành riêng cho những người bận rộn muốn nâng tầm kỹ năng chia sẻ kiến thức bằng công nghệ.</p>
+      
+      <div class="persona-grid">
+        <!-- Persona 1 -->
+        <div class="persona-card">
+          <div class="card-icon">💼</div>
+          <h3>Chuyên gia & Freelancer</h3>
+          <p>Có 5-10 năm chuyên môn sâu. Muốn đóng gói kiến thức thành các workshop 2-3h chất lượng để đi dạy, tạo nguồn thu nhập thứ hai hoặc xây dựng thương hiệu cá nhân.</p>
+          <span class="persona-tag">Tạo thu nhập & Đóng gói bản quyền</span>
+        </div>
+        <!-- Persona 2 -->
+        <div class="persona-card">
+          <div class="card-icon">🚀</div>
+          <h3>Quản lý & Trưởng bộ phận</h3>
+          <p>Thường xuyên phải đào tạo nội bộ cho đội ngũ. Muốn ứng dụng AI để thiết kế bài giảng nhanh, tạo case-study thực tế giúp nhân viên áp dụng được ngay.</p>
+          <span class="persona-tag">Tăng hiệu suất team & Đào tạo nội bộ</span>
+        </div>
+        <!-- Persona 3 -->
+        <div class="persona-card">
+          <div class="card-icon">🎓</div>
+          <h3>Nhân sự dùng ngân sách công ty</h3>
+          <p>Trainer nội bộ hoặc phụ trách L&D. Cần chuẩn hóa năng lực thiết kế đào tạo, sở hữu bộ Prompt Kit tối ưu công việc và nhận chứng nhận chuẩn TAT từ Sunext.</p>
+          <span class="persona-tag">Nâng cấp kỹ năng & Nhận chứng nhận</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story & Pain Section -->
+  <section class="story-pain-section">
+    <div class="section-container">
+      <div class="story-container">
+        <div class="story-content-box">
+          <span class="story-tag">CASE STUDY</span>
+          
+          <h3>Từ "Giảng Viên Bị Ghét" Đến "Top 3% Best Trainer" Trong 60 Ngày</h3>
+          
+          <!-- BEFORE - với số liệu cụ thể -->
+          <div class="story-phase before-phase">
+            <h4>🔴 Trước TAT (Tháng 3/2025):</h4>
+            <blockquote class="story-quote">
+              "Tháng 3/2025, tôi được sếp giao đào tạo nội bộ cho 50 marketer. Đây là ác mộng: <strong>15 tiếng cuối tuần</strong> lục tài liệu cũ, gõ từng dòng lên 87 slide PowerPoint. Kết quả? <strong>Score đánh giá: 2.3/5</strong> - thấp nhất công ty. Feedback: 'Quá lý thuyết, không thực chiến được'. Tôi thức đêm suy nghĩ có nên từ chức..."
+            </blockquote>
+            
+            <div class="metric-box negative">
+              <div class="metric">
+                <span class="number">15h</span>
+                <span class="label">Soạn 1 buổi training</span>
+              </div>
+              <div class="metric">
+                <span class="number">2.3/5</span>
+                <span class="label">Điểm đánh giá</span>
+              </div>
+              <div class="metric">
+                <span class="number">35%</span>
+                <span class="label">Tỷ lệ apply được</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- AHA MOMENT -->
+          <div class="story-turning-point">
+            <span class="icon">💡</span>
+            <p>
+              <strong>Bước ngoặt tháng 4/2025:</strong> Tham gia TAT Workshop 2 ngày. Ngày đầu học prompt engineering cho content creation. Ngày 2 thực hành tạo 5 bài giảng hoàn chỉnh với Claude AI.
+            </p>
+          </div>
+          
+          <!-- AFTER - với số liệu cụ thể -->
+          <div class="story-phase after-phase">
+            <h4>🟢 Sau TAT (Tháng 5/2025):</h4>
+            <blockquote class="story-quote">
+              "Tuần đầu tháng 5, tôi áp dụng ngay framework TAT. <strong>45 phút</strong> để tạo outline + 10 case study thực tế + quiz tương tác cho buổi 'Social Media Strategy'. Kết quả bất ngờ: <strong>Score: 4.7/5</strong> - top 3% công ty. Feedback: 'Thực chiến nhất từ trước đến nay'. Tháng 6, HR mời tôi đào tạo cho 3 chi nhánh khác với phụ cấp +5 triệu/tháng."
+            </blockquote>
+            
+            <div class="metric-box positive">
+              <div class="metric">
+                <span class="number">45 phút</span>
+                <span class="label">Soạn 1 buổi training</span>
+              </div>
+              <div class="metric">
+                <span class="number">4.7/5</span>
+                <span class="label">Điểm đánh giá</span>
+              </div>
+              <div class="metric">
+                <span class="number">92%</span>
+                <span class="label">Tỷ lệ apply được</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="story-author">
+            <span class="author-name">Anh Nguyễn Minh Hoàng</span>
+            <span class="author-title">
+              Marketing Manager, VinGroup | Trainer nội bộ 5 năm kinh nghiệm
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pains-grid-container">
+        <h3 class="pains-title">Bạn có đang gặp những nghịch cảnh này?</h3>
+        <div class="pains-grid">
+          <!-- Pain 1 -->
+          <div class="pain-item">
+            <span class="pain-num">01</span>
+            <h4>Mất 12-20 giờ soạn 1 buổi training 3 tiếng</h4>
+            <p>Lục tài liệu cũ, copy-paste từ Google, tự nghĩ ra case study. Cuối tuần không còn thời gian cho gia đình.</p>
+            <div class="pain-stat">
+              <span class="stat-icon">📊</span>
+              <span><strong>87%</strong> corporate trainers báo cáo burnout do soạn bài</span>
+            </div>
+          </div>
+          
+          <!-- Pain 2 -->
+          <div class="pain-item">
+            <span class="pain-num">02</span>
+            <h4>Bài giảng lý thuyết suông, học viên chán nản</h4>
+            <p>Slide toàn chữ, không có bài tập thực hành. Học viên xem điện thoại, đánh giá thấp (2-3/5).</p>
+            <div class="pain-stat">
+              <span class="stat-icon">😴</span>
+              <span>Chỉ <strong>38%</strong> học viên apply được nội dung sau training truyền thống</span>
+            </div>
+          </div>
+          
+          <!-- Pain 3 -->
+          <div class="pain-item">
+            <span class="pain-num">03</span>
+            <h4>Không biết cập nhật kiến thức mới nhanh</h4>
+            <p>Công nghệ đổi nhanh (AI, Blockchain...), bạn không kịp học để dạy. Sợ bị hỏi khó trong lớp.</p>
+            <div class="pain-stat">
+              <span class="stat-icon">⚡</span>
+              <span><strong>65%</strong> trainers cảm thấy "outdated" sau 6 tháng</span>
+            </div>
+          </div>
+          
+          <!-- Pain 4 -->
+          <div class="pain-item">
+            <span class="pain-num">04</span>
+            <h4>Không scale được: 1 người = 1-2 buổi/tuần max</h4>
+            <p>Muốn tăng thu nhập nhưng không đủ thời gian soạn thêm bài. Từ chối các cơ hội freelance vì overload.</p>
+            <div class="pain-stat">
+              <span class="stat-icon">💰</span>
+              <span>Mất <strong>15-30 triệu/tháng</strong> tiềm năng từ các gig bị từ chối</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Epiphany Section -->
+  <section class="epiphany-section">
+    <div class="epiphany-gradient"></div>
+    <div class="section-container epiphany-container">
+      <blockquote class="epiphany-quote">
+        "Đào tạo thời AI không phải là cố gắng nhồi nhét thêm kiến thức cho học viên. Đó là giải phóng thời gian thiết kế bằng AI để tập trung hoàn toàn vào việc tương tác và giải quyết vấn đề thực tế ngay tại lớp học."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Comparison Section (Framework) -->
+  <section id="framework" class="comparison-section">
+    <div class="section-container">
+      <h2 class="section-title">Tại sao chương trình này khác biệt?</h2>
+      <p class="section-subtitle">So sánh để thấy rõ hiệu quả vượt trội khi bạn trở thành một Trainer hệ AI-Native</p>
+      
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Tiêu chí</th>
+              <th>Khóa học thuyết trình / AI phổ thông</th>
+              <th class="highlight-col">TRAIN THE TRAINER: AI-Native Trainer (Sunext)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="criteria-name">Nguyên liệu bài giảng</td>
+              <td>Chủ đề giả lập, bài tập lý thuyết chung</td>
+              <td class="highlight-col">Kinh nghiệm thực tế của chính học viên</td>
+            </tr>
+            <tr>
+              <td class="criteria-name">Độ phủ thị trường</td>
+              <td>Chỉ dạy kỹ năng nói hoặc slide chung chung</td>
+              <td class="highlight-col">Đóng gói song song 2 phiên bản: B2B và B2C</td>
+            </tr>
+            <tr>
+              <td class="criteria-name">Vai trò của AI</td>
+              <td>AI là phần quà tặng thêm ở cuối khóa</td>
+              <td class="highlight-col">Nhúng xuyên suốt từ thiết kế, đứng lớp đến cải tiến</td>
+            </tr>
+            <tr>
+              <td class="criteria-name">Thực hành đứng lớp</td>
+              <td>Thuyết trình nhóm hoặc nói trước lớp ít phút</td>
+              <td class="highlight-col">Micro-teaching 2 vòng ghi hình, chấm điểm chéo bằng Rubric</td>
+            </tr>
+            <tr>
+              <td class="criteria-name">Lộ trình sau khóa</td>
+              <td>Học xong tự tìm học viên, tự bơi</td>
+              <td class="highlight-col">Gia nhập hệ sinh thái Sunext (Co-Trainer / Lead Trainer)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcomes & Curriculum Section -->
+  <section id="curriculum" class="curriculum-outcomes-section">
+    <div class="section-container">
+      <h2 class="section-title">Đầu ra chuẩn TAT & Lịch học 2 ngày</h2>
+      <p class="section-subtitle">Chương trình đào tạo cuốn chiếu: học đến đâu ra sản phẩm đến đó.</p>
+
+      <div class="outcomes-curriculum-grid">
+        <!-- Left Column: Outcomes Handover Pack -->
+        <div class="outcomes-block">
+          <h3>Bộ sản phẩm mang về (Handover Pack)</h3>
+          <div class="outcome-list">
+            <div class="outcome-card">
+              <span class="outcome-icon">📋</span>
+              <div>
+                <h4>02 Giáo án chuẩn chỉnh</h4>
+                <p>1 Outline workshop 2-3h cho doanh nghiệp (B2B) và 1 phiên bản tương ứng cho cá nhân (B2C).</p>
+              </div>
+            </div>
+            <div class="outcome-card">
+              <span class="outcome-icon">📹</span>
+              <div>
+                <h4>02 Video đứng lớp giảng thử</h4>
+                <p>Được ghi hình thực tế kèm bảng Rubric đánh giá chi tiết điểm mạnh/yếu từ hội đồng chuyên gia.</p>
+              </div>
+            </div>
+            <div class="outcome-card">
+              <span class="outcome-icon">⚙️</span>
+              <div>
+                <h4>01 AI Prompt Kit chuyên biệt</h4>
+                <p>Bộ prompt Claude được thiết lập sẵn giúp tự động soạn slide, bài tập tình huống và quiz nhanh chóng.</p>
+              </div>
+            </div>
+            <div class="outcome-card">
+              <span class="outcome-icon">🏅</span>
+              <div>
+                <h4>Hồ sơ Sunext Certified Trainer</h4>
+                <p>Chứng nhận tốt nghiệp TAT và cơ hội đứng lớp chính thức trong các chương trình đào tạo của Sunext.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Curriculum Tabs -->
+        <div class="curriculum-block">
+          <div class="tabs-header">
+            <button class="tab-btn active" data-tab="day1">Ngày 1: Đóng gói & Thiết kế AI</button>
+            <button class="tab-btn" data-tab="day2">Ngày 2: Đứng lớp & Tinh chỉnh</button>
+          </div>
+          
+          <div class="tabs-content">
+            <!-- Day 1 Tab -->
+            <div id="day1" class="tab-panel active">
+              <div class="curriculum-timeline">
+                <div class="timeline-item">
+                  <span class="time">09:00 - 10:30</span>
+                  <h4>Phiên 1: Khai phá & Định vị chủ đề</h4>
+                  <p>Chọn chủ đề cốt lõi. Phân tách chân dung học viên B2B (Mục tiêu kinh doanh) vs B2C (Nâng cấp cá nhân).</p>
+                  <span class="output-tag">Output: 1 Chủ đề → 2 Mô tả ngắn B2B & B2C</span>
+                </div>
+                <div class="timeline-item">
+                  <span class="time">10:45 - 12:00</span>
+                  <h4>Phiên 2: Nguyên lý Andragogy thực chiến</h4>
+                  <p>4 nguyên tắc thiết kế lớp học cho người bận rộn. Cắt bớt phần lý thuyết, tăng phần giải quyết vấn đề.</p>
+                  <span class="output-tag">Output: Checklist "Buổi học đáng tiền"</span>
+                </div>
+                <div class="timeline-item">
+                  <span class="time">14:00 - 15:30</span>
+                  <h4>Phiên 3: Thiết lập Skeleton kép B2B & B2C</h4>
+                  <p>Xây dựng khung bài giảng B2B (gắn KPI công ty) và B2C (kể chuyện cá nhân & cam kết 30 ngày).</p>
+                  <span class="output-tag">Output: 2 Skeleton workshop hoàn chỉnh</span>
+                </div>
+                <div class="timeline-item">
+                  <span class="time">15:45 - 17:30</span>
+                  <h4>Phiên 4 | Lab AI 1: Đồng soạn bài cùng Claude</h4>
+                  <p>Nạp dữ liệu thô vào Claude. AI tự phác outline và bài tập tình huống thực tế theo ngành.</p>
+                  <span class="output-tag">Output: Outline chi tiết + Kịch bản Slide nháp</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Day 2 Tab -->
+            <div id="day2" class="tab-panel">
+              <div class="curriculum-timeline">
+                <div class="timeline-item">
+                  <span class="time">09:00 - 10:30</span>
+                  <h4>Phiên 5: Đứng lớp Doanh nghiệp (B2B)</h4>
+                  <p>Cách phá băng với lãnh đạo và nhân viên. Script mở bài B2B và bộ câu trả lời khi bị hỏi khó.</p>
+                  <span class="output-tag">Output: Script mở bài B2B + Script đối phó câu hỏi khó</span>
+                </div>
+                <div class="timeline-item">
+                  <span class="time">10:45 - 12:00</span>
+                  <h4>Phiên 6: Đứng lớp Cá nhân (B2C)</h4>
+                  <p>Giữ năng lượng lớp B2C. Kỹ thuật storytelling và điều phối giọng nói tạo cảm hứng.</p>
+                  <span class="output-tag">Output: Script mở bài B2C 3 phút + 3 câu hỏi mở tương tác</span>
+                </div>
+                <div class="timeline-item">
+                  <span class="time">14:00 - 15:30</span>
+                  <h4>Phiên 7: Micro-Teaching Vòng 1</h4>
+                  <p>Mỗi học viên đứng lên giảng thử 10-15 phút. Cả lớp chấm điểm chéo theo Rubric TAT.</p>
+                  <span class="output-tag">Output: Bảng nhận xét chi tiết từ chuyên gia</span>
+                </div>
+                <div class="timeline-item">
+                  <span class="time">15:45 - 17:30</span>
+                  <h4>Phiên 8 | Lab AI 2: Dùng Claude Cowork sửa bài giảng</h4>
+                  <p>Nạp feedback vòng 1 vào Claude để tinh chỉnh slide. Giảng thử vòng 2 và công bố lộ trình Sunext Trainer.</p>
+                  <span class="output-tag">Output: Bản sửa đổi slide 2.0 + Chứng nhận TAT + Quyền gia nhập</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scarcity Justification Section -->
+  <section class="scarcity-why-section">
+    <div class="section-container">
+      <div class="scarcity-why-box">
+        <h2 class="why-title">Tại sao chúng tôi giới hạn đúng 15 người tham gia?</h2>
+        <p class="why-subtitle">TAT không phải là khóa học online đại trà dành cho hàng trăm người. Đây là workshop kèm cặp chuyên sâu để đảm bảo:</p>
+        <div class="why-grid">
+          <div class="why-card">
+            <h4>Huấn luyện 1-1 tại lớp</h4>
+            <p>Với 15 người, giảng viên có đủ thời gian sửa trực tiếp kịch bản nói và slide bài giảng cho từng học viên ở cả 2 phiên micro-teaching.</p>
+          </div>
+          <div class="why-card">
+            <h4>Đánh giá sát sao</h4>
+            <p>Mỗi học viên đều được ghi hình và chấm điểm chéo chi tiết theo Rubric TAT, giúp bạn nhận ra lỗi diễn đạt để cải thiện ngay.</p>
+          </div>
+          <div class="why-card">
+            <h4>Mối quan hệ chất lượng</h4>
+            <p>Nhóm 15 người ngang cơ tạo môi trường kết nối chuyên sâu, thảo luận thực chất và mở ra cơ hội hợp tác kinh doanh thực tế.</p>
+          </div>
+          <div class="why-card">
+            <h4>Bảo chứng đầu ra</h4>
+            <p>Chúng tôi từ chối scale lớp học đông hơn để cam kết 100% học viên ra phòng học có sản phẩm dùng được và tự tin đứng lớp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructor Section -->
+  <section class="instructor-section">
+    <div class="section-container">
+      <h2 class="section-title">Đội ngũ giảng viên thực chiến</h2>
+      <p class="section-subtitle">Học trực tiếp từ những chuyên gia đang triển khai hệ thống AI và đứng lớp đào tạo doanh nghiệp mỗi ngày.</p>
+      
+      <div class="instructor-grid">
+        <!-- Instructor 1 -->
+        <div class="instructor-card">
+          <div class="instructor-photo-placeholder">AM</div>
+          <div class="instructor-info">
+            <h3>Mr. Nguyễn Anh Minh</h3>
+            <span class="instructor-role">Lead AI Consultant tại Sunext</span>
+            <p class="instructor-bio">12 năm kinh nghiệm trong ngành đào tạo và phát triển nhân sự (L&D). Đã trực tiếp thiết kế và chuyển giao giải pháp ứng dụng AI cho hơn 20 doanh nghiệp SME và tập đoàn tại Việt Nam.</p>
+            <span class="instructor-specialty">Chuyên môn: Cấu trúc Prompt giáo án, Thiết kế bài giảng AI-Native</span>
+          </div>
+        </div>
+        <!-- Instructor 2 -->
+        <div class="instructor-card">
+          <div class="instructor-photo-placeholder">TH</div>
+          <div class="instructor-info">
+            <h3>Ms. Trần Thu Hương</h3>
+            <span class="instructor-role">Certified Trainer & Facilitator</span>
+            <p class="instructor-bio">Hơn 8 năm kinh nghiệm đứng lớp và điều phối các workshop cộng đồng (B2C) với tổng quy mô hơn 1.500 học viên. Chuyên gia huấn luyện ngôn ngữ cơ thể, kỹ thuật tương tác và làm chủ sân khấu.</p>
+            <span class="instructor-specialty">Chuyên môn: Kỹ năng điều phối, Storytelling, Micro-teaching review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables Section -->
+  <section class="deliverables-section">
+    <div class="section-container">
+      <h2 class="section-title">📦 Bạn Sẽ Mang Về Gì Sau 2 Ngày?</h2>
+      <p class="section-subtitle">Không chỉ học lý thuyết - bạn sẽ có ngay bộ công cụ triển khai thực tế</p>
+      
+      <div class="deliverables-grid">
+        <!-- Deliverable 1 -->
+        <div class="deliverable-card">
+          <div class="deliverable-icon">📝</div>
+          <h4>10 Bài Giảng Hoàn Chỉnh</h4>
+          <p>Tự tay xây dựng trong workshop: Outline + Slide + Case study + Quiz + Email follow-up</p>
+          <div class="file-format">
+            <span class="format-tag">PPTX</span>
+            <span class="format-tag">PDF</span>
+            <span class="format-tag">DOCX</span>
+          </div>
+        </div>
+        
+        <!-- Deliverable 2 -->
+        <div class="deliverable-card featured">
+          <div class="badge">EXCLUSIVE</div>
+          <div class="deliverable-icon">🤖</div>
+          <h4>150+ Prompts AI Cho Trainers</h4>
+          <p>Thư viện prompts chuyên biệt: Content creation, case study, quiz, scripts, email sequences</p>
+          <div class="file-format">
+            <span class="format-tag">Notion</span>
+            <span class="format-tag">Google Sheets</span>
+          </div>
+        </div>
+        
+        <!-- Deliverable 3 -->
+        <div class="deliverable-card">
+          <div class="deliverable-icon">📚</div>
+          <h4>TAT Framework Playbook (80 trang)</h4>
+          <p>Sổ tay tra cứu: Từng bước thiết kế training từ A-Z, troubleshooting, best practices</p>
+          <div class="file-format">
+            <span class="format-tag">PDF</span>
+          </div>
+        </div>
+        
+        <!-- Deliverable 4 -->
+        <div class="deliverable-card">
+          <div class="deliverable-icon">🎥</div>
+          <h4>15 Video Tutorials (Lifetime Access)</h4>
+          <p>Hướng dẫn từng bước: Prompt engineering, Claude advanced, tạo quiz tự động, v.v.</p>
+          <div class="file-format">
+            <span class="format-tag">Video HD</span>
+            <span class="format-tag">Lifetime</span>
+          </div>
+        </div>
+        
+        <!-- Deliverable 5 -->
+        <div class="deliverable-card">
+          <div class="deliverable-icon">👥</div>
+          <h4>Access Cộng Đồng 500+ AI Trainers</h4>
+          <p>Nhóm Zalo private: Chia sẻ prompts, giải đáp, updates công cụ AI mới hàng tuần</p>
+          <div class="file-format">
+            <span class="format-tag">Zalo Group</span>
+          </div>
+        </div>
+        
+        <!-- Deliverable 6 -->
+        <div class="deliverable-card">
+          <div class="deliverable-icon">🎓</div>
+          <h4>Certificate of Completion</h4>
+          <p>Chứng nhận "AI-Native Trainer" từ Sunext - tăng credibility khi pitch khách hàng</p>
+          <div class="file-format">
+            <span class="format-tag">Digital Badge</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tổng giá trị -->
+      <div class="total-value-box">
+        <p class="value-label">Tổng giá trị nếu mua riêng lẻ:</p>
+        <p class="value-amount">23.500.000đ</p>
+        <p class="value-offer">Hôm nay bạn chỉ đầu tư: <strong>4.997.000đ</strong> (Tiết kiệm 78%)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="section-container">
+      <h2 class="section-title">Đánh giá từ người đi trước</h2>
+      <p class="section-subtitle">Chuyên gia nói gì sau khi đầu tư và áp dụng thành công phương pháp TAT?</p>
+      
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">MP</div>
+            <div>
+              <h4>Chị Mai Phương</h4>
+              <span class="testimonial-title">HR Consultant / Freelancer</span>
+            </div>
+          </div>
+          <p class="testimonial-body">
+            "Khóa học TAT đã thay đổi hoàn toàn cách tôi làm workshop B2C. Nhờ bộ Prompt Kit của Sunext, tôi đã đóng gói được khóa học 'Thu hút nhân tài thời AI' chỉ trong 45 phút soạn bài. Ngay trong tháng đầu tiên sau khóa, tôi đã tự tổ chức workshop và thu hút 42 học viên, đem về doanh thu 21 triệu đồng."
+          </p>
+          <span class="testimonial-roi">ROI: Thu hồi vốn học phí ngay trong tháng đầu</span>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">QB</div>
+            <div>
+              <h4>Anh Quốc Bảo</h4>
+              <span class="testimonial-title">Sales Manager / Trưởng phòng Kinh doanh</span>
+            </div>
+          </div>
+          <p class="testimonial-body">
+            "Trước đây tôi mất cả tuần để chuẩn bị bài đào tạo Sales nội bộ cho team. Sau khi học TAT, tôi áp dụng Claude AI để thiết kế 5 bài tập tình huống tương tác thực tế chỉ trong 30 phút. Hiệu suất chốt sales của team đã tăng thêm 25% trong quý vừa qua nhờ áp dụng đúng phương pháp đào tạo thực chiến."
+          </p>
+          <span class="testimonial-roi">ROI: Giảm 90% thời gian chuẩn bị, Tăng 25% doanh số team</span>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">TM</div>
+            <div>
+              <h4>Anh Tuấn Minh</h4>
+              <span class="testimonial-title">Freelance AI Trainer & Coach</span>
+            </div>
+          </div>
+          <p class="testimonial-body">
+            "Với ngân sách tự túc của Freelancer, tôi từng đắn đo khi chi một khoản lớn đi học. Rất may TAT có tùy chọn Trả góp 2 kỳ (2.5tr/kỳ) giúp tôi xuống tiền ngay mà không cần suy nghĩ. Khóa học đã giúp tôi thu hồi vốn gấp 3 lần ngay trong tháng đầu tiên nhờ bán được workshop AI cho doanh nghiệp."
+          </p>
+          <span class="testimonial-roi">ROI: X3 đầu tư tháng đầu, Rất hài lòng với chính sách trả góp</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer & Pricing Section -->
+  <section id="offer" class="offer-section">
+    <div class="offer-gradient-overlay"></div>
+    <div class="section-container offer-container">
+      <h2 class="section-title">Quyết định đầu tư cho sự nghiệp đào tạo</h2>
+      <p class="section-subtitle">Sở hữu năng lực đóng gói và nhân bản bài giảng thời AI với chi phí tối ưu.</p>
+      
+      <div class="pricing-card-container">
+        <div class="pricing-card">
+          <div class="pricing-badge">ƯU ĐÃI EARLY BIRD</div>
+          
+          <div class="pricing-header">
+            <span class="price-old">6.500.000đ</span>
+            
+            <!-- Segmented Control for Payment Choice -->
+            <div class="payment-toggle-wrapper">
+              <div class="segmented-control">
+                <input type="radio" id="pay-full" name="payment-method" value="full" checked>
+                <label for="pay-full" class="segment-label">Thanh toán 1 lần</label>
+                
+                <input type="radio" id="pay-split" name="payment-method" value="split">
+                <label for="pay-split" class="segment-label">Trả góp 2 kỳ (2.5tr x 2)</label>
+                
+                <div class="segmented-slider"></div>
+              </div>
+            </div>
+            <div class="price-current-box">
+              <span id="price-display" class="price-current">4.997.000đ</span>
+              <span id="price-unit" class="price-unit">/trọn gói</span>
+            </div>
+            
+            <p id="price-breakdown" class="price-breakdown">Chỉ khoảng ~2.500.000đ/ngày hoặc ~208.000đ/giờ học chuyên sâu.</p>
+            <p id="price-anchoring" class="price-anchoring">Rẻ hơn 4 lần so với việc thuê chuyên gia tư vấn giáo trình riêng lẻ.</p>
+          </div>
+
+          <!-- Value Stack -->
+          <div class="pricing-features">
+            <h4>Khóa học bao gồm toàn bộ:</h4>
+            <ul>
+              <li><strong>2 Ngày học thực chiến</strong> tại venue chuyên nghiệp</li>
+              <li><strong>AI-Native Trainer Prompt Kit</strong> bản quyền Sunext (Trị giá 5.000.000đ)</li>
+              <li><strong>02 Video đứng lớp ghi hình</strong> kèm Rubric đánh giá từ chuyên gia</li>
+              <li><strong>Chứng nhận chuẩn TAT</strong> & Quyền tham gia cộng đồng Sunext Trainer</li>
+              <li><strong>02 Buổi sửa bài 1:1 sau khóa</strong> cùng giảng viên (Trị giá 6.000.000đ)</li>
+            </ul>
+          </div>
+
+          <div class="pricing-footer">
+            <a href="#final-cta" class="cta-button primary-cta full-width-btn">Đăng ký giữ chỗ với giá Early Bird</a>
+            
+            <div class="seats-remaining-box">
+              <div class="seats-text">⏰ Chỉ còn <strong class="seat-count">7</strong> / 15 suất ưu đãi đợt này</div>
+              <div class="seats-progress-bar">
+                <div class="progress-fill" style="width: 53.3%"></div>
+              </div>
+              <p class="seats-update-time">Cập nhật cách đây ít phút</p>
+            </div>
+            
+            <div class="money-back-guarantee">
+              <span class="guarantee-icon">🛡️</span>
+              <p>
+                <strong>Cam kết hoàn phí 100% tại chỗ:</strong> Sunext cam kết hoàn trả toàn bộ học phí ngay tại lớp học nếu sau 2 ngày học, bạn không đóng gói thành công ít nhất 1 outline bài giảng tích hợp AI của riêng mình. Yêu cầu hoàn tiền cần được báo trực tiếp cho Giảng viên trước khi kết thúc Phiên 8 của Ngày 2.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <div class="section-container">
+      <h2 class="section-title">Giải đáp thắc mắc</h2>
+      <p class="section-subtitle">Những câu hỏi phổ biến giúp bạn hiểu rõ hơn về chương trình.</p>
+      
+      <div class="faq-accordion-container">
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Tôi chưa từng đi dạy và ngại nói trước đám đông có học được không?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Hoàn toàn được. TAT được thiết kế theo phương pháp cuốn chiếu. Chúng tôi giúp bạn chuẩn bị kỹ phần cốt lõi (outline, kịch bản mở bài bằng AI) trước khi đứng lớp giảng thử 10-15 phút trong nhóm nhỏ 15 người ngang cơ và an toàn, nâng đỡ. Sự tự tin đến từ sự chuẩn bị kỹ lưỡng, và AI sẽ giúp bạn giải quyết 80% phần chuẩn bị đó.</p>
+          </div>
+        </div>
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Khóa học này dùng AI gì và tôi có cần biết code không?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Chúng ta sử dụng Claude AI làm trợ lý chính. Bạn tuyệt đối không cần biết lập trình hay công nghệ phức tạp. Giảng viên sẽ cung cấp sẵn các bộ Prompt đã được tối ưu hóa bằng ngôn ngữ tự nhiên. Bạn chỉ việc nạp dữ liệu kinh nghiệm của mình vào và làm theo hướng dẫn.</p>
+          </div>
+        </div>
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Tại sao khóa học lại giới hạn đúng 15 người?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>TAT là intensive workshop cần tương tác sâu. Với giới hạn 15 người, mỗi học viên đều được review trực tiếp 3-5 bài giảng, có đủ thời gian đứng lớp giảng demo 2 lần, được góp ý chỉnh sửa chi tiết và kết nối chất lượng với các chuyên gia ngang cơ khác.</p>
+          </div>
+        </div>
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Dữ liệu bài giảng và bí quyết chuyên môn của tôi nạp vào AI có an toàn không?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Chúng tôi sẽ hướng dẫn bạn các nguyên tắc bảo mật dữ liệu cơ bản khi làm việc với các mô hình AI lớn. Chúng ta sẽ thiết lập môi trường làm việc riêng tư và học cách nạp dữ liệu an toàn để tránh rò rỉ thông tin chuyên môn nhạy cảm ra ngoài.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA & Form & Payment Section -->
+  <section id="final-cta" class="final-cta-section">
+    <div class="section-container final-cta-container">
+      <div class="form-card-container">
+        
+        <!-- Toggle Demo Mode / Real Mode -->
+        <div class="mode-toggle-container">
+          <span class="mode-label">Chế độ trang web:</span>
+          <div class="segmented-control mode-control">
+            <input type="radio" id="mode-demo" name="page-mode" value="demo" checked>
+            <label for="mode-demo" class="segment-label">Dùng thử (Sandbox)</label>
+            
+            <input type="radio" id="mode-real" name="page-mode" value="real">
+            <label for="mode-real" class="segment-label">Thực tế (Production)</label>
+            
+            <div class="segmented-slider"></div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-card-header">
+            <h3>Đăng ký khóa học TAT</h3>
+            <p class="form-scarcity-alert">⚠️ Chỉ còn <strong class="seat-count">7</strong> suất trống cho đợt tháng 6. Đợt tiếp theo: Tháng 8/2026.</p>
+          </div>
+
+          <!-- Step 1: Form Fill -->
+          <div id="step-form-container" class="form-step-panel active">
+            <form id="reg-form" novalidate>
+              <div class="form-group">
+                <label for="user-name">Họ và tên của bạn <span class="required">*</span></label>
+                <input type="text" id="user-name" name="name" placeholder="Nhập họ và tên đầy đủ" required>
+                <span class="error-msg" id="error-name"></span>
+              </div>
+              <div class="form-group">
+                <label for="user-phone">Số điện thoại Zalo <span class="required">*</span></label>
+                <input type="tel" id="user-phone" name="phone" placeholder="Nhập số điện thoại của bạn" required>
+                <span class="error-msg" id="error-phone"></span>
+              </div>
+              <div class="form-group">
+                <label for="user-email">Địa chỉ Email nhận tài liệu <span class="required">*</span></label>
+                <input type="email" id="user-email" name="email" placeholder="Nhập email chính xác của bạn" required>
+                <span class="error-msg" id="error-email"></span>
+              </div>
+
+              <!-- Order Bump Checkbox -->
+              <div class="order-bump-container">
+                <label class="order-bump-checkbox-label">
+                  <input type="checkbox" id="order-bump-trigger">
+                  <span class="checkbox-custom"></span>
+                  <div class="order-bump-text">
+                    <span class="bump-tag">MUA KÈM ƯU ĐÃI</span>
+                    <strong>Nhận Thư viện 100+ Prompt AI soạn bài độc quyền chỉ với +500.000đ</strong>
+                    <span class="bump-pricing">(Trị giá gốc 2.000.000đ)</span>
+                    <span class="tooltip-trigger" id="tooltip-trigger">ℹ️</span>
+                  </div>
+                </label>
+                <!-- Tooltip Content -->
+                <div class="tooltip-bubble" id="tooltip-bubble">
+                  Bao gồm: 30 Prompt thiết kế outline, 25 Prompt tạo bài tập tình huống theo ngành, 20 Prompt sinh câu hỏi ôn tập (quiz), và bộ 10 mẫu email chăm sóc học viên sau khóa.
+                </div>
+              </div>
+
+              <button type="submit" id="cta-step-1" class="cta-button primary-cta full-width-btn">Nhận QR giữ suất Early Bird</button>
+            </form>
+          </div>
+
+          <!-- Step 2: Payment Pending -->
+          <div id="step-payment-container" class="form-step-panel">
+            <div id="thank-you-message" class="payment-panel-box">
+              <span id="demo-mode-badge" class="sandbox-badge">Chế độ dùng thử (Sandbox) - Giao dịch mô phỏng</span>
+              
+              <h4>Thông tin chuyển khoản giữ suất của bạn</h4>
+              <p class="payment-instructions">Quét mã QR dưới đây bằng ứng dụng Ngân hàng của bạn để hoàn tất đăng ký tự động. Hệ thống sẽ tự động giữ chỗ tạm thời của bạn.</p>
+              
+              <div class="qr-code-wrapper">
+                <img id="payment-qr-img" src="" alt="Mã QR thanh toán VietQR" width="250" height="250">
+              </div>
+
+              <!-- Fallback Copy details -->
+              <div id="payment-desc" class="fallback-details-box">
+                <div class="detail-row">
+                  <span class="label">Ngân hàng:</span>
+                  <span class="val">MB Bank</span>
+                  <button class="copy-btn" data-copy="MB Bank">Copy</button>
+                </div>
+                <div class="detail-row">
+                  <span class="label">Số tài khoản:</span>
+                  <span class="val">0345678910</span>
+                  <button class="copy-btn" data-copy="0345678910">Copy</button>
+                </div>
+                <div class="detail-row">
+                  <span class="label">Chủ tài khoản:</span>
+                  <span class="val">SUNEXT GROUP</span>
+                </div>
+                <div class="detail-row">
+                  <span class="label">Số tiền:</span>
+                  <span id="fallback-amount" class="val text-orange">4.997.000đ</span>
+                  <button class="copy-btn" id="btn-copy-amount" data-copy="4997000">Copy</button>
+                </div>
+                <div class="detail-row">
+                  <span class="label">Nội dung CK:</span>
+                  <span id="fallback-syntax" class="val text-orange">TAT 0987654321</span>
+                  <button class="copy-btn" id="btn-copy-syntax" data-copy="TAT 0987654321">Copy</button>
+                </div>
+              </div>
+
+              <div class="progress-bar-container">
+                <div id="payment-progress-bar" class="progress-bar-fill"></div>
+              </div>
+              <p id="payment-status-text" class="status-indicator">Đang đợi giao dịch chuyển khoản của bạn...</p>
+
+              <button id="btn-paid" class="cta-button primary-cta full-width-btn">Xác nhận đã thanh toán & Nhận link Zalo</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Payment Success & OTO -->
+          <div id="step-success-container" class="form-step-panel">
+            <div id="success-confirm-message" class="success-panel-box">
+              <div class="success-icon">🎉</div>
+              <h3>Chào mừng bạn đến với cộng đồng 500+ AI-Native Trainers!</h3>
+              <p class="success-desc">Hành trình đột phá sự nghiệp giảng dạy của bạn chính thức bắt đầu từ đây. Yêu cầu giữ chỗ đã được ghi nhận thành công.</p>
+              
+              <!-- OTO Upsell Block -->
+              <div class="oto-upsell-box">
+                <span class="oto-badge">🎁 ĐẶC QUYỀN ĐI KÈM</span>
+                <h4>Nâng cấp lên gói VIP Coaching đồng hành 1-1 cùng chuyên gia trong 30 ngày</h4>
+                <p class="oto-desc">Nhận thêm 30 ngày đồng hành coaching 1-1 trực tiếp cùng chuyên gia Sunext để tinh chỉnh giáo trình và lên kế hoạch tuyển sinh khóa đầu tiên. Ưu đãi chỉ áp dụng duy nhất tại màn hình này.</p>
+                <div class="oto-price-box">
+                  <span class="price-original">5.000.000đ</span>
+                  <span class="price-promo">chỉ với +2.000.000đ</span>
+                </div>
+                
+                <!-- OTO QR box toggle -->
+                <button id="btn-accept-oto" class="oto-btn accept-btn">Nâng cấp VIP Coaching</button>
+                
+                <div id="oto-payment-details" class="oto-payment-details">
+                  <p>Vui lòng chuyển khoản thêm <strong>2.000.000đ</strong> vào tài khoản ngân hàng trên với nội dung chuyển khoản: <strong id="oto-syntax">TAT [SĐT] VIP</strong></p>
+                </div>
+              </div>
+
+              <a href="https://zalo.me/g/demo-group" id="zalo-group-btn" target="_blank" class="cta-button success-cta full-width-btn">Tham gia nhóm Zalo lớp học TAT ngay</a>
+              <p class="zalo-helper-text">Hãy vào nhóm Zalo để nhận ngay tài liệu chuẩn bị trước khóa học và kết nối với các học viên khác.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (End of page scroll layout) -->
+
+  <!-- Exit-Intent Lead Magnet Modal -->
+  <div id="exit-intent-modal" class="modal-overlay">
+    <div class="exit-modal-content">
+      <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+      <div class="modal-header">
+        <span class="icon">🎁</span>
+        <h3 class="modal-title">Nhận MIỄN PHÍ 75 Prompts<br>AI-Native Trainer</h3>
+        <p class="modal-subtitle">Được 500+ trainers sử dụng để tạo bài giảng<br>chuyên nghiệp trong 30 phút</p>
+      </div>
+      
+      <!-- Preview thumbnails -->
+      <div class="prompt-preview">
+        <div class="preview-item">
+          <span class="check-icon">✅</span>
+          <span>30 Prompts soạn outline & nội dung</span>
+        </div>
+        <div class="preview-item">
+          <span class="check-icon">✅</span>
+          <span>25 Prompts tạo bài tập tình huống</span>
+        </div>
+        <div class="preview-item">
+          <span class="check-icon">✅</span>
+          <span>20 Prompts viết quiz & email follow-up</span>
+        </div>
+      </div>
+      
+      <!-- Social proof -->
+      <div class="modal-social-proof">
+        <div class="avatars">
+          <span class="avatar">MT</span>
+          <span class="avatar">HL</span>
+          <span class="avatar">NP</span>
+          <span class="more">+497</span>
+        </div>
+        <p class="proof-text">
+          <strong>500+ trainers</strong> đã tải và sử dụng
+        </p>
+      </div>
+      
+      <form id="lead-form" novalidate>
+        <div class="form-group">
+          <input type="text" id="lead-name" placeholder="Họ và tên của bạn" required>
+          <span class="error-msg" id="error-lead-name"></span>
+        </div>
+        <div class="form-group">
+          <input type="email" id="lead-email" placeholder="Email nhận Prompts" required>
+          <span class="error-msg" id="error-lead-email"></span>
+        </div>
+        <button type="submit" class="modal-cta-btn">Tải miễn phí Prompt Kit ngay</button>
+      </form>
+      <p class="privacy-note">
+        🔒 Chúng tôi tôn trọng quyền riêng tư của bạn. Không spam.
+      </p>
+    </div>
+  </div>
+
+  <!-- Sticky Footer Bar -->
+  <div id="sticky-bar" class="sticky-footer-bar">
+    <div class="sticky-bar-container sticky-bar-content">
+      <div class="sticky-scarcity">
+        ⚡ Chỉ 15 người/đợt — Còn <strong class="seat-count number">7</strong>/15 suất trống
+      </div>
+      <div class="sticky-program-name">
+        TRAIN THE TRAINER: AI-Native Trainer
+      </div>
+      <a href="#final-cta" class="sticky-cta-btn">Đăng ký giữ chỗ</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="section-container">
+      <p>&copy; 2026 Sunext Group. Bảo lưu mọi quyền.</p>
+      <p class="footer-links">
+        <a href="#">Chính sách bảo mật</a> | 
+        <a href="#">Điều khoản dịch vụ</a> | 
+        <a href="#">Quy chế thanh toán</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
