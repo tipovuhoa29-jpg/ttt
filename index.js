@@ -185,142 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- EXIT-INTENT LEAD MAGNET MODAL ---
-  // Lắng nghe di chuột ra ngoài trang
-  document.addEventListener('mouseleave', (e) => {
-    if (e.clientY < 0) {
-      triggerExitIntent();
-    }
-  });
-  
-  // Lắng nghe scroll quá 50% độ sâu trang
-  window.addEventListener('scroll', () => {
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (window.scrollY / totalHeight) * 100;
-    if (scrollPercent > 50) {
-      triggerExitIntent();
-    }
-  });
-  
-  // Lắng nghe không hoạt động (idle) trong 30 giây
-  let idleTimer;
-  function resetIdleTimer() {
-    clearTimeout(idleTimer);
-    idleTimer = setTimeout(() => {
-      triggerExitIntent();
-    }, 30000);
-  }
-  
-  window.addEventListener('mousemove', resetIdleTimer);
-  window.addEventListener('keypress', resetIdleTimer);
-  resetIdleTimer();
-  
-  // Track tương tác với form để chặn exit-intent popup
-  const formInputs = document.querySelectorAll('#reg-form input');
-  formInputs.forEach(input => {
-    input.addEventListener('focus', () => {
-      formInteracted = true;
-    });
-    input.addEventListener('input', () => {
-      formInteracted = true;
-    });
-  });
-  
-  function triggerExitIntent() {
-    // Nếu đã hiện, hoặc người dùng đã tương tác với form đăng ký chính, hoặc đang ở gần form đăng ký
-    const finalCtaRect = finalCtaSection.getBoundingClientRect();
-    const isNearForm = finalCtaRect.top < window.innerHeight && finalCtaRect.bottom > 0;
-    
-    if (exitIntentTriggered || formInteracted || isNearForm || stepSuccessContainer.classList.contains('active')) {
-      return;
-    }
-    
-    exitIntentTriggered = true;
-    exitIntentModal.classList.add('active');
-  }
-  
-  modalCloseBtn.addEventListener('click', () => {
-    exitIntentModal.classList.remove('active');
-  });
-  
-  exitIntentModal.addEventListener('click', (e) => {
-    if (e.target === exitIntentModal) {
-      exitIntentModal.classList.remove('active');
-    }
-  });
-  
-  // Submit Form Lead magnet (Bait)
-  leadForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const nameInput = document.getElementById('lead-name');
-    const emailInput = document.getElementById('lead-email');
-    const nameVal = nameInput.value.trim();
-    const emailVal = emailInput.value.trim();
-    
-    const errorLeadName = document.getElementById('error-lead-name');
-    const errorLeadEmail = document.getElementById('error-lead-email');
-    
-    nameInput.parentElement.classList.remove('has-error', 'has-success');
-    emailInput.parentElement.classList.remove('has-error', 'has-success');
-    errorLeadName.style.display = 'none';
-    errorLeadEmail.style.display = 'none';
-    
-    let isValid = true;
-    if (nameVal.length < 2) {
-      nameInput.parentElement.classList.add('has-error');
-      errorLeadName.textContent = 'Họ và tên của bạn cần có ít nhất 2 ký tự.';
-      errorLeadName.style.display = 'block';
-      isValid = false;
-    } else {
-      nameInput.parentElement.classList.add('has-success');
-    }
-    
-    if (!validateEmail(emailVal)) {
-      emailInput.parentElement.classList.add('has-error');
-      errorLeadEmail.textContent = 'Vui lòng nhập địa chỉ email hợp lệ.';
-      errorLeadEmail.style.display = 'block';
-      isValid = false;
-    } else {
-      emailInput.parentElement.classList.add('has-success');
-    }
-    
-    if (!isValid) return;
-    
-    showToast('🎉 Đăng ký nhận Prompt Kit thành công! Vui lòng kiểm tra email của bạn.');
-    setTimeout(() => {
-      exitIntentModal.classList.remove('active');
-    }, 1500);
-  });
-
-  // Inline blur validation for Exit Modal inputs
-  document.getElementById('lead-name').addEventListener('blur', () => {
-    const input = document.getElementById('lead-name');
-    const error = document.getElementById('error-lead-name');
-    input.parentElement.classList.remove('has-error', 'has-success');
-    error.style.display = 'none';
-    if (input.value.trim().length >= 2) {
-      input.parentElement.classList.add('has-success');
-    } else if (input.value.trim().length > 0) {
-      input.parentElement.classList.add('has-error');
-      error.textContent = 'Họ và tên của bạn cần có ít nhất 2 ký tự.';
-      error.style.display = 'block';
-    }
-  });
-
-  document.getElementById('lead-email').addEventListener('blur', () => {
-    const input = document.getElementById('lead-email');
-    const error = document.getElementById('error-lead-email');
-    input.parentElement.classList.remove('has-error', 'has-success');
-    error.style.display = 'none';
-    if (validateEmail(input.value.trim())) {
-      input.parentElement.classList.add('has-success');
-    } else if (input.value.trim().length > 0) {
-      input.parentElement.classList.add('has-error');
-      error.textContent = 'Vui lòng nhập địa chỉ email hợp lệ.';
-      error.style.display = 'block';
-    }
-  });
-
   // Tooltip Click Toggle on Mobile
   const tooltipTrigger = document.getElementById('tooltip-trigger');
   const tooltipBubble = document.getElementById('tooltip-bubble');
@@ -415,6 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nameInput.parentElement.classList.add('has-error');
       errorName.textContent = 'Họ và tên của bạn cần có ít nhất 2 ký tự.';
       errorName.style.display = 'block';
+      shakeInput(nameInput);
       isValid = false;
     }
     
@@ -424,6 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
       phoneInput.parentElement.classList.add('has-error');
       errorPhone.textContent = 'Vui lòng nhập số điện thoại hợp lệ (10 chữ số, bắt đầu bằng 0).';
       errorPhone.style.display = 'block';
+      shakeInput(phoneInput);
       isValid = false;
     }
     
@@ -433,6 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
       emailInput.parentElement.classList.add('has-error');
       errorEmail.textContent = 'Vui lòng nhập địa chỉ email hợp lệ (ví dụ: name@domain.com).';
       errorEmail.style.display = 'block';
+      shakeInput(emailInput);
       isValid = false;
     }
     
@@ -552,8 +419,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // Update OTO upsell syntax
       otoSyntax.textContent = `TAT ${userPhone} VIP`;
       
-      // Trigger celebratory Confetti (Aarron Walter emotional moment)
-      triggerCelebrationConfetti();
+      // Trigger success checkmark animation
+      triggerSuccessAnimation();
     }, 1500); // 1.5-second loading verification simulation
   });
 
@@ -564,65 +431,97 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast('Cú pháp chuyển khoản VIP đã được hiển thị!');
   });
 
-  // Confetti script function (Upgraded 3-phase animation)
-  function triggerCelebrationConfetti() {
-    if (typeof confetti !== 'function') return;
-    
-    const duration = 4000; // 4 seconds
-    const end = Date.now() + duration;
-    const colors = ['#FF7733', '#3A1C6A', '#FF5500', '#F3EEF9', '#22C55E'];
-    
-    // Phase 1: Big burst từ giữa màn hình
-    confetti({
-      particleCount: 150,
-      spread: 180,
-      origin: { y: 0.6 },
-      colors: colors,
-      scalar: 1.2,
-      gravity: 1,
-      ticks: 300
-    });
-    
-    // Phase 2: Continuous rain from sides
-    (function frame() {
-      confetti({
-        particleCount: 3,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0, y: 0.6 },
-        colors: colors,
-        shapes: ['circle', 'square'],
-        gravity: 0.8,
-        scalar: 0.8
-      });
-      
-      confetti({
-        particleCount: 3,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1, y: 0.6 },
-        colors: colors,
-        shapes: ['circle', 'square'],
-        gravity: 0.8,
-        scalar: 0.8
-      });
-      
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
+  // --- SUCCESS CHECKMARK ANIMATION ---
+  function triggerSuccessAnimation() {
+    const successIcon = document.querySelector('.success-icon');
+    if (successIcon) {
+      successIcon.classList.add('animate-success');
+    }
+  }
+
+  // --- COUNTDOWN TIMER ---
+  function initCountdown() {
+    const countdownEl = document.querySelector('.badge-timer .countdown');
+    if (!countdownEl) return;
+
+    let targetTime = localStorage.getItem('tat_countdown_target');
+    if (!targetTime) {
+      // 23h 45m from now
+      const now = new Date().getTime();
+      targetTime = now + (23 * 60 * 60 * 1000) + (45 * 60 * 1000);
+      localStorage.setItem('tat_countdown_target', targetTime);
+    } else {
+      targetTime = parseInt(targetTime, 10);
+      // If target time has already passed, reset it to another 24h to keep it working
+      if (targetTime < new Date().getTime()) {
+        const now = new Date().getTime();
+        targetTime = now + (23 * 60 * 60 * 1000) + (45 * 60 * 1000);
+        localStorage.setItem('tat_countdown_target', targetTime);
       }
-    }());
+    }
+
+    function update() {
+      const now = new Date().getTime();
+      const distance = targetTime - now;
+
+      if (distance < 0) {
+        countdownEl.textContent = "Đã đóng đăng ký";
+        return;
+      }
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.textContent = `${hours}h ${minutes}p ${seconds}s`;
+    }
+
+    update();
+    setInterval(update, 1000);
+  }
+  initCountdown();
+
+  // --- SCROLL REVEAL ANIMATION ---
+  function initScrollReveal() {
+    const revealElements = document.querySelectorAll(
+      '.persona-card, .pain-item, .outcome-card, .timeline-item, .deliverable-card, .testimonial-card, .claude-feature-card'
+    );
     
-    // Phase 3: Final big blast (sau 2 giây)
-    setTimeout(() => {
-      confetti({
-        particleCount: 100,
-        spread: 120,
-        origin: { y: 0.7 },
-        colors: colors,
-        startVelocity: 45,
-        scalar: 1.5
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-active');
+          observer.unobserve(entry.target);
+        }
       });
-    }, 2000);
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => {
+      el.classList.add('reveal-element');
+      observer.observe(el);
+    });
+  }
+  initScrollReveal();
+
+  // --- HELPERS & ANIMATIONS ---
+  function shakeInput(inputEl) {
+    inputEl.classList.add('shake-input');
+    inputEl.addEventListener('animationend', () => {
+      inputEl.classList.remove('shake-input');
+    }, { once: true });
+  }
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  function validatePhone(phone) {
+    const re = /^0[0-9]{9}$/;
+    return re.test(phone);
   }
 
 });
