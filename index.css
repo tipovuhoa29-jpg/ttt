@@ -3423,3 +3423,241 @@ th.highlight-col {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== NEW: Hero Value Prop & Hero How ===== */
+.hero-value-prop {
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.88);
+  line-height: var(--lh-relaxed);
+  max-width: 720px;
+  margin: 0 auto var(--sp-16);
+  text-align: center;
+}
+.hero-value-prop strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.hero-how {
+  font-size: var(--text-base);
+  color: rgba(255,255,255,0.65);
+  line-height: var(--lh-normal);
+  max-width: 640px;
+  margin: 0 auto var(--sp-32);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ===== NEW: Hero Risk Reversal ===== */
+.hero-risk-reversal {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.72);
+  line-height: var(--lh-normal);
+  margin-top: var(--sp-12);
+  text-align: center;
+}
+.hero-risk-reversal .risk-link {
+  color: var(--accent-orange);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.hero-risk-reversal .risk-link:hover {
+  color: var(--orange-400);
+}
+
+/* ===== NEW: Value Stack (replaces tech-stack-visual) ===== */
+.value-stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-32);
+  margin-top: var(--sp-48);
+  padding: var(--sp-24) var(--sp-32);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+}
+.value-item {
+  text-align: center;
+}
+.value-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--accent-orange);
+  line-height: 1.2;
+}
+.value-label {
+  display: block;
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.7);
+  line-height: var(--lh-normal);
+  margin-top: 4px;
+}
+.value-separator {
+  font-size: var(--text-xl);
+  color: rgba(255,255,255,0.25);
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .value-stack {
+    flex-direction: column;
+    gap: var(--sp-16);
+    padding: var(--sp-16);
+  }
+  .value-separator {
+    display: none;
+  }
+  .value-stack .value-item {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-12);
+  }
+  .value-number {
+    font-size: var(--text-xl);
+    min-width: 60px;
+  }
+  .value-label {
+    text-align: left;
+  }
+}
+
+/* ===== NEW: Trust Stat Context ===== */
+.stat-context {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--gray-600);
+  margin-top: 4px;
+  font-style: italic;
+  line-height: var(--lh-normal);
+}
+
+/* ===== NEW: Story Reflection Blockquote ===== */
+.story-reflection {
+  margin: var(--sp-32) auto var(--sp-16);
+  padding: var(--sp-24) var(--sp-32);
+  max-width: 640px;
+  border-left: 3px solid var(--accent-orange);
+  background: var(--purple-50);
+  border-radius: 0 12px 12px 0;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--purple-700);
+  line-height: var(--lh-relaxed);
+  text-align: center;
+  position: relative;
+}
+.story-reflection::before {
+  content: '\201C';
+  font-size: 48px;
+  color: var(--accent-orange);
+  opacity: 0.3;
+  position: absolute;
+  top: -8px;
+  left: 16px;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+/* ===== NEW: Client Name Tag ===== */
+.client-name {
+  color: var(--purple-600);
+  font-weight: 500;
+}
+
+/* ===== NEW: Program Leadership Section ===== */
+.leadership-section {
+  padding: var(--sp-80) 0;
+  background: var(--bg-light);
+}
+
+.leader-card {
+  max-width: 720px;
+  margin: var(--sp-48) auto 0;
+  padding: var(--sp-48);
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(42, 24, 71, 0.06);
+}
+
+.leader-info {
+  text-align: center;
+}
+
+.leader-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--primary-purple);
+  margin-bottom: 4px;
+}
+
+.leader-title {
+  font-size: var(--text-base);
+  color: var(--gray-600);
+  margin-bottom: var(--sp-24);
+}
+
+.leader-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-12);
+  align-items: flex-start;
+  max-width: 480px;
+  margin: 0 auto var(--sp-32);
+}
+
+.credential-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-12);
+  font-size: var(--text-base);
+  color: var(--gray-900);
+  line-height: var(--lh-normal);
+}
+.credential-item svg {
+  flex-shrink: 0;
+  color: var(--success);
+}
+
+.leader-quote {
+  margin: var(--sp-32) auto 0;
+  padding: var(--sp-24) var(--sp-32);
+  border-left: 3px solid var(--accent-orange);
+  background: var(--purple-50);
+  border-radius: 0 12px 12px 0;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--purple-700);
+  line-height: var(--lh-relaxed);
+  max-width: 560px;
+}
+
+@media (max-width: 768px) {
+  .leader-card {
+    padding: var(--sp-24);
+    margin-top: var(--sp-32);
+  }
+  .leader-name {
+    font-size: var(--text-xl);
+  }
+  .leader-quote {
+    padding: var(--sp-16);
+    font-size: var(--text-base);
+  }
+  .leadership-section {
+    padding: var(--sp-48) 0;
+  }
+  .story-reflection {
+    padding: var(--sp-16) var(--sp-24);
+    font-size: var(--text-lg);
+    margin: var(--sp-24) auto var(--sp-12);
+  }
+}
