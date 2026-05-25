@@ -90,15 +90,26 @@
               Đăng Ký Tham Gia Khóa Học
             </a>
 
-            <p class="cta-note">
-              <svg class="icon-sm orange-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-              Đợt tiếp theo: <strong>30-31/05/2026 (Thứ 7 - Chủ Nhật)</strong> — Còn <strong class="seat-count">7</strong>/15 suất
-            </p>
+            <div class="cta-note-group">
+              <div class="cta-note-badge">
+                <svg class="icon-sm purple-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="width:16px; height:16px;">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span class="note-date">30-31/05/2026 (T7-CN)</span>
+              </div>
+              <div class="cta-note-seats">
+                <svg class="icon-sm orange-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="width:16px; height:16px;">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9.5" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Còn <strong class="seat-count">7</strong>/15 suất</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1504,7 +1515,7 @@
     
   </footer>
 
-  <!-- Sticky CTA xuất hiện khi scroll -->
+  <!-- Sticky CTA xuất hiện khi scroll (Top Bar) -->
   <div class="sticky-cta" id="stickyCTA">
     <div class="sticky-content">
       <div class="sticky-info">
@@ -1512,6 +1523,41 @@
         <span>Còn <span class="seat-count">7</span>/15 suất</span>
       </div>
       <a href="#final-cta" class="btn-sticky" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">Đăng Ký Ngay</a>
+    </div>
+  </div>
+
+  <!-- Sticky Footer CTA (Bottom Bar) -->
+  <div class="sticky-footer-cta" id="stickyFooter">
+    <div class="sticky-footer-container">
+      
+      <!-- Left: Info -->
+      <div class="footer-cta-info">
+        <div class="cohort-badge">
+          <svg class="icon-calendar" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="flex-shrink:0;">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Đợt 30-31/05/2026</span>
+        </div>
+        <div class="seats-urgency">
+          <div class="seats-bar">
+            <div class="seats-fill progress-fill" style="width: 53.33%;"></div>
+          </div>
+          <span class="seats-text">Còn <strong><span class="seat-count">7</span>/15 suất</strong></span>
+        </div>
+      </div>
+      
+      <!-- Right: CTA -->
+      <a href="#final-cta" class="btn-footer-cta" style="text-decoration: none;">
+        <span>Đăng Ký Ngay</span>
+        <svg class="icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="flex-shrink:0;">
+          <path d="M5 12h14"></path>
+          <path d="m13 5 7 7-7 7"></path>
+        </svg>
+      </a>
+      
     </div>
   </div>
 

@@ -121,13 +121,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- STICKY FOOTER BAR LOGIC ---
   // Chỉ hiển thị sticky CTA khi scroll qua 50% trang
-  if (stickyCTA) {
+  const stickyFooter = document.getElementById('stickyFooter');
+  if (stickyCTA || stickyFooter) {
     window.addEventListener('scroll', () => {
       const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       if (scrollPercent > 50) {
-        stickyCTA.classList.add('visible');
+        if (stickyCTA) stickyCTA.classList.add('visible');
+        if (stickyFooter) stickyFooter.classList.add('visible');
       } else {
-        stickyCTA.classList.remove('visible');
+        if (stickyCTA) stickyCTA.classList.remove('visible');
+        if (stickyFooter) stickyFooter.classList.remove('visible');
       }
     });
   }
