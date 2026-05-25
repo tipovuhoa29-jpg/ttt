@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const priceBreakdown = document.getElementById('price-breakdown');
   const priceAnchoring = document.getElementById('price-anchoring');
   
-  const payFullRadio = document.getElementById('pay-full');
-  const paySplitRadio = document.getElementById('pay-split');
   
   const regForm = document.getElementById('reg-form');
   const stepFormContainer = document.getElementById('step-form-container');
@@ -164,76 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- INTERACTIVE PRICING CARD LOGIC ---
-  function updatePricingCard() {
-    if (!priceDisplay) return;
-    
-    const fullOptionCard = document.querySelector('#pay-full ~ .option-card');
-    const splitOptionCard = document.querySelector('#pay-split ~ .option-card');
-    
-    if (selectedPaymentMethod === 'full') {
-      priceDisplay.textContent = '4.997.000đ';
-      if (priceUnit) priceUnit.textContent = '/trọn gói';
-      if (priceBreakdown) priceBreakdown.textContent = 'Chỉ khoảng ~2.500.000đ/ngày hoặc ~208.000đ/giờ học chuyên sâu.';
-      if (priceAnchoring) priceAnchoring.textContent = 'Rẻ hơn 4 lần so với việc thuê chuyên gia tư vấn giáo trình riêng lẻ.';
-      
-      if (fullOptionCard) {
-        fullOptionCard.style.borderColor = 'var(--purple-700)';
-        fullOptionCard.style.backgroundColor = 'var(--purple-50)';
-        const fullTitle = fullOptionCard.querySelector('h4');
-        if (fullTitle) fullTitle.style.color = 'var(--purple-700)';
-        const fullPrice = fullOptionCard.querySelector('.price');
-        if (fullPrice) fullPrice.style.color = 'var(--purple-700)';
-      }
-      if (splitOptionCard) {
-        splitOptionCard.style.borderColor = 'var(--gray-200)';
-        splitOptionCard.style.backgroundColor = 'var(--white)';
-        const splitTitle = splitOptionCard.querySelector('h4');
-        if (splitTitle) splitTitle.style.color = 'var(--gray-700)';
-        const splitPrice = splitOptionCard.querySelector('.price');
-        if (splitPrice) splitPrice.style.color = 'var(--gray-900)';
-      }
-    } else {
-      priceDisplay.textContent = '2.500.000đ';
-      if (priceUnit) priceUnit.textContent = '/kỳ 1';
-      if (priceBreakdown) priceBreakdown.textContent = 'Thanh toán kỳ 2 (2.500.000đ) sau khi hoàn thành Ngày 1.';
-      if (priceAnchoring) priceAnchoring.textContent = 'Giúp tháo gỡ áp lực tài chính, sở hữu ngay suất học.';
-      
-      if (fullOptionCard) {
-        fullOptionCard.style.borderColor = 'var(--gray-200)';
-        fullOptionCard.style.backgroundColor = 'var(--white)';
-        const fullTitle = fullOptionCard.querySelector('h4');
-        if (fullTitle) fullTitle.style.color = 'var(--gray-700)';
-        const fullPrice = fullOptionCard.querySelector('.price');
-        if (fullPrice) fullPrice.style.color = 'var(--gray-900)';
-      }
-      if (splitOptionCard) {
-        splitOptionCard.style.borderColor = 'var(--purple-700)';
-        splitOptionCard.style.backgroundColor = 'var(--purple-50)';
-        const splitTitle = splitOptionCard.querySelector('h4');
-        if (splitTitle) splitTitle.style.color = 'var(--purple-700)';
-        const splitPrice = splitOptionCard.querySelector('.price');
-        if (splitPrice) splitPrice.style.color = 'var(--purple-700)';
-      }
-    }
-  }
-  
-  // Call initial pricing card update
-  updatePricingCard();
-  
-  if (payFullRadio) {
-    payFullRadio.addEventListener('change', () => {
-      selectedPaymentMethod = 'full';
-      updatePricingCard();
-    });
-  }
-  
-  if (paySplitRadio) {
-    paySplitRadio.addEventListener('change', () => {
-      selectedPaymentMethod = 'split';
-      updatePricingCard();
-    });
-  }
 
   // --- FORM SUBMIT & PAYMENT STATE ENGINE ---
   if (regForm) {
@@ -299,8 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
       userPhone = phoneVal;
       
       // Calculate pricing amount
-      let basePrice = (selectedPaymentMethod === 'full') ? 4997000 : 2500000;
-      calculatedAmount = basePrice;
+      calculatedAmount = 4997000;
       
       // Calculate syntax
       calculatedSyntax = `TAT ${userPhone}`;
@@ -320,11 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Update Instructions based on package
       const paymentInstructions = document.querySelector('.payment-instructions');
-      if (selectedPaymentMethod === 'full') {
-        paymentInstructions.innerHTML = `Quét mã QR dưới đây bằng ứng dụng Ngân hàng của bạn để hoàn tất thanh toán Trọn gói (<strong>${formattedAmount}</strong>).`;
-      } else {
-        paymentInstructions.innerHTML = `Quét mã QR dưới đây bằng ứng dụng Ngân hàng của bạn để hoàn tất thanh toán Kỳ 1 (<strong>${formattedAmount}</strong>). Kỳ 2 (2.500.000đ) sẽ thanh toán sau khi hoàn thành Ngày 1.`;
-      }
+      paymentInstructions.innerHTML = `Quét mã QR dưới đây bằng ứng dụng Ngân hàng của bạn để hoàn tất thanh toán Trọn gói (<strong>${formattedAmount}</strong>).`;
 
       setTimeout(() => {
         submitBtn.classList.remove('btn-loading');
