@@ -1,1162 +1,1141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRAIN THE TRAINER: AI-Native Trainer | Đóng gói bài giảng & Xây giáo án bằng AI cùng Sunext</title>
-  <meta name="description" content="Khóa học Train The Trainer 2 ngày thực chiến dành cho chuyên gia. Đóng gói chuyên môn thành workshop B2B/B2C, làm chủ trợ lý AI soạn bài tự động và nhận lộ trình giảng dạy tại Sunext.">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TAT: Đóng Gói Chuyên Môn Thành Chương Trình Đào Tạo Chuyên Nghiệp</title>
+  <meta name="description" content="Khóa học 2 ngày giúp chuyên gia dùng AI để đóng gói kinh nghiệm thành chương trình đào tạo chuyên nghiệp, dễ triển khai và có thể nhân rộng." />
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
   <!-- Toast Notification -->
   <div id="toast" class="toast-notification">Đã sao chép vào bộ nhớ tạm!</div>
 
-  <!-- Header & Navigation -->
-  <header class="main-header">
-    <div class="header-container">
-      <div class="logo">
-        <span class="brand-text">SUNEXT</span>
-        <span class program-badge>TAT</span>
-      </div>
-      <nav class="desktop-nav">
-        <a href="#persona" class="nav-link">Đối tượng</a>
-        <a href="#framework" class="nav-link">Khác biệt</a>
-        <a href="#curriculum" class="nav-link">Lịch học</a>
-        <a href="#offer" class="nav-link">Học phí</a>
-        <a href="#faq" class="nav-link">Hỏi đáp</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="TAT">
+        <div class="brand-mark">TAT</div>
+        <div class="brand-text">
+          <strong>AI-Native Trainer</strong>
+          <span>Đóng gói chuyên môn thành đào tạo</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Điều hướng chính">
+        <a href="#doi-tuong">Đối tượng</a>
+        <a href="#noi-dung">Bạn sẽ học gì</a>
+        <a href="#lo-trinh">Lộ trình</a>
+        <a href="#hoc-phi">Học phí</a>
+        <a href="#hoi-dap">Hỏi đáp</a>
       </nav>
-      <a href="#final-cta" class="header-cta-btn">ÄÄƒng kÃ½ tham gia</a>
+
+      <a class="header-cta" href="#final-cta">Đăng ký ngay</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-gradient-overlay"></div>
-    <div class="section-container hero-container">
-      <div class="hero-content">
-        
-        <!-- Badge với icon -->
-        <div class="hero-badge">
-          <svg class="badge-icon icon-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 6px; color: var(--accent-orange);"><path d="M12 2c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          <span>500+ chuyên gia đã tốt nghiệp | Được tin dùng bởi 30+ tổ chức</span>
-        </div>
-        
-        <!-- Headline ngắn gọn -->
-        <h1 class="hero-headline">
-          Biến 10 Năm Kinh Nghiệm<br>
-          Thành Workshop Thu Impact<br>
-          <span class="highlight">Chỉ Trong 2 Ngày</span>
-        </h1>
-        
-        <!-- Subheadline với icons -->
-        <div class="hero-benefits">
-          <div class="benefit-item">
-            <svg class="benefit-icon icon-lightning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: var(--accent-orange);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <span>Claude AI soạn outline trong 2 giờ</span>
+  <main>
+    <section class="hero-section">
+      <div class="wide-container hero-grid">
+        <div>
+          <div class="hero-badge">
+            <svg class="icon-sm purple-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+              <path d="M9 12.5 11 14.5 15.5 9.5"></path>
+              <circle cx="12" cy="12" r="9"></circle>
+            </svg>
+            500+ chuyên gia đã tham gia | 30+ tổ chức hàng đầu tin dùng
           </div>
-          <div class="benefit-item">
-            <svg class="benefit-icon icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: var(--accent-orange);"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <span>Nhân impact từ 10 → 500+ người</span>
-          </div>
-          <div class="benefit-item">
-            <svg class="benefit-icon icon-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: var(--accent-orange);"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"/><path d="M12 2a6 6 0 0 1 6 6v5a6 6 0 0 1-12 0V8a6 6 0 0 1 6-6z"/></svg>
-            <span>Được công nhận là thought leader</span>
-          </div>
-        </div>
-        
-        <!-- CTA -->
-        <div class="hero-cta-group" style="align-items: flex-start; text-align: left; margin: var(--sp-24) 0 0 0;">
-          <a href="#final-cta" class="cta-button primary-cta hero-cta">Đăng Ký Tham Gia Cohort</a>
-          <p class="hero-cta-sub" style="margin-top: var(--sp-12); font-size: var(--text-sm); color: var(--fg-secondary);">
-            <svg class="icon-sm icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 6px; color: var(--accent-orange);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Còn <span class="seat-count">7</span>/15 suất cho đợt tháng 6/2026
-          </p>
-        </div>
-        
-      </div>
-      
-      <!-- 🖼️ HERO IMAGE - QUAN TRỌNG -->
-      <div class="hero-visual">
-        <img src="hero-workshop.png" alt="Chuyên gia đang workshop">
-      </div>
-      
-    </div>
-  </section>
 
-  <!-- Trust Strip -->
-  <section class="trust-strip">
-    <div class="section-container trust-container">
-      <div class="trust-stats">
-        
-        <!-- Stat 1 -->
-        <div class="trust-stat">
-          <div class="stat-visual">
-            <svg class="stat-icon icon-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; color: var(--accent-orange);"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
-            <span class="stat-number">500+</span>
-          </div>
-          <p class="stat-label">
-            Chuyên gia đã scale impact<br>
-            <span class="stat-context">Từ 2023 đến nay</span>
-          </p>
-        </div>
-        
-        <!-- Stat 2 -->
-        <div class="trust-stat">
-          <div class="stat-visual">
-            <svg class="stat-icon icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; color: var(--accent-orange);"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="16"/><line x1="15" y1="22" x2="15" y2="16"/><line x1="9" y1="16" x2="15" y2="16"/><path d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm8-4h2v2h-2V6zm0 4h2v2h-2v-2z"/></svg>
-            <span class="stat-number">30+</span>
-          </div>
-          <p class="stat-label">
-            Tổ chức hàng đầu<br>
-            <span class="stat-context">Viettel, FPT, VinGroup...</span>
-          </p>
-        </div>
-        
-        <!-- Stat 3 -->
-        <div class="trust-stat">
-          <div class="stat-visual">
-            <svg class="stat-icon icon-megaphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; color: var(--accent-orange);"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-            <span class="stat-number">85%</span>
-          </div>
-          <p class="stat-label">
-            Được mời diễn giả<br>
-            <span class="stat-context">Trong 6 tháng sau TAT</span>
-          </p>
-        </div>
-        
-      </div>
-      
-      <!-- 🖼️ LOGO STRIP -->
-      <div class="client-logos-wrapper">
-        <p class="client-logos-title">Đã hợp tác đào tạo tại:</p>
-        <div class="client-logos">
-          <img src="logo-viettel.svg" alt="Viettel">
-          <img src="logo-fpt.svg" alt="FPT">
-          <img src="logo-vingroup.svg" alt="VinGroup">
-          <img src="logo-bidv.svg" alt="BIDV">
-        </div>
-      </div>
-      
-    </div>
-  </section>
+          <h1 class="hero-headline">
+            Biến 10 Năm Kinh Nghiệm<br />
+            Thành Chương Trình Đào Tạo Chuyên Nghiệp<br />
+            <span class="highlight">Chỉ Trong 2 Ngày</span>
+          </h1>
 
-  <!-- Personas Section -->
-  <section id="persona" class="persona-section">
-    <div class="section-container">
-      <span class="section-tag badge-secondary">TARGET AUDIENCE</span>
-      <h2 class="section-title">Ai Nên Tham Gia TAT?</h2>
-      <p class="section-subtitle">Chương trình được đo ni đóng giày cho các chuyên gia senior muốn đóng gói tri thức.</p>
-      
-      <div class="persona-grid">
-        
-        <!-- Persona 1 -->
-        <div class="persona-card reveal-element">
-          <!-- 🖼️ ICON/ILLUSTRATION Top -->
-          <div class="persona-visual">
-            <img src="persona-expert.svg" alt="Expert Icon">
-          </div>
-          
-          <span class="card-number">01</span>
-          <h3>Chuyên Gia Muốn Scale Impact</h3>
-          
-          <!-- Profile snippet -->
-          <div class="persona-profile">
-            <svg class="icon-sm icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; color: var(--accent-orange);"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            <span>5-10 năm kinh nghiệm | Muốn nhân rộng influence</span>
-          </div>
-          
-          <!-- Pain point (concise) -->
-          <p class="persona-pain">
-            Expertise chỉ nằm trong đầu — chưa thể chế hóa thành chương trình bền vững.
+          <p class="hero-sub">
+            500+ chuyên gia từ Viettel, FPT, VinGroup đã dùng phương pháp này để đóng gói chuyên môn thành chương trình đào tạo —
+            <strong>tăng gấp 10 lần khả năng truyền tải tri thức.</strong>
           </p>
-          
-          <!-- Solution với icon -->
-          <div class="persona-solution">
-            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; color: var(--success);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <strong>TAT giúp:</strong> Đóng gói thành 2 workshop chỉ trong 2 ngày
-          </div>
-          
-          <!-- Outcome badge -->
-          <div class="outcome-badge">
-            <svg class="icon-sm icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; color: var(--accent-orange);"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            Nhân impact gấp 10-100 lần
-          </div>
-        </div>
 
-        <!-- Persona 2 -->
-        <div class="persona-card reveal-element">
-          <!-- 🖼️ ICON/ILLUSTRATION Top -->
-          <div class="persona-visual">
-            <img src="persona-manager.svg" alt="Manager Icon">
-          </div>
-          
-          <span class="card-number">02</span>
-          <h3>Quản Lý Cần Đào Tạo Team</h3>
-          
-          <!-- Profile snippet -->
-          <div class="persona-profile">
-            <svg class="icon-sm icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; color: var(--accent-orange);"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            <span>Manager, Team Lead | Soạn bài mất nhiều thời gian</span>
-          </div>
-          
-          <!-- Pain point (concise) -->
-          <p class="persona-pain">
-            Dành cả tuần chuẩn bị bài giảng nhưng team vẫn lười áp dụng, lý thuyết suông.
-          </p>
-          
-          <!-- Solution với icon -->
-          <div class="persona-solution">
-            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; color: var(--success);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <strong>TAT giúp:</strong> Claude AI tạo case study thực tế từ công ty trong 2 giờ
-          </div>
-          
-          <!-- Outcome badge -->
-          <div class="outcome-badge">
-            <svg class="icon-sm icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; color: var(--accent-orange);"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            Đào tạo hiệu quả gấp 5 lần
-          </div>
-        </div>
+          <div class="hero-benefits">
+            <div class="benefit">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <span>Công nghệ AI hỗ trợ soạn bài trong 2 giờ</span>
+            </div>
 
-        <!-- Persona 3 -->
-        <div class="persona-card reveal-element">
-          <!-- 🖼️ ICON/ILLUSTRATION Top -->
-          <div class="persona-visual">
-            <img src="persona-ld.svg" alt="L&D Icon">
-          </div>
-          
-          <span class="card-number">03</span>
-          <h3>L&D / HR Muốn Scale Training</h3>
-          
-          <!-- Profile snippet -->
-          <div class="persona-profile">
-            <svg class="icon-sm icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; color: var(--accent-orange);"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            <span>Phụ trách L&D, Corporate Training | Cần chuẩn hóa</span>
-          </div>
-          
-          <!-- Pain point (concise) -->
-          <p class="persona-pain">
-            Quy trình thiết kế tản mác, khó đồng bộ chất lượng bài giảng của giảng viên nội bộ.
-          </p>
-          
-          <!-- Solution với icon -->
-          <div class="persona-solution">
-            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; color: var(--success);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <strong>TAT giúp:</strong> Workspace AI & prompts chuẩn hóa giáo trình cả đội ngũ
-          </div>
-          
-          <!-- Outcome badge -->
-          <div class="outcome-badge">
-            <svg class="icon-sm icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; color: var(--accent-orange);"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            Tự động hóa 80% quy trình thiết kế
-          </div>
-        </div>
+            <div class="benefit">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <span>Đào tạo được 100+ người thay vì chỉ 5-10 người nội bộ</span>
+            </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- Case Study Section -->
-  <section class="case-study-section">
-    <div class="section-container">
-      <span class="section-tag badge-secondary">CASE STUDY</span>
-      <h2 class="section-title">Từ "Ẩn Danh" Đến "Industry Icon" — 90 Ngày</h2>
-      
-      <!-- 🖼️ VISUAL TIMELINE -->
-      <div class="timeline-visual">
-        
-        <!-- BEFORE - với ảnh -->
-        <div class="timeline-phase before timeline-item">
-          <div class="phase-image">
-            <img src="before-frustrated.png" alt="Chuyên gia bận rộn">
+            <div class="benefit">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <span>Được công nhận là chuyên gia có hệ thống phương pháp rõ ràng</span>
+            </div>
           </div>
-          <div class="phase-content">
-            <span class="phase-label">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" style="width: 8px; height: 8px; color: var(--error); display: inline-block; vertical-align: middle; margin-right: 4px;"><circle cx="12" cy="12" r="10"/></svg>
-              Trước TAT
-            </span>
-            <h4>Nguyễn Minh Hoàng</h4>
-            <p class="role">Marketing Director, VinGroup (12 năm)</p>
-            <p class="problem">
-              Mentor 5-10 người nội bộ. Impact giới hạn trong 1 tổ chức duy nhất.
+
+          <div class="hero-cta">
+            <a class="btn-primary large" href="#final-cta">
+              Đăng Ký Tham Gia Khóa Học
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                <path d="M5 12h14"></path>
+                <path d="m13 5 7 7-7 7"></path>
+              </svg>
+            </a>
+
+            <p class="cta-note">
+              <svg class="icon-sm orange-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 7v5l3 2"></path>
+              </svg>
+              Còn <strong class="seat-count">7</strong>/15 suất cho đợt tháng 6/2026
             </p>
           </div>
         </div>
-        
-        <!-- TRANSFORMATION ARROW -->
-        <div class="timeline-transform">
-          <svg class="transform-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 32px; height: 32px; color: var(--accent-orange);"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"/></svg>
-          <span class="transform-label">TAT Workshop<br>Tháng 4/2025</span>
-        </div>
-        
-        <!-- AFTER - với ảnh -->
-        <div class="timeline-phase after timeline-item">
-          <div class="phase-image">
-            <img src="after-confident.png" alt="Chuyên gia presenting">
-          </div>
-          <div class="phase-content">
-            <span class="phase-label">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" style="width: 8px; height: 8px; color: var(--success); display: inline-block; vertical-align: middle; margin-right: 4px;"><circle cx="12" cy="12" r="10"/></svg>
-              Sau TAT
-            </span>
-            <div class="results">
-              <div class="result-item">
-                <span class="result-num">480+</span> professionals đào tạo
+
+        <div class="hero-image-card" aria-label="Minh họa quy trình đóng gói chuyên môn">
+          <div class="workshop-visual">
+            <div class="visual-top">
+              <div class="visual-titlebar" aria-hidden="true">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
               </div>
-              <div class="result-item">
-                <span class="result-num">3</span> tổ chức triển khai
+
+              <div class="visual-flow">
+                <div class="flow-box">
+                  <svg class="icon-lg purple-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <circle cx="12" cy="8" r="4.5"></circle>
+                    <path d="M4 21a8 8 0 0 1 16 0"></path>
+                  </svg>
+                  <strong>Kinh nghiệm</strong>
+                  <span>10 năm thực chiến</span>
+                </div>
+
+                <svg class="icon flow-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m13 5 7 7-7 7"></path>
+                </svg>
+
+                <div class="flow-box">
+                  <svg class="icon-lg purple-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path d="M12 3v4"></path>
+                    <path d="M12 17v4"></path>
+                    <path d="M3 12h4"></path>
+                    <path d="M17 12h4"></path>
+                    <path d="m5.6 5.6 2.8 2.8"></path>
+                    <path d="m15.6 15.6 2.8 2.8"></path>
+                    <path d="m18.4 5.6-2.8 2.8"></path>
+                    <path d="m8.4 15.6-2.8 2.8"></path>
+                  </svg>
+                  <strong>Công nghệ AI</strong>
+                  <span>Soạn bài nhanh</span>
+                </div>
+
+                <svg class="icon flow-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m13 5 7 7-7 7"></path>
+                </svg>
+
+                <div class="flow-box">
+                  <svg class="icon-lg purple-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9.5" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.8"></path>
+                    <path d="M16 3.2a4 4 0 0 1 0 7.6"></path>
+                  </svg>
+                  <strong>Đào tạo</strong>
+                  <span>100+ học viên</span>
+                </div>
               </div>
-              <div class="result-item">
-                <span class="result-num">5</span> lời mời diễn giả
+            </div>
+
+            <div class="visual-bottom">
+              <div class="mock-heading"></div>
+              <div class="mock-lines" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+
+              <div class="mini-dashboard">
+                <div class="mini-stat">
+                  <strong>2 giờ</strong>
+                  <span>soạn dàn ý</span>
+                </div>
+                <div class="mini-stat">
+                  <strong>150+</strong>
+                  <span>mẫu lệnh AI</span>
+                </div>
+                <div class="mini-stat">
+                  <strong>2</strong>
+                  <span>chương trình</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
       </div>
-      
-      <!-- Quote với avatar -->
-      <blockquote class="case-quote">
-        <img src="avatar-hoang.png" alt="Hoàng" class="quote-avatar">
-        <p class="quote-text">
-          "Expertise của tôi giờ tồn tại vượt qua chính tôi. Đó là legacy."
+    </section>
+    
+    <section class="trust-section">
+      <div class="container">
+        <p class="trust-intro">
+          Được tin dùng bởi chuyên gia từ <strong>30+ tổ chức hàng đầu Việt Nam</strong>
         </p>
-        <cite>
-          <strong>Nguyễn Minh Hoàng</strong><br>
-          Marketing Director, VinGroup
-        </cite>
-      </blockquote>
-      
-    </div>
-  </section>
 
-  <!-- Pain Points Section -->
-  <section class="pain-section">
-    <div class="section-container">
-      <span class="section-tag badge-secondary">CORE CHALLENGES</span>
-      <h2 class="section-title">2 Vấn Đề Lớn Nhất Của Chuyên Gia Senior</h2>
-      
-      <div class="pain-grid">
-        
-        <!-- Pain 1 -->
-        <div class="pain-card pain-item">
-          <!-- 🖼️ ILLUSTRATION -->
-          <div class="pain-visual">
-            <img src="pain-vanishing.svg" alt="Knowledge vanishing">
+        <div class="logos-grid" aria-label="Danh sách tổ chức">
+          <div class="logo-pill">VIETTEL</div>
+          <div class="logo-pill">FPT</div>
+          <div class="logo-pill">VinGroup</div>
+          <div class="logo-pill">BIDV</div>
+          <div class="logo-pill">VNPT</div>
+          <div class="logo-pill">Prudential</div>
+          <div class="logo-pill">Dai-ichi</div>
+          <div class="logo-pill">Mitsubishi</div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Chuyên gia đã tốt nghiệp</span>
+            <span class="stat-context">Từ năm 2023 đến nay</span>
           </div>
-          
-          <div class="pain-content">
-            <span class="pain-number">01</span>
-            <h3>
-              <svg class="icon-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 20px; height: 20px; color: var(--accent-orange); display: inline-block; vertical-align: middle; margin-right: 8px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              Expertise Đang "Biến Mất"
-            </h3>
-            
-            <p>
-              10+ năm kinh nghiệm chỉ nằm trong đầu. Khi rời tổ chức, <strong>institutional knowledge mất sạch.</strong>
+
+          <div class="stat-item">
+            <span class="stat-number">85%</span>
+            <span class="stat-label">Được mời làm diễn giả</span>
+            <span class="stat-context">Trong 6 tháng sau khóa học</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-number">10 lần</span>
+            <span class="stat-label">Tăng khả năng truyền tải</span>
+            <span class="stat-context">Từ 10 người lên 100+ người</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="doi-tuong">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Đối tượng phù hợp</div>
+          <h2 class="section-title">Khóa Học Này Dành Cho Bạn Nếu:</h2>
+          <p class="section-subtitle">
+            Bạn đã có kinh nghiệm thực chiến, nhưng muốn biến kinh nghiệm đó thành chương trình đào tạo rõ ràng, dễ truyền đạt và có thể nhân rộng.
+          </p>
+        </div>
+
+        <div class="personas-grid">
+          <article class="persona-card">
+            <div class="persona-icon">
+              <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <circle cx="12" cy="8" r="4.5"></circle>
+                <path d="M4 21a8 8 0 0 1 16 0"></path>
+                <path d="M12 13v3"></path>
+                <path d="M9.5 18h5"></path>
+              </svg>
+            </div>
+
+            <h3>Chuyên Gia Muốn Mở Khóa Học</h3>
+
+            <p class="persona-profile">
+              <svg class="icon-sm purple-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+                <path d="M8 7V5a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v2"></path>
+              </svg>
+              5-10 năm kinh nghiệm | Chưa biết bắt đầu từ đâu
             </p>
-            
-            <!-- Stat box -->
-            <div class="pain-stat">
-              <svg class="icon-sm icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;margin-right:6px;color:var(--accent-orange);"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22V16h6v6"/></svg>
-              Impact giới hạn <strong>1 tổ chức</strong> thay vì cả ngành
-            </div>
-          </div>
-        </div>
-        
-        <!-- Pain 2 -->
-        <div class="pain-card pain-item">
-          <!-- 🖼️ ILLUSTRATION -->
-          <div class="pain-visual">
-            <img src="pain-scaling.svg" alt="Cannot scale">
-          </div>
-          
-          <div class="pain-content">
-            <span class="pain-number">02</span>
-            <h3>
-              <svg class="icon-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 20px; height: 20px; color: var(--accent-orange); display: inline-block; vertical-align: middle; margin-right: 8px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              Không Scale Được Mentorship
-            </h3>
-            
-            <p>
-              Chỉ mentor được 1-1 hoặc nhóm nhỏ. <strong>Không có framework</strong> để dạy 100+ người cùng lúc.
+
+            <p class="persona-desc">
+              Bạn có chuyên môn sâu nhưng chưa biết cách đóng gói thành chương trình đào tạo. Soạn giáo án mất quá nhiều thời gian.
             </p>
-            
-            <!-- Stat box -->
-            <div class="pain-stat">
-              <svg class="icon-sm icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;margin-right:6px;color:var(--accent-orange);"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              Max <strong>5-10 mentees/năm</strong> — quá chậm để tạo impact lớn
+
+            <div class="persona-outcome">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <span><strong>Kết quả:</strong> Có 2 chương trình hoàn chỉnh sau 2 ngày</span>
             </div>
-          </div>
+          </article>
+
+          <article class="persona-card">
+            <div class="persona-icon">
+              <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9.5" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.8"></path>
+                <path d="M16 3.2a4 4 0 0 1 0 7.6"></path>
+              </svg>
+            </div>
+
+            <h3>Quản Lý Cần Đào Tạo Đội Nhóm</h3>
+
+            <p class="persona-profile">
+              <svg class="icon-sm purple-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+                <path d="M8 7V5a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v2"></path>
+              </svg>
+              Giám đốc, Trưởng phòng | Bận rộn với công việc
+            </p>
+
+            <p class="persona-desc">
+              Bạn cần đào tạo nội bộ thường xuyên nhưng mất cả tuần soạn một buổi 3 giờ. Nội dung lý thuyết khiến đội nhóm khó áp dụng.
+            </p>
+
+            <div class="persona-outcome">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <span><strong>Kết quả:</strong> Soạn bài nhanh gấp 10 lần với AI</span>
+            </div>
+          </article>
+
+          <article class="persona-card">
+            <div class="persona-icon">
+              <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M3 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H3z"></path>
+                <path d="M21 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8z"></path>
+              </svg>
+            </div>
+
+            <h3>Chuyên Viên Đào Tạo Muốn Chuẩn Hóa</h3>
+
+            <p class="persona-profile">
+              <svg class="icon-sm purple-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+                <path d="M8 7V5a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v2"></path>
+              </svg>
+              Phòng Nhân sự, Đào tạo | Cần hệ thống hóa
+            </p>
+
+            <p class="persona-desc">
+              Bạn phụ trách đào tạo cho cả công ty, cần chuẩn hóa quy trình và tạo thư viện nội dung có thể tái sử dụng.
+            </p>
+
+            <div class="persona-outcome">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <span><strong>Kết quả:</strong> Hệ thống đào tạo tự động với AI</span>
+            </div>
+          </article>
         </div>
-        
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Solution Framework Section -->
-  <section id="framework" class="framework-section">
-    <div class="section-container">
-      <span class="section-tag badge-secondary">TAT METHOD</span>
-      <h2 class="section-title">Framework TAT: 3 Bước Đóng Gói Expertise</h2>
-      
-      <!-- 🖼️ BIG VISUAL DIAGRAM -->
-      <div class="framework-diagram">
-        <img src="framework-visual.svg" alt="TAT Framework">
+    <section class="section section-alternate">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Câu chuyện thành công</div>
+          <h2 class="section-title">Từ “Chuyên Gia Bận Rộn” Đến “Diễn Giả Được Săn Đón”</h2>
+          <p class="section-subtitle">
+            Một ví dụ điển hình về cách chuyên môn cá nhân có thể trở thành tài sản đào tạo cho nhiều tổ chức.
+          </p>
+        </div>
+
+        <div class="case-timeline">
+          <article class="timeline-card before">
+            <div class="timeline-badge">
+              <span class="badge-dot red"></span>
+              Trước Khi Học
+            </div>
+
+            <div class="timeline-content">
+              <h4>Nguyễn Minh Hoàng</h4>
+              <p class="role">Giám Đốc Marketing, VinGroup — 12 năm kinh nghiệm</p>
+
+              <p class="situation">
+                “Sau 12 năm, tôi có phương pháp marketing riêng giúp tăng hiệu quả gấp 3-5 lần. Nhưng tất cả chỉ nằm trong đầu —
+                <strong>khi tôi chuyển công ty, toàn bộ kiến thức đó biến mất.</strong>”
+              </p>
+
+              <div class="metric">
+                Đào tạo được: <strong>5-10 người</strong> trong nội bộ
+              </div>
+            </div>
+          </article>
+
+          <div class="timeline-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width: 42px; height: 42px;">
+              <path d="M5 12h14"></path>
+              <path d="m13 5 7 7-7 7"></path>
+            </svg>
+            <span class="arrow-label">Tham gia TAT tháng 4/2025</span>
+          </div>
+
+          <article class="timeline-card after">
+            <div class="timeline-badge">
+              <span class="badge-dot green"></span>
+              Sau Khi Học
+            </div>
+
+            <div class="timeline-content">
+              <div class="results-grid">
+                <div class="result-item">
+                  <strong>480+</strong>
+                  <span>người được đào tạo</span>
+                </div>
+
+                <div class="result-item">
+                  <strong>4</strong>
+                  <span>tổ chức triển khai</span>
+                </div>
+
+                <div class="result-item">
+                  <strong>5</strong>
+                  <span>sự kiện mời diễn giả</span>
+                </div>
+              </div>
+
+              <blockquote class="case-quote">
+                “Phương pháp của tôi giờ là tài sản của 4 tổ chức lớn, được 480+ người áp dụng mỗi ngày. Đó là di sản tôi muốn để lại.”
+              </blockquote>
+            </div>
+          </article>
+        </div>
       </div>
-      
-      <!-- Text explanation dưới -->
-      <div class="framework-steps">
-        
-        <div class="step-card outcome-card">
-          <div class="step-icon-circle">
-            <svg class="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px; color: var(--accent-orange);"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          </div>
-          <h4>01 — Andragogy Structure</h4>
-          <p>
-            Thiết lập khung bài giảng thực chiến theo Adult Learning Theory — không lý thuyết suông.
+    </section>
+
+    <section class="section" id="noi-dung">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Bạn sẽ học gì</div>
+          <h2 class="section-title">3 Năng Lực Cốt Lõi Sau Khóa Học</h2>
+          <p class="section-subtitle">
+            Không học lý thuyết rời rạc. Bạn xây dựng ngay chương trình đào tạo dựa trên chính chuyên môn của mình.
           </p>
         </div>
-        
-        <div class="step-card outcome-card">
-          <div class="step-icon-circle">
-            <svg class="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px; color: var(--accent-orange);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <h4>02 — Claude AI Automation</h4>
-          <p>
-            150+ prompts sinh outline, case study, quiz trong 2 giờ — nhanh hơn thủ công 10 lần.
-          </p>
+
+        <div class="learn-grid">
+          <article class="learn-card">
+            <div class="learn-number">1</div>
+            <h3>Biến kinh nghiệm thành cấu trúc bài giảng</h3>
+            <p>
+              Bạn học cách lấy kinh nghiệm thực chiến và chuyển hóa thành chương trình có mục tiêu, bài tập, tình huống và kết quả đầu ra rõ ràng.
+            </p>
+            <ul class="learn-list">
+              <li>
+                <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                Xác định chủ đề đào tạo có nhu cầu thật
+              </li>
+              <li>
+                <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                Chia nhỏ kiến thức thành lộ trình dễ học
+              </li>
+              <li>
+                <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                Tạo bài tập áp dụng thay vì chỉ giảng lý thuyết
+              </li>
+            </ul>
+          </article>
+
+          <article class="learn-card">
+            <div class="learn-number">2</div>
+            <h3>Dùng AI để soạn nội dung nhanh hơn</h3>
+            <p>
+              Bạn được cung cấp bộ mẫu lệnh AI để tạo dàn ý, tình huống, câu hỏi thảo luận, bài tập nhóm và tài liệu học viên.
+            </p>
+            <ul class="learn-list">
+              <li>
+                <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                Soạn dàn ý khóa học trong 2 giờ
+              </li>
+              <li>
+                <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                Tạo ví dụ và tình huống sát ngành nghề
+              </li>
+              <li>
+                <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                Giảm 80% thời gian chuẩn bị tài liệu
+              </li>
+            </ul>
+          </article>
+
+          <article class="learn-card">
+            <div class="learn-number">3</div>
+            <h3>Tập giảng và nhận phản hồi chuyên sâu</h3>
+            <p>
+              Bạn thực hành giảng thử trong nhóm nhỏ, nhận phản hồi theo tiêu chí rõ ràng và tinh chỉnh lại chương trình ngay tại lớp.
+            </p>
+            <ul class="learn-list">
+              <li>
+                <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                Giảng thử 10-15 phút
+              </li>
+              <li>
+                <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                Nhận góp ý về cấu trúc, nhịp độ, tương tác
+              </li>
+              <li>
+                <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                Có phiên bản sẵn sàng triển khai sau khóa
+              </li>
+            </ul>
+          </article>
         </div>
-        
-        <div class="step-card outcome-card">
-          <div class="step-icon-circle">
-            <svg class="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px; color: var(--accent-orange);"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          </div>
-          <h4>03 — Micro-Teaching Loop</h4>
-          <p>
-            Giảng thử 10-15 phút + Feedback rubric chuyên nghiệp — tự tin đứng lớp ngay.
-          </p>
-        </div>
-        
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Curriculum Section -->
-  <section id="curriculum" class="curriculum-section">
-    <div class="section-container">
-      <span class="section-tag badge-secondary">CURRICULUM</span>
-      <h2 class="section-title">Lộ Trình 2 Ngày Intensive</h2>
-      
-      <!-- 🖼️ VISUAL CALENDAR -->
-      <div class="curriculum-visual">
-        
-        <!-- Day 1 -->
-        <div class="day-card deliverable-card">
-          <div class="day-header">
-            <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: var(--accent-orange);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span class="day-number">Ngày 1</span>
-          </div>
-          
-          <!-- 🖼️ DAY ILLUSTRATION -->
-          <div class="day-image">
-            <img src="day1-setup.svg" alt="Day 1">
-          </div>
-          
-          <h3>Đóng Gói + Setup Claude AI</h3>
-          
-          <ul class="day-activities">
-            <li>
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; color: var(--success);"><polyline points="20 6 9 17 4 12"/></svg>
-              Định vị chủ đề workshop
-            </li>
-            <li>
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; color: var(--success);"><polyline points="20 6 9 17 4 12"/></svg>
-              Andragogy framework
-            </li>
-            <li>
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; color: var(--success);"><polyline points="20 6 9 17 4 12"/></svg>
-              Sinh outline B2B & B2C
-            </li>
-          </ul>
-          
-          <div class="day-outcome">
-            <svg class="icon-sm icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 16px; height: 16px; color: var(--accent-orange);"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="2"/></svg>
-            Outcome: 2 workshop outlines hoàn chỉnh
-          </div>
+    <section class="section section-alternate" id="giang-vien">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Giảng viên</div>
+          <h2 class="section-title">Được Hướng Dẫn Bởi Chuyên Gia Đào Tạo Thực Chiến</h2>
+          <p class="section-subtitle">
+            Người hướng dẫn không chỉ biết đào tạo, mà còn có kinh nghiệm xây dựng hệ thống học tập cho doanh nghiệp.
+          </p>
         </div>
-        
-        <!-- Day 2 -->
-        <div class="day-card deliverable-card">
-          <div class="day-header">
-            <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: var(--accent-orange);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span class="day-number">Ngày 2</span>
+
+        <article class="instructor-card">
+          <div class="instructor-photo">
+            <img src="tran-xuan-hien.png" alt="Trần Xuân Hiển" style="width: 230px; height: 230px; border-radius: 50%; object-fit: cover; border: 4px solid var(--white); box-shadow: var(--shadow-md);">
           </div>
-          
-          <!-- 🖼️ DAY ILLUSTRATION -->
-          <div class="day-image">
-            <img src="day2-teaching.svg" alt="Day 2">
+
+          <div class="instructor-content">
+            <h3>Trần Xuân Hiển</h3>
+            <p class="instructor-role">Nhà sáng lập Sunext Training | Chuyên gia thiết kế chương trình đào tạo</p>
+
+            <p class="instructor-bio">
+              Với hơn 15 năm kinh nghiệm trong đào tạo doanh nghiệp, anh Hiển đã đồng hành cùng nhiều tổ chức trong việc xây dựng chương trình phát triển năng lực, đào tạo quản lý và chuyển hóa tri thức chuyên gia thành hệ thống có thể nhân rộng.
+            </p>
+
+            <div class="credential-grid">
+              <div class="credential">
+                <strong>15+</strong>
+                <span>năm kinh nghiệm đào tạo</span>
+              </div>
+
+              <div class="credential">
+                <strong>500+</strong>
+                <span>chuyên gia đã tham gia</span>
+              </div>
+
+              <div class="credential">
+                <strong>30+</strong>
+                <span>tổ chức đã hợp tác</span>
+              </div>
+            </div>
+
+            <blockquote class="instructor-quote">
+              “Một chuyên gia giỏi không chỉ là người làm tốt. Họ cần biết cách biến kinh nghiệm của mình thành phương pháp để người khác có thể học, áp dụng và tạo kết quả.”
+            </blockquote>
           </div>
-          
-          <h3>Micro-Teaching + Tinh Chỉnh</h3>
-          
-          <ul class="day-activities">
-            <li>
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; color: var(--success);"><polyline points="20 6 9 17 4 12"/></svg>
-              Giảng thử 10-15 phút
-            </li>
-            <li>
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; color: var(--success);"><polyline points="20 6 9 17 4 12"/></svg>
-              Review theo Rubric
-            </li>
-            <li>
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; color: var(--success);"><polyline points="20 6 9 17 4 12"/></svg>
-              AI tinh chỉnh slide
-            </li>
-          </ul>
-          
-          <div class="day-outcome">
-            <svg class="icon-sm icon-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 16px; height: 16px; color: var(--accent-orange);"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Outcome: Workshop sẵn sàng launch
-          </div>
-        </div>
-        
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Deliverables Section -->
-  <section class="deliverables-section">
-    <div class="section-container">
-      <span class="section-tag badge-secondary">DELIVERABLES</span>
-      <h2 class="section-title">Những Gì Bạn Nhận Được</h2>
-      
-      <div class="deliverables-grid">
-        
-        <!-- Deliverable 1 -->
-        <div class="deliverable-card featured">
-          <!-- 🖼️ ICON/ILLUSTRATION -->
-          <div class="deliverable-visual">
-            <img src="deliverable-workshop.svg" alt="Workshops">
-          </div>
-          
-          <span class="card-badge">CORE</span>
-          <h4>2 Workshop Hoàn Chỉnh</h4>
-          
-          <p>
-            1 phiên bản B2B (đào tạo tổ chức) + 1 phiên bản B2C (thought leadership)
+    <section class="section" id="lo-trinh">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Lộ trình học</div>
+          <h2 class="section-title">2 Ngày Huấn Luyện Thực Chiến</h2>
+          <p class="section-subtitle">
+            Mỗi buổi học đều có sản phẩm đầu ra rõ ràng. Bạn không ra về với ghi chú, mà với một chương trình đào tạo đã được xây dựng.
           </p>
-          
-          <div class="deliverable-specs">
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; color: var(--accent-orange);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Outline đầy đủ
-            </div>
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; color: var(--accent-orange);"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Slide template
-            </div>
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; color: var(--accent-orange);"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-              Case study + Quiz
-            </div>
-          </div>
-          
-          <div class="outcome-tag">
-            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 16px; height: 16px; color: var(--accent-orange);"><path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5s3 2.5 5 2.5c2.31 0 4.24-1 5.5-2.5"/><path d="m12 12 9-9"/></svg>
-            Sẵn sàng launch sau khóa học
-          </div>
-        </div>
-        
-        <!-- Deliverable 2 -->
-        <div class="deliverable-card">
-          <!-- 🖼️ ICON/ILLUSTRATION -->
-          <div class="deliverable-visual">
-            <img src="deliverable-prompts.svg" alt="Prompts">
-          </div>
-          
-          <h4>150+ Claude Prompts</h4>
-          
-          <p>
-            Thư viện prompts chuyên biệt cho training design — soạn bài nhanh 10 lần.
-          </p>
-          
-          <div class="deliverable-specs">
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; color: var(--accent-orange);"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-              30 prompts outline
-            </div>
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; color: var(--accent-orange);"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-              40 prompts case study
-            </div>
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; color: var(--accent-orange);"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-              25 prompts quiz
-            </div>
-          </div>
-          
-          <div class="outcome-tag">
-            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 16px; height: 16px; color: var(--accent-orange);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Soạn bài chỉ còn 2 giờ
-          </div>
         </div>
 
-        <!-- Deliverable 3 -->
-        <div class="deliverable-card">
-          <!-- 🖼️ ICON/ILLUSTRATION -->
-          <div class="deliverable-visual">
-            <img src="deliverable-playbook.svg" alt="Playbook">
-          </div>
-          
-          <h4>TAT Playbook 80 Trang</h4>
-          
-          <p>
-            Cẩm nang hướng dẫn chi tiết từng bước xây dựng, vận hành và scale bài giảng.
-          </p>
-          
-          <div class="deliverable-specs">
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; color: var(--accent-orange);"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-              Cẩm nang gối đầu
+        <div class="schedule-grid">
+          <article class="day-card">
+            <div class="day-header">
+              <div>
+                <span>Ngày 1</span>
+                <h3>Đóng Gói Chuyên Môn & Thiết Lập AI</h3>
+              </div>
+              <div class="day-time">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M12 7v5l3 2"></path>
+                </svg>
+                8 tiếng
+              </div>
             </div>
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; color: var(--accent-orange);"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-              Xử lý tình huống B2B
-            </div>
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; color: var(--accent-orange);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              Mẹo ứng phó an toàn
-            </div>
-          </div>
-          
-          <div class="outcome-tag">
-            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 16px; height: 16px; color: var(--accent-orange);"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg>
-            Tự tin xử lý tình huống
-          </div>
-        </div>
 
-        <!-- Deliverable 4 -->
-        <div class="deliverable-card">
-          <!-- 🖼️ ICON/ILLUSTRATION -->
-          <div class="deliverable-visual">
-            <img src="deliverable-certificate.svg" alt="Certificate">
-          </div>
-          
-          <h4>Chứng Chỉ & Cộng Đồng</h4>
-          
-          <p>
-            Chứng chỉ AI-Native Trainer và quyền tham gia cộng đồng elite trọn đời.
-          </p>
-          
-          <div class="deliverable-specs">
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; color: var(--accent-orange);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Chứng nhận uy tín
-            </div>
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; color: var(--accent-orange);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              Cộng đồng Zalo private
-            </div>
-            <div class="spec">
-              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; color: var(--accent-orange);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Update prompt liên tục
-            </div>
-          </div>
-          
-          <div class="outcome-tag">
-            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 16px; height: 16px; color: var(--accent-orange);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Nâng tầm profile ngành
-          </div>
-        </div>
+            <div class="session-list">
+              <div class="session">
+                <div class="session-time">08:30</div>
+                <div>
+                  <h4>Định vị chủ đề đào tạo</h4>
+                  <p>Chọn đúng chủ đề có giá trị, có nhu cầu và phù hợp với kinh nghiệm thật của bạn.</p>
+                </div>
+              </div>
 
+              <div class="session">
+                <div class="session-time">10:30</div>
+                <div>
+                  <h4>Thiết kế cấu trúc chương trình</h4>
+                  <p>Chuyển chuyên môn thành lộ trình học rõ mục tiêu, rõ bài tập, rõ kết quả đầu ra.</p>
+                </div>
+              </div>
+
+              <div class="session">
+                <div class="session-time">13:30</div>
+                <div>
+                  <h4>Thiết lập công cụ AI hỗ trợ soạn bài</h4>
+                  <p>Tạo không gian làm việc, nạp thông tin chuyên môn và dùng mẫu lệnh để phát triển nội dung.</p>
+                </div>
+              </div>
+
+              <div class="session">
+                <div class="session-time">15:30</div>
+                <div>
+                  <h4>Tạo dàn ý chương trình đầu tiên</h4>
+                  <p>Hoàn thành dàn ý phiên bản 1 cho chương trình đào tạo của riêng bạn.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-output">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <span><strong>Kết quả ngày 1:</strong> Có chủ đề, cấu trúc và dàn ý chương trình đào tạo phiên bản đầu tiên.</span>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-header">
+              <div>
+                <span>Ngày 2</span>
+                <h3>Tập Giảng, Nhận Phản Hồi & Hoàn Thiện</h3>
+              </div>
+              <div class="day-time">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M12 7v5l3 2"></path>
+                </svg>
+                8 tiếng
+              </div>
+            </div>
+
+            <div class="session-list">
+              <div class="session">
+                <div class="session-time">08:30</div>
+                <div>
+                  <h4>Hoàn thiện tài liệu học viên</h4>
+                  <p>Tạo ví dụ, tình huống, câu hỏi thảo luận và bài tập áp dụng bằng AI.</p>
+                </div>
+              </div>
+
+              <div class="session">
+                <div class="session-time">10:30</div>
+                <div>
+                  <h4>Giảng thử trong nhóm nhỏ</h4>
+                  <p>Thực hành một phần chương trình trong môi trường an toàn, có phản hồi ngay.</p>
+                </div>
+              </div>
+
+              <div class="session">
+                <div class="session-time">13:30</div>
+                <div>
+                  <h4>Tinh chỉnh theo phản hồi</h4>
+                  <p>Chỉnh lại cấu trúc, ngôn ngữ, ví dụ và bài tập để chương trình dễ hiểu hơn.</p>
+                </div>
+              </div>
+
+              <div class="session">
+                <div class="session-time">15:30</div>
+                <div>
+                  <h4>Hoàn thiện phiên bản sẵn sàng triển khai</h4>
+                  <p>Chốt chương trình, thông điệp, đầu ra và kế hoạch triển khai sau khóa học.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-output">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <span><strong>Kết quả ngày 2:</strong> Có chương trình đào tạo đã được góp ý, tinh chỉnh và sẵn sàng triển khai.</span>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Program Leadership Section -->
-  <section class="leadership-section">
-    <div class="section-container">
-      <span class="section-tag badge-secondary">PROGRAM LEADERSHIP</span>
-      <h2 class="section-title">Được Chủ Trì Bởi</h2>
-      
-      <div class="leadership-card testimonial-card">
-        
-        <!-- 🖼️ PROFESSIONAL HEADSHOT -->
-        <div class="leader-photo">
-          <img src="tran-xuan-hien.png" alt="Trần Xuân Hiển">
-        </div>
-        
-        <div class="leader-content">
-          
-          <h3>Trần Xuân Hiển</h3>
-          <p class="leader-title">
-            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-right:4px;color:var(--accent-orange);"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            Founder & CEO, Sunext Training
+    <section class="section section-alternate" id="hoc-phi">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Học phí & quyền lợi</div>
+          <h2 class="section-title">Bạn Nhận Được Gì Sau Khóa Học?</h2>
+          <p class="section-subtitle">
+            Toàn bộ chương trình được thiết kế để bạn có sản phẩm thật, tài liệu thật và phương pháp có thể dùng lại nhiều lần.
           </p>
-          
-          <!-- Visual credentials -->
-          <div class="credentials-visual">
-            
-            <div class="credential-item">
-              <div class="credential-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:20px;height:20px;color:var(--accent-orange);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+
+        <div class="included-grid">
+          <div class="included-main">
+            <article class="included-item">
+              <div class="included-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <path d="M14 2v6h6"></path>
+                  <path d="M16 13H8"></path>
+                  <path d="M16 17H8"></path>
+                </svg>
               </div>
-              <div class="credential-text">
-                <strong>15 năm</strong><br>
-                Thiết kế đào tạo
+              <h3>2 Chương Trình Đào Tạo Hoàn Chỉnh</h3>
+              <p>Một phiên bản dùng cho đào tạo nội bộ/doanh nghiệp và một phiên bản dùng cho lớp công khai hoặc cộng đồng chuyên môn.</p>
+            </article>
+
+            <article class="included-item">
+              <div class="included-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true">
+                  <path d="M12 3v4"></path>
+                  <path d="M12 17v4"></path>
+                  <path d="M3 12h4"></path>
+                  <path d="M17 12h4"></path>
+                  <path d="m5.6 5.6 2.8 2.8"></path>
+                  <path d="m15.6 15.6 2.8 2.8"></path>
+                  <path d="m18.4 5.6-2.8 2.8"></path>
+                  <path d="m8.4 15.6-2.8 2.8"></path>
+                </svg>
               </div>
-            </div>
-            
-            <div class="credential-item">
-              <div class="credential-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:20px;height:20px;color:var(--accent-orange);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              <h3>150+ Mẫu Lệnh AI Soạn Bài</h3>
+              <p>Bộ mẫu lệnh giúp bạn tạo dàn ý, ví dụ, tình huống, câu hỏi, bài tập và tài liệu học viên nhanh hơn.</p>
+            </article>
+
+            <article class="included-item">
+              <div class="included-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"></path>
+                </svg>
               </div>
-              <div class="credential-text">
-                <strong>500+</strong><br>
-                Chuyên gia trained
+              <h3>Sổ Tay Thiết Kế Đào Tạo</h3>
+              <p>Tài liệu hướng dẫn từng bước để bạn tiếp tục tạo các chương trình mới sau khóa học.</p>
+            </article>
+
+            <article class="included-item">
+              <div class="included-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true">
+                  <circle cx="12" cy="8" r="6"></circle>
+                  <path d="M15.5 13 17 22l-5-3-5 3 1.5-9"></path>
+                </svg>
               </div>
-            </div>
-            
-            <div class="credential-item">
-              <div class="credential-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:20px;height:20px;color:var(--accent-orange);"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="16"/><line x1="15" y1="22" x2="15" y2="16"/></svg>
+              <h3>Chứng Nhận Hoàn Thành</h3>
+              <p>Ghi nhận năng lực thiết kế chương trình đào tạo có ứng dụng AI và thực hành giảng thử.</p>
+            </article>
+
+            <article class="included-item">
+              <div class="included-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9.5" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.8"></path>
+                  <path d="M16 3.2a4 4 0 0 1 0 7.6"></path>
+                </svg>
               </div>
-              <div class="credential-text">
-                <strong>30+</strong><br>
-                Tổ chức hàng đầu
+              <h3>Cộng Đồng Cựu Học Viên</h3>
+              <p>Kết nối với những chuyên gia cùng mục tiêu, trao đổi tài liệu và cơ hội triển khai đào tạo.</p>
+            </article>
+
+            <article class="included-item">
+              <div class="included-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true">
+                  <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+                </svg>
               </div>
-            </div>
-            
+              <h3>Phản Hồi Trực Tiếp Từ Giảng Viên</h3>
+              <p>Bạn nhận góp ý cụ thể về chương trình, cách truyền đạt, cấu trúc bài giảng và tính ứng dụng.</p>
+            </article>
           </div>
-          
-          <!-- Quote -->
-          <blockquote class="leader-quote">
-            <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px; color: var(--accent-orange); opacity: 0.15; position: absolute; top: 12px; left: 16px;"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            "Mỗi chuyên gia có insight xứng đáng được thể chế hóa. TAT giúp làm điều đó nhanh hơn 10 lần."
-          </blockquote>
-          
-          <!-- 🖼️ CLIENT LOGOS -->
-          <div class="leader-clients">
-            <p class="clients-label">Đã hợp tác với:</p>
-            <div class="clients-logos-grid">
-              <img src="logo-vingroup.svg" alt="VinGroup">
-              <img src="logo-fpt.svg" alt="FPT">
-              <img src="logo-viettel.svg" alt="Viettel">
-              <img src="logo-bidv.svg" alt="BIDV">
+
+          <aside class="pricing-card" aria-label="Học phí khóa học">
+            <div class="pricing-top">
+              <div class="price-badge">Ưu đãi đăng ký sớm</div>
+              <div class="price-old" style="text-decoration: line-through; color: var(--gray-500); font-weight: 650; margin-bottom: 4px; font-size: 18px;">6.500.000đ</div>
+              
+              <!-- Segmented Control for Payment Choice -->
+              <div class="payment-toggle-wrapper" style="margin: 12px 0 16px;">
+                <div class="segmented-control" style="display: flex; position: relative; background: var(--gray-100); padding: 4px; border-radius: var(--radius-sm); border: 1px solid var(--gray-200); width: 100%; max-width: 320px; margin: 0 auto;">
+                  <input type="radio" id="pay-full" name="payment-method" value="full" checked style="position: absolute; opacity: 0; width: 0; height: 0;">
+                  <label for="pay-full" class="segment-label" style="flex: 1; text-align: center; padding: 8px 12px; font-size: 13px; font-weight: 800; cursor: pointer; color: var(--gray-600); z-index: 2; transition: color 0.25s ease;">Thanh toán 1 lần</label>
+                  
+                  <input type="radio" id="pay-split" name="payment-method" value="split" style="position: absolute; opacity: 0; width: 0; height: 0;">
+                  <label for="pay-split" class="segment-label" style="flex: 1; text-align: center; padding: 8px 12px; font-size: 13px; font-weight: 800; cursor: pointer; color: var(--gray-600); z-index: 2; transition: color 0.25s ease;">Trả góp 2 kỳ</label>
+                  
+                  <div class="segmented-slider" style="position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); background: var(--white); border-radius: 6px; box-shadow: var(--shadow-sm); transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1;"></div>
+                </div>
+              </div>
+
+              <div class="price-current" style="color: var(--purple-700); font-size: 46px; line-height: 1; font-weight: 950; letter-spacing: -0.06em; margin-bottom: 8px;">
+                <span id="price-display">4.997.000đ</span>
+                <span id="price-unit" style="font-size: 14px; font-weight: 700; color: var(--gray-650); margin-left: 2px;">/trọn gói</span>
+              </div>
+              <p id="price-breakdown" class="price-note" style="color: var(--gray-600); font-size: 13px; font-weight: 650; line-height: 1.5;">Trọn gói 2 ngày huấn luyện thực chiến</p>
+              <p id="price-anchoring" class="price-note" style="display:none; color: var(--gray-500); font-size: 12px; font-weight: 650; margin-top: 4px;"></p>
+            </div>
+
+            <div class="pricing-body">
+              <ul class="pricing-list">
+                <li>
+                  <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                  16 giờ học trực tiếp và thực hành
+                </li>
+                <li>
+                  <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                  2 chương trình đào tạo hoàn chỉnh
+                </li>
+                <li>
+                  <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                  150+ mẫu lệnh AI hỗ trợ soạn bài
+                </li>
+                <li>
+                  <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                  Phản hồi trực tiếp từ giảng viên
+                </li>
+                <li>
+                  <svg class="icon-sm check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                  Cộng đồng cựu học viên sau khóa
+                </li>
+              </ul>
+
+              <a class="btn-primary" href="#final-cta" style="width: 100%;">Đăng Ký Giữ Chỗ Ngay</a>
+
+              <div class="guarantee">
+                <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+                <span><strong>Cam kết:</strong> Nếu sau 2 ngày bạn không có ít nhất 1 dàn ý chương trình đào tạo hoàn chỉnh, chúng tôi hoàn lại học phí.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="hoc-vien">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Học viên nói gì</div>
+          <h2 class="section-title">Phản Hồi Từ Những Người Đã Áp Dụng</h2>
+          <p class="section-subtitle">
+            Các học viên không chỉ học cách dùng AI, họ dùng AI để biến chuyên môn thành tài sản đào tạo thật.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-author">
+              <div class="avatar">MP</div>
+              <div>
+                <strong>Mai Phương</strong>
+                <span>Chuyên gia Nhân sự, 7 năm kinh nghiệm</span>
+              </div>
+            </div>
+
+            <p class="testimonial-text">
+              “Trước đây tôi có rất nhiều kiến thức về tuyển dụng nhưng không biết cách dạy lại. Sau khóa học, tôi có ngay chương trình 3 giờ cho quản lý tuyển dụng và đã triển khai cho 42 học viên đầu tiên.”
+            </p>
+
+            <div class="testimonial-impact">
+              <span class="impact-pill">42 học viên</span>
+              <span class="impact-pill">1 chương trình mới</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-author">
+              <div class="avatar">QB</div>
+              <div>
+                <strong>Quốc Bảo</strong>
+                <span>Trưởng phòng Kinh doanh, FPT</span>
+              </div>
+            </div>
+
+            <p class="testimonial-text">
+              “Tôi thường mất cả tuần để soạn một buổi đào tạo sales. Giờ chỉ cần vài giờ là có dàn ý, tình huống thực hành và câu hỏi thảo luận cho đội nhóm.”
+            </p>
+
+            <div class="testimonial-impact">
+              <span class="impact-pill">Giảm 80% thời gian</span>
+              <span class="impact-pill">Đào tạo nội bộ</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-author">
+              <div class="avatar">LH</div>
+              <div>
+                <strong>Lan Hương</strong>
+                <span>Quản lý Đào tạo, Ngân hàng</span>
+              </div>
+            </div>
+
+            <p class="testimonial-text">
+              “Điều tôi thích nhất là chương trình rất thực tế. Không nói chung chung về AI, mà hướng dẫn rõ cách biến nội dung chuyên môn thành bài học, hoạt động và tài liệu triển khai.”
+            </p>
+
+            <div class="testimonial-impact">
+              <span class="impact-pill">Chuẩn hóa quy trình</span>
+              <span class="impact-pill">Dùng lại nhiều lần</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alternate" id="hoi-dap">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Hỏi đáp</div>
+          <h2 class="section-title">Những Câu Hỏi Thường Gặp</h2>
+        </div>
+
+        <div class="faq-wrap">
+          <div class="faq-item open">
+            <button class="faq-question" type="button">
+              Tôi chưa từng đi dạy, có tham gia được không?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                <path d="M12 5v14"></path><path d="M5 12h14"></path>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Có. Khóa học được thiết kế cho chuyên gia có kinh nghiệm nhưng chưa biết cách đóng gói, thiết kế và truyền đạt thành chương trình đào tạo. Bạn sẽ được hướng dẫn từ cấu trúc đến giảng thử.
+              </div>
             </div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              Tôi có cần biết sử dụng AI trước không?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                <path d="M12 5v14"></path><path d="M5 12h14"></path>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Không cần. Bạn sẽ được hướng dẫn cách sử dụng công cụ AI ở mức thực dụng: nhập thông tin chuyên môn, dùng mẫu lệnh, kiểm tra chất lượng và chỉnh sửa kết quả.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              Sau khóa học tôi có thể triển khai ngay không?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                <path d="M12 5v14"></path><path d="M5 12h14"></path>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Mục tiêu của khóa học là bạn có ít nhất một chương trình đã có cấu trúc, nội dung chính, bài tập và phản hồi từ giảng viên. Bạn có thể tiếp tục tinh chỉnh để triển khai cho nội bộ hoặc lớp công khai.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              Khóa học phù hợp với ngành nào?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                <path d="M12 5v14"></path><path d="M5 12h14"></path>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Phù hợp với các ngành có chuyên môn thực chiến như kinh doanh, marketing, nhân sự, vận hành, tài chính, quản lý, chăm sóc khách hàng, đào tạo nội bộ và phát triển năng lực.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Final CTA & Form & Payment Section -->
+    <section id="final-cta" class="final-cta" style="background: var(--purple-700); padding: 96px 0; color: var(--white);">
+      <div class="container final-cta-container">
+        
+        <!-- Left column: text and benefits -->
+        <div class="final-cta-left">
+          <h2 style="color: var(--white); font-size: clamp(32px, 4vw, 46px); font-weight: 800; margin-bottom: 20px; line-height: 1.15; letter-spacing: -0.04em;">Sẵn Sàng Biến Chuyên Môn Của Bạn Thành Chương Trình Đào Tạo?</h2>
+          <p style="font-size: 17px; line-height: 1.7; color: rgba(255, 255, 255, 0.85); margin-bottom: 32px;">Trong 2 ngày, bạn sẽ có cấu trúc rõ ràng, tài liệu thực tế và phương pháp dùng AI để tiếp tục phát triển các chương trình đào tạo mới.</p>
           
+          <div class="final-cta-benefits">
+            <div class="final-cta-benefit" style="display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 12px;">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--green-500);"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Đóng gói 10 năm kinh nghiệm thành 2 workshops</span>
+            </div>
+            <div class="final-cta-benefit" style="display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 12px;">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--green-500);"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Soạn bài nhanh gấp 10 lần nhờ Claude AI</span>
+            </div>
+            <div class="final-cta-benefit" style="display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 12px;">
+              <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--green-500);"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Thực hành giảng thử và nhận feedback trực tiếp</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: Multi-step checkout card -->
+        <div class="form-card-container">
+          
+          <!-- Toggle Demo Mode / Real Mode -->
+          <div class="mode-toggle-container" style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 20px;">
+            <span class="mode-label" style="font-size: 13px; color: rgba(255, 255, 255, 0.85); font-weight: 600;">Chế độ trang web:</span>
+            <div class="segmented-control mode-control" style="display: flex; position: relative; background: rgba(255, 255, 255, 0.1); padding: 4px; border-radius: var(--radius-sm); border: 1px solid rgba(255, 255, 255, 0.2); width: 100%; max-width: 320px;">
+              <input type="radio" id="mode-demo" name="page-mode" value="demo" checked style="position: absolute; opacity: 0; width: 0; height: 0;">
+              <label for="mode-demo" class="segment-label" style="flex: 1; text-align: center; padding: 8px 12px; font-size: 13px; font-weight: 800; cursor: pointer; color: rgba(255, 255, 255, 0.8); z-index: 2; transition: color 0.25s ease;">Dùng thử (Sandbox)</label>
+              
+              <input type="radio" id="mode-real" name="page-mode" value="real" style="position: absolute; opacity: 0; width: 0; height: 0;">
+              <label for="mode-real" class="segment-label" style="flex: 1; text-align: center; padding: 8px 12px; font-size: 13px; font-weight: 800; cursor: pointer; color: rgba(255, 255, 255, 0.8); z-index: 2; transition: color 0.25s ease;">Thực tế (Production)</label>
+              
+              <div class="segmented-slider" style="position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); background: rgba(255, 255, 255, 0.15); border-radius: 6px; transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1;"></div>
+            </div>
+          </div>
+
+          <div class="form-card" style="background: var(--white); border: 1px solid var(--gray-200); border-radius: 20px; padding: 32px; box-shadow: var(--shadow-lg); color: var(--gray-900); text-align: left;">
+            <div class="form-card-header" style="text-align: center; margin-bottom: 24px; border-bottom: 1px solid var(--gray-200); padding-bottom: 16px;">
+              <h3 style="font-size: 20px; color: var(--purple-700); font-weight: 850;">Đăng Ký Tham Gia TAT Workshop</h3>
+              <p class="form-scarcity-alert" style="font-size: 12px; color: var(--orange-600); font-weight: 700; margin-top: 8px;">
+                <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Chỉ còn <strong class="seat-count">7</strong>/15 suất cho đợt tháng 6/2026.
+              </p>
+            </div>
+
+            <div class="seats-remaining-box" style="background-color: var(--orange-50); border: 1px solid var(--orange-100); border-radius: var(--radius-md); padding: 16px; margin: 0 0 24px; text-align: center;">
+              <div class="seats-text" style="font-size: 13px; font-weight: 700; color: var(--gray-900);">
+                Chỉ 15 người/đợt — Còn <strong class="seat-count">7</strong>/15 suất trống
+              </div>
+              <div class="seats-progress-bar" style="height: 12px; background-color: var(--purple-100); border-radius: 6px; border: 1px solid var(--purple-200); margin: 12px auto 0; max-width: 300px; overflow: hidden;">
+                <div class="progress-fill" style="height: 100%; background: linear-gradient(135deg, #7C3AED 0%, #EA580C 100%); border-radius: 5px; width: 53.33%;"></div>
+              </div>
+            </div>
+
+            <!-- Step 1: Form Fill -->
+            <div id="step-form-container" class="form-step-panel active">
+              <form id="reg-form" novalidate style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="form-group">
+                  <label for="user-name">Họ và tên của bạn <span class="required">*</span></label>
+                  <input type="text" id="user-name" name="name" placeholder="Nhập họ và tên đầy đủ" required>
+                  <span class="error-msg" id="error-name"></span>
+                </div>
+                <div class="form-group">
+                  <label for="user-phone">Số điện thoại Zalo <span class="required">*</span></label>
+                  <input type="tel" id="user-phone" name="phone" placeholder="Nhập số điện thoại của bạn" required>
+                  <span class="error-msg" id="error-phone"></span>
+                </div>
+                <div class="form-group">
+                  <label for="user-email">Địa chỉ Email nhận tài liệu <span class="required">*</span></label>
+                  <input type="email" id="user-email" name="email" placeholder="Nhập email chính xác của bạn" required>
+                  <span class="error-msg" id="error-email"></span>
+                </div>
+
+                <button type="submit" id="cta-step-1" class="btn-primary large" style="width: 100%; border: none; font-size: 16px; margin-top: 12px; cursor: pointer; justify-content: center;">Đăng Ký Tham Gia Khóa TAT</button>
+              </form>
+            </div>
+
+            <!-- Step 2: Payment Pending -->
+            <div id="step-payment-container" class="form-step-panel">
+              <div id="thank-you-message" class="payment-panel-box">
+                <span id="demo-mode-badge" class="sandbox-badge" style="display: none;">Chế độ dùng thử (Sandbox) - Giao dịch mô phỏng</span>
+                
+                <h4 style="font-size: 15px; font-weight: 800; color: var(--purple-700); margin-bottom: 8px;">Thông tin chuyển khoản giữ suất của bạn</h4>
+                <p class="payment-instructions" style="font-size: 13px; color: var(--gray-600); line-height: 1.5;">Quét mã QR dưới đây bằng ứng dụng Ngân hàng của bạn để hoàn tất đăng ký giữ chỗ.</p>
+                
+                <div class="qr-code-wrapper" style="margin: 16px 0;">
+                  <img id="payment-qr-img" src="" alt="Mã QR thanh toán VietQR" width="230" height="230">
+                </div>
+
+                <!-- Fallback Copy details -->
+                <div id="payment-desc" class="fallback-details-box" style="width: 100%; background: var(--purple-50); border: 1px solid var(--purple-100); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 12px; text-align: left;">
+                  <div class="detail-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+                    <span class="label" style="color: var(--gray-600);">Ngân hàng:</span>
+                    <span class="val" style="font-weight: 750; color: var(--purple-700);">MB Bank</span>
+                    <button type="button" class="copy-btn" data-copy="MB Bank" style="background: var(--purple-700); color: #FFF; border: none; padding: 4px 8px; border-radius: 4px; font-size: 10px; cursor: pointer;">Copy</button>
+                  </div>
+                  <div class="detail-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+                    <span class="label" style="color: var(--gray-600);">Số tài khoản:</span>
+                    <span class="val" style="font-weight: 750; color: var(--purple-700);">0345678910</span>
+                    <button type="button" class="copy-btn" data-copy="0345678910" style="background: var(--purple-700); color: #FFF; border: none; padding: 4px 8px; border-radius: 4px; font-size: 10px; cursor: pointer;">Copy</button>
+                  </div>
+                  <div class="detail-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+                    <span class="label" style="color: var(--gray-600);">Chủ tài khoản:</span>
+                    <span class="val" style="font-weight: 750; color: var(--purple-700);">SUNEXT GROUP</span>
+                  </div>
+                  <div class="detail-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+                    <span class="label" style="color: var(--gray-600);">Số tiền:</span>
+                    <span id="fallback-amount" class="val" style="font-weight: 750; color: var(--orange-600);">4.997.000đ</span>
+                    <button type="button" class="copy-btn" id="btn-copy-amount" data-copy="4997000" style="background: var(--purple-700); color: #FFF; border: none; padding: 4px 8px; border-radius: 4px; font-size: 10px; cursor: pointer;">Copy</button>
+                  </div>
+                  <div class="detail-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+                    <span class="label" style="color: var(--gray-600);">Nội dung CK:</span>
+                    <span id="fallback-syntax" class="val" style="font-weight: 750; color: var(--orange-600);">TAT 0987654321</span>
+                    <button type="button" class="copy-btn" id="btn-copy-syntax" data-copy="TAT 0987654321" style="background: var(--purple-700); color: #FFF; border: none; padding: 4px 8px; border-radius: 4px; font-size: 10px; cursor: pointer;">Copy</button>
+                  </div>
+                </div>
+
+                <div class="progress-bar-container" style="width: 100%; height: 6px; background-color: var(--purple-100); border-radius: 3px; overflow: hidden; display: none; margin-top: 10px;">
+                  <div id="payment-progress-bar" class="progress-bar-fill" style="height: 100%; background: linear-gradient(135deg, #7C3AED 0%, #EA580C 100%); width: 0%;"></div>
+                </div>
+                <p id="payment-status-text" class="status-indicator" style="font-size: 13px; font-weight: 750; color: var(--orange-600);">Đang đợi giao dịch chuyển khoản của bạn...</p>
+
+                <button type="button" id="btn-paid" class="btn-primary" style="width: 100%; border: none; font-size: 15px; cursor: pointer; justify-content: center;">Xác nhận đã thanh toán &amp; Nhận link Zalo</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Payment Success & OTO -->
+            <div id="step-success-container" class="form-step-panel">
+              <div id="success-confirm-message" class="success-panel-box">
+                <div class="success-icon" style="margin-bottom: 12px;">
+                  <svg viewBox="0 0 52 52" class="checkmark-svg" style="width: 60px; height: 60px; border-radius: 50%; stroke-width: 3; stroke: var(--green-500); fill: none;">
+                    <circle cx="26" cy="26" r="25" fill="none" class="checkmark-circle" style="stroke-dasharray: 166; stroke-dashoffset: 166; stroke-width: 3; stroke: var(--green-500); fill: none;"/>
+                    <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" class="checkmark-check" style="stroke-dasharray: 48; stroke-dashoffset: 48; stroke: var(--green-500);"/>
+                  </svg>
+                </div>
+                <h3 style="font-size: 18px; color: var(--purple-700); font-weight: 850;">Chào mừng bạn đến với cộng đồng 500+ AI-Native Trainers!</h3>
+                <p class="success-desc" style="font-size: 13px; color: var(--gray-600); line-height: 1.5;">Hành trình đột phá sự nghiệp giảng dạy của bạn chính thức bắt đầu từ đây. Yêu cầu giữ chỗ đã được ghi nhận thành công.</p>
+                
+                <!-- OTO Upsell Block -->
+                <div class="oto-upsell-box" style="width: 100%; background: var(--purple-50); border: 1.5px solid var(--purple-200); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; text-align: left; margin: 16px 0;">
+                  <span class="oto-badge" style="background-color: var(--orange-500); color: #FFF; padding: 2px 8px; border-radius: 3px; font-size: 10px; font-weight: 800; align-self: flex-start;">ĐẶC QUYỀN ĐI KÈM</span>
+                  <h4 style="font-size: 14px; color: var(--purple-700); font-weight: 800; line-height: 1.35;">Nâng cấp lên gói VIP Coaching đồng hành 1-1 cùng chuyên gia trong 30 ngày</h4>
+                  <p class="oto-desc" style="font-size: 12px; color: var(--gray-600); line-height: 1.5;">Nhận thêm 30 ngày đồng hành coaching 1-1 trực tiếp cùng chuyên gia Sunext để tinh chỉnh giáo trình và lên kế hoạch tuyển sinh khóa đầu tiên. Ưu đãi chỉ áp dụng duy nhất tại màn hình này.</p>
+                  <div class="oto-price-box" style="display: flex; gap: 12px; align-items: center; font-size: 13px;">
+                    <span class="price-original" style="text-decoration: line-through; color: var(--gray-500);">5.000.000đ</span>
+                    <span class="price-promo" style="color: var(--orange-600); font-weight: 800; font-size: 15px;">chỉ với +2.000.000đ</span>
+                  </div>
+                  
+                  <button type="button" id="btn-accept-oto" class="oto-btn" style="background: none; border: 1px solid var(--orange-500); color: var(--orange-500); padding: 10px; border-radius: 6px; font-weight: 800; cursor: pointer; text-align: center; width: 100%;">Nâng cấp VIP Coaching</button>
+                  
+                  <div id="oto-payment-details" class="oto-payment-details" style="display: none; font-size: 12px; background-color: var(--purple-100); padding: 12px; border-radius: 6px; border-left: 3px solid var(--orange-500); color: var(--purple-700);">
+                    <p>Vui lòng chuyển khoản thêm <strong>2.000.000đ</strong> vào tài khoản ngân hàng trên với nội dung chuyển khoản: <strong id="oto-syntax">TAT [SĐT] VIP</strong></p>
+                  </div>
+                </div>
+
+                <a href="https://zalo.me/g/demo-group" id="zalo-group-btn" target="_blank" class="btn-primary" style="width: 100%; text-align: center; justify-content: center; font-size: 15px;">Tham gia nhóm Zalo lớp học TAT ngay</a>
+                <p class="zalo-helper-text" style="font-size: 11px; color: var(--gray-500); margin-top: 8px;">Hãy vào nhóm Zalo để nhận ngay tài liệu chuẩn bị trước khóa học và kết nối với các học viên khác.</p>
+              </div>
+            </div>
+
+          </div>
         </div>
         
       </div>
     </section>
+  </main>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials-section">
-    <div class="section-container">
-      <span class="section-tag badge-secondary">ALUMNI REFLECTIONS</span>
-      <h2 class="section-title">Chuyên Gia Nói Gì Về TAT</h2>
-      
-      <div class="testimonials-grid">
-        
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card">
-          
-          <!-- 🖼️ AVATAR PHOTO -->
-          <div class="testimonial-header">
-            <img src="avatar-mai-phuong.png" alt="Mai Phương" class="avatar">
-            <div class="testimonial-author">
-              <strong>Mai Phương</strong>
-              <p class="author-role">
-                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px; color: var(--accent-orange);"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                HR Consultant, 7 năm kinh nghiệm
-              </p>
-            </div>
-          </div>
-          
-          <!-- Quote -->
-          <blockquote class="testimonial-text">
-            "TAT giúp tôi đóng gói 7 năm HR expertise chỉ trong 45 phút setup. Giờ 42 professionals đã học từ framework của tôi."
-          </blockquote>
-          
-          <!-- Impact metrics với icons -->
-          <div class="testimonial-impact">
-            <div class="impact-metric">
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; margin-right: 4px; color: var(--accent-orange);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              <strong>42</strong> người trained
-            </div>
-            <div class="impact-metric">
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; margin-right: 4px; color: var(--accent-orange);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <strong>45 phút</strong> setup
-            </div>
-          </div>
-          
-          <!-- 🖼️ VERIFICATION BADGE -->
-          <div class="verified-badge">
-            <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px; color: var(--success);"><polyline points="20 6 9 17 4 12"/></svg>
-            Verified Trainer
-          </div>
-          
-        </div>
-        
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card">
-          
-          <!-- 🖼️ AVATAR PHOTO -->
-          <div class="testimonial-header">
-            <img src="avatar-quoc-bao.png" alt="Quốc Bảo" class="avatar">
-            <div class="testimonial-author">
-              <strong>Quốc Bảo</strong>
-              <p class="author-role">
-                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px; color: var(--accent-orange);"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                Sales Manager, FPT Group
-              </p>
-            </div>
-          </div>
-          
-          <!-- Quote -->
-          <blockquote class="testimonial-text">
-            "Trước đây tôi mất cả tuần chuẩn bị bài giảng Sales cho team. Sau TAT, tôi dùng Claude AI thiết kế 5 case study thực tế chỉ trong 30 phút."
-          </blockquote>
-          
-          <!-- Impact metrics với icons -->
-          <div class="testimonial-impact">
-            <div class="impact-metric">
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; margin-right: 4px; color: var(--accent-orange);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              <strong>FPT team</strong> tự vận hành
-            </div>
-            <div class="impact-metric">
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; margin-right: 4px; color: var(--accent-orange);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <strong>30 phút</strong> thiết kế
-            </div>
-          </div>
-          
-          <!-- 🖼️ VERIFICATION BADGE -->
-          <div class="verified-badge">
-            <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px; color: var(--success);"><polyline points="20 6 9 17 4 12"/></svg>
-            Verified Trainer
-          </div>
-          
-        </div>
-        
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2026 Sunext Training. Khóa học TAT: AI-Native Trainer.</div>
+      <div class="footer-links">
+        <a href="#doi-tuong">Đối tượng</a>
+        <a href="#lo-trinh">Lộ trình</a>
+        <a href="#hoc-phi">Học phí</a>
       </div>
     </div>
-  </section>
-
-  <!-- Offer & Pricing Section -->
-  <section id="offer" class="pricing-section">
-    <div class="section-container">
-      <span class="section-tag badge-secondary">PROGRAM INVESTMENT</span>
-      <h2 class="section-title">Đầu Tư Vào Legacy Của Bạn</h2>
-      
-      <div class="pricing-card">
-        
-        <!-- Price display -->
-        <div class="price-display">
-          <span class="price-original">6.500.000đ</span>
-          
-          <!-- Segmented Control for Payment Choice -->
-          <div class="payment-toggle-wrapper">
-            <div class="segmented-control">
-              <input type="radio" id="pay-full" name="payment-method" value="full" checked>
-              <label for="pay-full" class="segment-label">Thanh toán 1 lần</label>
-              
-              <input type="radio" id="pay-split" name="payment-method" value="split">
-              <label for="pay-split" class="segment-label">Trả góp 2 kỳ (2.5tr x 2)</label>
-              
-              <div class="segmented-slider"></div>
-            </div>
-          </div>
-
-          <div class="price-current">
-            <span id="price-display" class="price-number">4.997.000đ</span>
-            <span id="price-unit" class="price-badge">/trọn gói</span>
-          </div>
-          
-          <p id="price-breakdown" class="price-context">
-            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-right:4px;color:var(--accent-orange);"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="16"/><line x1="15" y1="22" x2="15" y2="16"/></svg>
-            ~208.000đ/giờ học intensive
-          </p>
-          <p id="price-anchoring" class="price-anchoring" style="display:none;"></p>
-        </div>
-        
-        <!-- 🖼️ WHAT'S INCLUDED - VISUAL LIST -->
-        <div class="includes-section">
-          <h4>Bao gồm:</h4>
-          <div class="includes-grid">
-            
-            <div class="include-item">
-              <svg class="include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px; color: var(--accent-orange);"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <span>2 ngày intensive</span>
-            </div>
-            
-            <div class="include-item">
-              <svg class="include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px; color: var(--accent-orange);"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <span>150+ Prompts</span>
-            </div>
-            
-            <div class="include-item">
-              <svg class="include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px; color: var(--accent-orange);"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M10 11l5 3-5 3v-6z"/></svg>
-              <span>Video Rubric</span>
-            </div>
-            
-            <div class="include-item">
-              <svg class="include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px; color: var(--accent-orange);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>Certificate</span>
-            </div>
-            
-            <div class="include-item">
-              <svg class="include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px; color: var(--accent-orange);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              <span>Community</span>
-            </div>
-            
-            <div class="include-item">
-              <svg class="include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px; color: var(--accent-orange);"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-              <span>Playbook 80 trang</span>
-            </div>
-            
-          </div>
-        </div>
-        
-        <!-- 🖼️ GUARANTEE BADGE -->
-        <div class="guarantee-box">
-          <div class="guarantee-badge">
-            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 24px; height: 24px; color: var(--success);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <div class="guarantee-text">
-              <strong>Cam kết hoàn phí 100%</strong>
-              <p>Nếu không đóng gói được outline workshop</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- CTA -->
-        <div class="pricing-cta-wrapper" style="margin-top: var(--sp-24); text-align: center;">
-          <a href="#final-cta" class="cta-button primary-cta pricing-cta" style="display: block; width: 100%;">Đăng Ký Ngay</a>
-        </div>
-        
-        <!-- Trust indicators -->
-        <div class="trust-indicators">
-          <div class="indicator">
-            <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; color: var(--success);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Thanh toán bảo mật
-          </div>
-          <div class="indicator">
-            <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; color: var(--accent-orange);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Còn <span class="seat-count">7</span>/15 suất
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>�� tự tin đến từ sự chuẩn bị kỹ lưỡng, và AI sẽ giúp bạn giải quyết 80% phần chuẩn bị đó.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Tôi không có bằng cấp sư phạm, có được dạy không?</span>
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Hoàn toàn được. <strong>70% alumni TAT không có background giáo dục.</strong><br><br>
-              Trong thị trường corporate training, <strong>kinh nghiệm thực chiến > bằng cấp sư phạm.</strong> Doanh nghiệp trả tiền để học từ người "đã làm được", không phải từ người "học lý thuyết".<br><br>
-              TAT dạy bạn framework thiết kế bài giảng người lớn (Andragogy) + AI tools để đóng gói kinh nghiệm — không cần bằng cấp.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ 3 -->
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Tôi bận công việc chính, liệu có đủ thời gian triển khai không?</span>
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Đây chính là lý do TAT tập trung vào AI automation.<br><br>
-              <strong>Với Claude AI:</strong><br>
-              • Soạn 1 workshop: 2 giờ (thay vì 2 tuần)<br>
-              • Cập nhật nội dung: 30 phút (thay vì 1 tuần)<br>
-              • Tạo materials: 1 giờ (thay vì 3 ngày)<br><br>
-              <strong>Alumni trung bình dành 5-8 giờ/tuần</strong> cho training freelance, tạo thu nhập 15-30 triệu/tháng mà không ảnh hưởng công việc chính.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Chi phí Claude AI hàng tháng là bao nhiêu?</span>
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              <strong>Claude Pro:</strong> $20/tháng (~500K VND)<br><br>
-              <strong>Nhưng bạn không nhất thiết phải trả ngay:</strong><br>
-              • Claude Free tier đủ để hoàn thành khóa TAT<br>
-              • Chỉ upgrade Pro khi bạn đã bán được workshop đầu tiên (thu hồi 20-50 triệu)<br>
-              • ROI: 1 workshop B2B (30 triệu) = 60 tháng Claude Pro<br><br>
-              <strong>Alumni report:</strong> Claude Pro ROI trung bình 50-100 lần/năm.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA & Form & Payment Section -->
-  <section id="final-cta" class="final-cta-section">
-    <div class="section-container final-cta-container">
-      <div class="form-card-container">
-        
-        <!-- Toggle Demo Mode / Real Mode -->
-        <div class="mode-toggle-container">
-          <span class="mode-label">Chế độ trang web:</span>
-          <div class="segmented-control mode-control">
-            <input type="radio" id="mode-demo" name="page-mode" value="demo" checked>
-            <label for="mode-demo" class="segment-label">Dùng thử (Sandbox)</label>
-            
-            <input type="radio" id="mode-real" name="page-mode" value="real">
-            <label for="mode-real" class="segment-label">Thực tế (Production)</label>
-            
-            <div class="segmented-slider"></div>
-          </div>
-        </div>
-
-        <div class="form-card">
-          <div class="form-card-header">
-            <h3>Đăng Ký Tham Gia TAT Workshop</h3>
-            <p class="form-scarcity-alert"><svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 6px; color: var(--accent-orange);"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Chỉ còn <strong class="seat-count">7</strong> suất cho đợt tháng 6/2026. Đợt tiếp theo: Tháng 8/2026.</p>
-          </div>
-
-          <!-- Step 1: Form Fill -->
-          <div id="step-form-container" class="form-step-panel active">
-            <form id="reg-form" novalidate>
-              <div class="form-group">
-                <label for="user-name">Họ và tên của bạn <span class="required">*</span></label>
-                <input type="text" id="user-name" name="name" placeholder="Nhập họ và tên đầy đủ" required>
-                <span class="error-msg" id="error-name"></span>
-              </div>
-              <div class="form-group">
-                <label for="user-phone">Số điện thoại Zalo <span class="required">*</span></label>
-                <input type="tel" id="user-phone" name="phone" placeholder="Nhập số điện thoại của bạn" required>
-                <span class="error-msg" id="error-phone"></span>
-              </div>
-              <div class="form-group">
-                <label for="user-email">Địa chỉ Email nhận tài liệu <span class="required">*</span></label>
-                <input type="email" id="user-email" name="email" placeholder="Nhập email chính xác của bạn" required>
-                <span class="error-msg" id="error-email"></span>
-              </div>
-
-              <button type="submit" id="cta-step-1" class="cta-button primary-cta full-width-btn">Đăng Ký Tham Gia Khóa TAT</button>
-            </form>
-          </div>
-
-          <!-- Step 2: Payment Pending -->
-          <div id="step-payment-container" class="form-step-panel">
-            <div id="thank-you-message" class="payment-panel-box">
-              <span id="demo-mode-badge" class="sandbox-badge">Chế độ dùng thử (Sandbox) - Giao dịch mô phỏng</span>
-              
-              <h4>Thông tin chuyển khoản giữ suất của bạn</h4>
-              <p class="payment-instructions">Quét mã QR dưới đây bằng ứng dụng Ngân hàng của bạn để hoàn tất đăng ký tự động. Hệ thống sẽ tự động giữ chỗ tạm thời của bạn.</p>
-              
-              <div class="qr-code-wrapper">
-                <img id="payment-qr-img" src="" alt="Mã QR thanh toán VietQR" width="250" height="250">
-              </div>
-
-              <!-- Fallback Copy details -->
-              <div id="payment-desc" class="fallback-details-box">
-                <div class="detail-row">
-                  <span class="label">Ngân hàng:</span>
-                  <span class="val">MB Bank</span>
-                  <button class="copy-btn" data-copy="MB Bank">Copy</button>
-                </div>
-                <div class="detail-row">
-                  <span class="label">Số tài khoản:</span>
-                  <span class="val">0345678910</span>
-                  <button class="copy-btn" data-copy="0345678910">Copy</button>
-                </div>
-                <div class="detail-row">
-                  <span class="label">Chủ tài khoản:</span>
-                  <span class="val">SUNEXT GROUP</span>
-                </div>
-                <div class="detail-row">
-                  <span class="label">Số tiền:</span>
-                  <span id="fallback-amount" class="val text-orange">4.997.000đ</span>
-                  <button class="copy-btn" id="btn-copy-amount" data-copy="4997000">Copy</button>
-                </div>
-                <div class="detail-row">
-                  <span class="label">Nội dung CK:</span>
-                  <span id="fallback-syntax" class="val text-orange">TAT 0987654321</span>
-                  <button class="copy-btn" id="btn-copy-syntax" data-copy="TAT 0987654321">Copy</button>
-                </div>
-              </div>
-
-              <div class="progress-bar-container">
-                <div id="payment-progress-bar" class="progress-bar-fill"></div>
-              </div>
-              <p id="payment-status-text" class="status-indicator">Đang đợi giao dịch chuyển khoản của bạn...</p>
-
-              <button id="btn-paid" class="cta-button primary-cta full-width-btn">Xác nhận đã thanh toán & Nhận link Zalo</button>
-            </div>
-          </div>
-
-          <!-- Step 3: Payment Success & OTO -->
-          <div id="step-success-container" class="form-step-panel">
-            <div id="success-confirm-message" class="success-panel-box">
-              <div class="success-icon">
-                <svg viewBox="0 0 52 52" class="checkmark-svg">
-                  <circle cx="26" cy="26" r="25" fill="none" class="checkmark-circle"/>
-                  <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" class="checkmark-check"/>
-                </svg>
-              </div>
-              <h3>Chào mừng bạn đến với cộng đồng 500+ AI-Native Trainers!</h3>
-              <p class="success-desc">Hành trình đột phá sự nghiệp giảng dạy của bạn chính thức bắt đầu từ đây. Yêu cầu giữ chỗ đã được ghi nhận thành công.</p>
-              
-              <!-- OTO Upsell Block -->
-              <div class="oto-upsell-box">
-                <span class="oto-badge"><svg class="gift-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 6px; color: #FFFFFF;"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>ĐẶC QUYỀN ĐI KÈM</span>
-                <h4>Nâng cấp lên gói VIP Coaching đồng hành 1-1 cùng chuyên gia trong 30 ngày</h4>
-                <p class="oto-desc">Nhận thêm 30 ngày đồng hành coaching 1-1 trực tiếp cùng chuyên gia Sunext để tinh chỉnh giáo trình và lên kế hoạch tuyển sinh khóa đầu tiên. Ưu đãi chỉ áp dụng duy nhất tại màn hình này.</p>
-                <div class="oto-price-box">
-                  <span class="price-original">5.000.000đ</span>
-                  <span class="price-promo">chỉ với +2.000.000đ</span>
-                </div>
-                
-                <!-- OTO QR box toggle -->
-                <button id="btn-accept-oto" class="oto-btn accept-btn">Nâng cấp VIP Coaching</button>
-                
-                <div id="oto-payment-details" class="oto-payment-details">
-                  <p>Vui lòng chuyển khoản thêm <strong>2.000.000đ</strong> vào tài khoản ngân hàng trên với nội dung chuyển khoản: <strong id="oto-syntax">TAT [SĐT] VIP</strong></p>
-                </div>
-              </div>
-
-              <a href="https://zalo.me/g/demo-group" id="zalo-group-btn" target="_blank" class="cta-button success-cta full-width-btn">Tham gia nhóm Zalo lớp học TAT ngay</a>
-              <p class="zalo-helper-text">Hãy vào nhóm Zalo để nhận ngay tài liệu chuẩn bị trước khóa học và kết nối với các học viên khác.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section (End of page scroll layout) -->
+  </footer>
 
   <!-- Sticky Footer Bar -->
   <div id="sticky-bar" class="sticky-footer-bar">
-    <div class="sticky-bar-container sticky-bar-content">
+    <div class="sticky-bar-container">
       <div class="sticky-scarcity">
-        <svg class="sticky-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 6px; color: var(--accent-orange);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Chỉ 15 người/đợt — Còn <strong class="seat-count number">7</strong>/15 suất trống
+        <svg class="sticky-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 16px; height: 16px; color: var(--orange-500);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        Chỉ 15 người/đợt — Còn <strong class="seat-count number">7</strong>/15 suất trống
       </div>
       <div class="sticky-program-name">
         TRAIN THE TRAINER: AI-Native Trainer
@@ -1165,19 +1144,54 @@
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="main-footer">
-    <div class="section-container">
-      <p>&copy; 2026 Sunext Group. Bảo lưu mọi quyền.</p>
-      <p class="footer-links">
-        <a href="#">Chính sách bảo mật</a> | 
-        <a href="#">Điều khoản dịch vụ</a> | 
-        <a href="#">Quy chế thanh toán</a>
-      </p>
-    </div>
-  </footer>
+  <!-- Exit Intent Modal -->
+  <div id="exit-modal" class="modal-overlay">
+    <div class="exit-modal-content">
+      <button type="button" class="modal-close-btn" id="btn-close-modal">&times;</button>
+      <span class="modal-badge">Quà tặng đặc biệt</span>
+      <h3 class="modal-title">Tải Ngay 150+ Claude Prompts Soạn Bài</h3>
+      <p class="modal-subtitle">Bộ prompts thực chiến giúp bạn đóng gói giáo trình, outline, case study tự động trong 2 giờ.</p>
+      
+      <div class="prompt-preview">
+        <div class="preview-item">
+          <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+          Prompt sinh outline khóa học B2B/B2C
+        </div>
+        <div class="preview-item">
+          <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+          Prompt tạo case study thực tế theo ngành
+        </div>
+        <div class="preview-item">
+          <svg class="icon check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg>
+          Prompt soạn câu hỏi thảo luận và bài tập
+        </div>
+      </div>
 
-  <!-- Scripts -->
+      <div class="modal-social-proof">
+        <div class="avatars">
+          <div class="avatar">MP</div>
+          <div class="avatar">QB</div>
+          <div class="avatar">LH</div>
+          <div class="more">+497</div>
+        </div>
+        <p class="proof-text">500+ chuyên gia đã tải tài liệu này</p>
+      </div>
+
+      <form id="modal-lead-form" novalidate style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="form-group">
+          <input type="text" id="modal-user-name" placeholder="Họ và tên của bạn" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1.5px solid var(--purple-100);">
+          <span class="error-msg" id="modal-error-name" style="color: var(--red-500); font-size: 12px; display: none;">Họ và tên không được để trống.</span>
+        </div>
+        <div class="form-group">
+          <input type="email" id="modal-user-email" placeholder="Email nhận tài liệu" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1.5px solid var(--purple-100);">
+          <span class="error-msg" id="modal-error-email" style="color: var(--red-500); font-size: 12px; display: none;">Vui lòng nhập email hợp lệ.</span>
+        </div>
+        <button type="submit" class="modal-cta-btn" style="justify-content: center; align-items: center; display: inline-flex;">Gửi tài liệu cho tôi</button>
+      </form>
+      <p class="privacy-note">Chúng tôi tôn trọng sự riêng tư của bạn. Không spam.</p>
+    </div>
+  </div>
+
   <script src="index.js"></script>
 </body>
 </html>

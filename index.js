@@ -44,6 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnAcceptOto = document.getElementById('btn-accept-oto');
   const otoPaymentDetails = document.getElementById('oto-payment-details');
   const otoSyntax = document.getElementById('oto-syntax');
+
+  // --- EXIT INTENT MODAL ELEMENTS ---
+  const exitModal = document.getElementById('exit-modal');
+  const btnCloseModal = document.getElementById('btn-close-modal');
+  const modalLeadForm = document.getElementById('modal-lead-form');
+  let exitModalShown = false;
   
   // --- SEATS COUNT DYNAMIC DECREASE (Scarcity) ---
   let GLOBAL_SEATS_LEFT = 7; // Single source of truth
@@ -91,18 +97,18 @@ document.addEventListener('DOMContentLoaded', () => {
     q.addEventListener('click', () => {
       const parent = q.parentElement;
       const answer = parent.querySelector('.faq-answer');
-      const isActive = parent.classList.contains('active');
+      const isOpen = parent.classList.contains('open');
       
       // Close all first
       document.querySelectorAll('.faq-item').forEach(item => {
         const ans = item.querySelector('.faq-answer');
         if (ans) ans.style.maxHeight = '0';
-        item.classList.remove('active');
+        item.classList.remove('open');
       });
       
       // Open clicked item with calculated height
-      if (!isActive) {
-        parent.classList.add('active');
+      if (!isOpen) {
+        parent.classList.add('open');
         const scrollHeight = answer.scrollHeight;
         answer.style.maxHeight = scrollHeight + 'px';
       }
@@ -120,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Autofocus sau khi cuộn xong
       setTimeout(() => {
-        userNameInput.focus();
+        if (userNameInput) userNameInput.focus();
       }, 800);
     });
   });
@@ -129,25 +135,29 @@ document.addEventListener('DOMContentLoaded', () => {
   // Ẩn/hiện dựa trên vị trí scroll: chỉ hiện khi scroll qua Hero, và tự ẩn khi tới form đăng ký
   const heroSection = document.querySelector('.hero-section');
   
-  window.addEventListener('scroll', () => {
-    const heroBottom = heroSection.getBoundingClientRect().bottom + window.scrollY;
-    const finalCtaTop = finalCtaSection.getBoundingClientRect().top + window.scrollY;
-    const currentScroll = window.scrollY + window.innerHeight;
-    
-    if (window.scrollY > heroBottom - 200 && currentScroll < finalCtaTop + 100) {
-      stickyBar.classList.add('show');
-    } else {
-      stickyBar.classList.remove('show');
-    }
-  });
+  if (heroSection && finalCtaSection && stickyBar) {
+    window.addEventListener('scroll', () => {
+      const heroBottom = heroSection.getBoundingClientRect().bottom + window.scrollY;
+      const finalCtaTop = finalCtaSection.getBoundingClientRect().top + window.scrollY;
+      const currentScroll = window.scrollY + window.innerHeight;
+      
+      if (window.scrollY > heroBottom - 200 && currentScroll < finalCtaTop + 100) {
+        stickyBar.classList.add('show');
+      } else {
+        stickyBar.classList.remove('show');
+      }
+    });
+  }
 
   // --- TOAST NOTIFICATION & COPY ---
   function showToast(message) {
-    toast.textContent = message;
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 2000);
+    if (toast) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2000);
+    }
   }
   
   const copyButtons = document.querySelectorAll('.copy-btn');
@@ -162,21 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Tooltip Click Toggle on Mobile
-  const tooltipTrigger = document.getElementById('tooltip-trigger');
-  const tooltipBubble = document.getElementById('tooltip-bubble');
-  if (tooltipTrigger && tooltipBubble) {
-    tooltipTrigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      tooltipBubble.style.display = (tooltipBubble.style.display === 'block') ? 'none' : 'block';
-    });
-    document.addEventListener('click', () => {
-      tooltipBubble.style.display = 'none';
-    });
-  }
-
   // Mouse move tracker for 3D card glows
-  document.querySelectorAll('.persona-card, .testimonial-card, .deliverable-card').forEach(card => {
+  document.querySelectorAll('.persona-card, .testimonial-card, .included-item, .day-card, .learn-card, .timeline-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -188,222 +185,235 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- INTERACTIVE PRICING CARD LOGIC ---
   function updatePricingCard() {
+    if (!priceDisplay) return;
     if (selectedPaymentMethod === 'full') {
       priceDisplay.textContent = '4.997.000đ';
-      priceUnit.textContent = '/trọn gói';
-      priceBreakdown.textContent = 'Chỉ khoảng ~2.500.000đ/ngày hoặc ~208.000đ/giờ học chuyên sâu.';
-      priceAnchoring.textContent = 'Rẻ hơn 4 lần so với việc thuê chuyên gia tư vấn giáo trình riêng lẻ.';
+      if (priceUnit) priceUnit.textContent = '/trọn gói';
+      if (priceBreakdown) priceBreakdown.textContent = 'Chỉ khoảng ~2.500.000đ/ngày hoặc ~208.000đ/giờ học chuyên sâu.';
+      if (priceAnchoring) priceAnchoring.textContent = 'Rẻ hơn 4 lần so với việc thuê chuyên gia tư vấn giáo trình riêng lẻ.';
     } else {
       priceDisplay.textContent = '2.500.000đ';
-      priceUnit.textContent = '/kỳ 1';
-      priceBreakdown.textContent = 'Thanh toán kỳ 2 (2.500.000đ) sau khi hoàn thành Ngày 1.';
-      priceAnchoring.textContent = 'Giúp tháo gỡ áp lực tài chính, sở hữu ngay suất học.';
+      if (priceUnit) priceUnit.textContent = '/kỳ 1';
+      if (priceBreakdown) priceBreakdown.textContent = 'Thanh toán kỳ 2 (2.500.000đ) sau khi hoàn thành Ngày 1.';
+      if (priceAnchoring) priceAnchoring.textContent = 'Giúp tháo gỡ áp lực tài chính, sở hữu ngay suất học.';
     }
   }
   
   // Call initial pricing card update
   updatePricingCard();
   
-  payFullRadio.addEventListener('change', () => {
-    selectedPaymentMethod = 'full';
-    updatePricingCard();
-  });
+  if (payFullRadio) {
+    payFullRadio.addEventListener('change', () => {
+      selectedPaymentMethod = 'full';
+      updatePricingCard();
+    });
+  }
   
-  paySplitRadio.addEventListener('change', () => {
-    selectedPaymentMethod = 'split';
-    updatePricingCard();
-  });
+  if (paySplitRadio) {
+    paySplitRadio.addEventListener('change', () => {
+      selectedPaymentMethod = 'split';
+      updatePricingCard();
+    });
+  }
 
   // --- PAGE MODE TOGGLE (Sandbox vs Real) ---
-  modeDemoRadio.addEventListener('change', () => {
-    pageMode = 'demo';
-  });
+  if (modeDemoRadio) {
+    modeDemoRadio.addEventListener('change', () => {
+      pageMode = 'demo';
+    });
+  }
   
-  modeRealRadio.addEventListener('change', () => {
-    pageMode = 'real';
-  });
-
-
+  if (modeRealRadio) {
+    modeRealRadio.addEventListener('change', () => {
+      pageMode = 'real';
+    });
+  }
 
   // --- FORM SUBMIT & PAYMENT STATE ENGINE ---
-  regForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const nameInput = document.getElementById('user-name');
-    const phoneInput = document.getElementById('user-phone');
-    const emailInput = document.getElementById('user-email');
-    
-    const errorName = document.getElementById('error-name');
-    const errorPhone = document.getElementById('error-phone');
-    const errorEmail = document.getElementById('error-email');
-    
-    // Clear errors
-    nameInput.parentElement.classList.remove('has-error');
-    phoneInput.parentElement.classList.remove('has-error');
-    emailInput.parentElement.classList.remove('has-error');
-    errorName.style.display = 'none';
-    errorPhone.style.display = 'none';
-    errorEmail.style.display = 'none';
-    
-    let isValid = true;
-    
-    // Validate Name
-    const nameVal = nameInput.value.trim();
-    if (nameVal.length < 2) {
-      nameInput.parentElement.classList.add('has-error');
-      errorName.textContent = 'Họ và tên của bạn cần có ít nhất 2 ký tự.';
-      errorName.style.display = 'block';
-      shakeInput(nameInput);
-      isValid = false;
-    }
-    
-    // Validate Phone
-    const phoneVal = phoneInput.value.trim();
-    if (!validatePhone(phoneVal)) {
-      phoneInput.parentElement.classList.add('has-error');
-      errorPhone.textContent = 'Vui lòng nhập số điện thoại hợp lệ (10 chữ số, bắt đầu bằng 0).';
-      errorPhone.style.display = 'block';
-      shakeInput(phoneInput);
-      isValid = false;
-    }
-    
-    // Validate Email
-    const emailVal = emailInput.value.trim();
-    if (!validateEmail(emailVal)) {
-      emailInput.parentElement.classList.add('has-error');
-      errorEmail.textContent = 'Vui lòng nhập địa chỉ email hợp lệ (ví dụ: name@domain.com).';
-      errorEmail.style.display = 'block';
-      shakeInput(emailInput);
-      isValid = false;
-    }
-    
-    if (!isValid) return;
-    
-    // Show Loading state on submit button
-    const submitBtn = document.getElementById('cta-step-1');
-    submitBtn.classList.add('btn-loading');
-    submitBtn.disabled = true;
-    
-    // --- CALCULATION OF AMOUNT & SYNTAX ---
-    userPhone = phoneVal;
-    
-    // Calculate pricing amount
-    let basePrice = (selectedPaymentMethod === 'full') ? 4997000 : 2500000;
-    calculatedAmount = basePrice;
-    
-    // Calculate syntax
-    calculatedSyntax = `TAT ${userPhone}`;
-    
-    // Format Display amount
-    const formattedAmount = calculatedAmount.toLocaleString('vi-VN') + 'đ';
-    fallbackAmount.textContent = formattedAmount;
-    fallbackSyntax.textContent = calculatedSyntax;
-    
-    // Update Copy Data Attributes
-    btnCopyAmount.setAttribute('data-copy', calculatedAmount.toString());
-    btnCopySyntax.setAttribute('data-copy', calculatedSyntax);
-    
-    // Generate VietQR dynamic link
-    const vietQrUrl = `https://img.vietqr.io/image/MB-0345678910-compact2.png?amount=${calculatedAmount}&addInfo=${encodeURIComponent(calculatedSyntax)}&accountName=SUNEXT%20GROUP`;
-    paymentQrImg.src = vietQrUrl;
-    
-    // Update Instructions based on package
-    const paymentInstructions = document.querySelector('.payment-instructions');
-    if (selectedPaymentMethod === 'full') {
-      paymentInstructions.innerHTML = `Quét mã QR dưới đây bằng ứng dụng Ngân hàng của bạn để hoàn tất thanh toán Trọn gói (<strong>${formattedAmount}</strong>). Hệ thống sẽ tự động giữ chỗ tạm thời cho bạn.`;
-    } else {
-      paymentInstructions.innerHTML = `Quét mã QR dưới đây bằng ứng dụng Ngân hàng của bạn để hoàn tất thanh toán Kỳ 1 (<strong>${formattedAmount}</strong>). Kỳ 2 (2.500.000đ) sẽ được thanh toán sau khi hoàn thành Ngày 1. Hệ thống sẽ tự động giữ chỗ tạm thời cho bạn.`;
-    }
-
-    setTimeout(() => {
-      submitBtn.classList.remove('btn-loading');
-      submitBtn.disabled = false;
-
-      // Transition Step: Form -> Payment Pending
-      stepFormContainer.classList.remove('active');
-      stepPaymentContainer.classList.add('active');
+  if (regForm) {
+    regForm.addEventListener('submit', (e) => {
+      e.preventDefault();
       
-      // Setup state according to Mode (Sandbox vs Production)
-      if (pageMode === 'demo') {
-        demoModeBadge.style.display = 'inline-block';
-        paymentProgressBarContainer.style.display = 'block';
-        paymentStatusText.textContent = 'Đang kết nối cổng thanh toán MB Bank...';
-        paymentStatusText.style.color = '#F59E0B';
-        
-        // Simulate progress bar checking transaction
-        let progress = 0;
-        paymentProgressBar.style.width = '0%';
-        const progressInterval = setInterval(() => {
-          progress += 2;
-          paymentProgressBar.style.width = `${progress}%`;
-          
-          // Dynamic status labels based on progress percentage
-          if (progress <= 25) {
-            paymentStatusText.textContent = 'Đang kết nối cổng thanh toán MB Bank...';
-          } else if (progress <= 55) {
-            paymentStatusText.textContent = 'Đang xác thực thông tin tài khoản...';
-          } else if (progress <= 85) {
-            paymentStatusText.textContent = 'Đang kiểm tra giao dịch sao kê và đối chiếu cú pháp...';
-          } else if (progress <= 99) {
-            paymentStatusText.textContent = 'Đang hoàn tất đồng bộ giữ chỗ...';
-          }
-          
-          if (progress >= 100) {
-            clearInterval(progressInterval);
-            paymentStatusText.textContent = 'Đã xác thực giao dịch thành công!';
-            paymentStatusText.style.color = '#22C55E';
-          }
-        }, 100);
-        
-      } else {
-        demoModeBadge.style.display = 'none';
-        paymentProgressBarContainer.style.display = 'none';
-        paymentStatusText.textContent = 'Đang đợi giao dịch chuyển khoản thực tế của bạn...';
-        paymentStatusText.style.color = '#FF7733';
+      const nameInput = document.getElementById('user-name');
+      const phoneInput = document.getElementById('user-phone');
+      const emailInput = document.getElementById('user-email');
+      
+      const errorName = document.getElementById('error-name');
+      const errorPhone = document.getElementById('error-phone');
+      const errorEmail = document.getElementById('error-email');
+      
+      // Clear errors
+      nameInput.parentElement.classList.remove('has-error');
+      phoneInput.parentElement.classList.remove('has-error');
+      emailInput.parentElement.classList.remove('has-error');
+      errorName.style.display = 'none';
+      errorPhone.style.display = 'none';
+      errorEmail.style.display = 'none';
+      
+      let isValid = true;
+      
+      // Validate Name
+      const nameVal = nameInput.value.trim();
+      if (nameVal.length < 2) {
+        nameInput.parentElement.classList.add('has-error');
+        errorName.textContent = 'Họ và tên của bạn cần có ít nhất 2 ký tự.';
+        errorName.style.display = 'block';
+        shakeInput(nameInput);
+        isValid = false;
       }
-    }, 1000); // 1-second dynamic load simulation
-  });
+      
+      // Validate Phone
+      const phoneVal = phoneInput.value.trim();
+      if (!validatePhone(phoneVal)) {
+        phoneInput.parentElement.classList.add('has-error');
+        errorPhone.textContent = 'Vui lòng nhập số điện thoại hợp lệ (10 chữ số, bắt đầu bằng 0).';
+        errorPhone.style.display = 'block';
+        shakeInput(phoneInput);
+        isValid = false;
+      }
+      
+      // Validate Email
+      const emailVal = emailInput.value.trim();
+      if (!validateEmail(emailVal)) {
+        emailInput.parentElement.classList.add('has-error');
+        errorEmail.textContent = 'Vui lòng nhập địa chỉ email hợp lệ (ví dụ: name@domain.com).';
+        errorEmail.style.display = 'block';
+        shakeInput(emailInput);
+        isValid = false;
+      }
+      
+      if (!isValid) return;
+      
+      // Show Loading state on submit button
+      const submitBtn = document.getElementById('cta-step-1');
+      submitBtn.classList.add('btn-loading');
+      submitBtn.disabled = true;
+      
+      // --- CALCULATION OF AMOUNT & SYNTAX ---
+      userPhone = phoneVal;
+      
+      // Calculate pricing amount
+      let basePrice = (selectedPaymentMethod === 'full') ? 4997000 : 2500000;
+      calculatedAmount = basePrice;
+      
+      // Calculate syntax
+      calculatedSyntax = `TAT ${userPhone}`;
+      
+      // Format Display amount
+      const formattedAmount = calculatedAmount.toLocaleString('vi-VN') + 'đ';
+      fallbackAmount.textContent = formattedAmount;
+      fallbackSyntax.textContent = calculatedSyntax;
+      
+      // Update Copy Data Attributes
+      btnCopyAmount.setAttribute('data-copy', calculatedAmount.toString());
+      btnCopySyntax.setAttribute('data-copy', calculatedSyntax);
+      
+      // Generate VietQR dynamic link
+      const vietQrUrl = `https://img.vietqr.io/image/MB-0345678910-compact2.png?amount=${calculatedAmount}&addInfo=${encodeURIComponent(calculatedSyntax)}&accountName=SUNEXT%20GROUP`;
+      paymentQrImg.src = vietQrUrl;
+      
+      // Update Instructions based on package
+      const paymentInstructions = document.querySelector('.payment-instructions');
+      if (selectedPaymentMethod === 'full') {
+        paymentInstructions.innerHTML = `Quét mã QR dưới đây bằng ứng dụng Ngân hàng của bạn để hoàn tất thanh toán Trọn gói (<strong>${formattedAmount}</strong>).`;
+      } else {
+        paymentInstructions.innerHTML = `Quét mã QR dưới đây bằng ứng dụng Ngân hàng của bạn để hoàn tất thanh toán Kỳ 1 (<strong>${formattedAmount}</strong>). Kỳ 2 (2.500.000đ) sẽ thanh toán sau khi hoàn thành Ngày 1.`;
+      }
+
+      setTimeout(() => {
+        submitBtn.classList.remove('btn-loading');
+        submitBtn.disabled = false;
+
+        // Transition Step: Form -> Payment Pending
+        stepFormContainer.classList.remove('active');
+        stepPaymentContainer.classList.add('active');
+        
+        // Setup state according to Mode (Sandbox vs Production)
+        if (pageMode === 'demo') {
+          demoModeBadge.style.display = 'inline-block';
+          paymentProgressBarContainer.style.display = 'block';
+          paymentStatusText.textContent = 'Đang kết nối cổng thanh toán MB Bank...';
+          paymentStatusText.style.color = '#F59E0B';
+          
+          // Simulate progress bar checking transaction
+          let progress = 0;
+          paymentProgressBar.style.width = '0%';
+          const progressInterval = setInterval(() => {
+            progress += 2;
+            paymentProgressBar.style.width = `${progress}%`;
+            
+            // Dynamic status labels based on progress percentage
+            if (progress <= 25) {
+              paymentStatusText.textContent = 'Đang kết nối cổng thanh toán MB Bank...';
+            } else if (progress <= 55) {
+              paymentStatusText.textContent = 'Đang xác thực thông tin tài khoản...';
+            } else if (progress <= 85) {
+              paymentStatusText.textContent = 'Đang kiểm tra giao dịch sao kê và đối chiếu cú pháp...';
+            } else if (progress <= 99) {
+              paymentStatusText.textContent = 'Đang hoàn tất đồng bộ giữ chỗ...';
+            }
+            
+            if (progress >= 100) {
+              clearInterval(progressInterval);
+              paymentStatusText.textContent = 'Đã xác thực giao dịch thành công!';
+              paymentStatusText.style.color = '#22C55E';
+            }
+          }, 100);
+          
+        } else {
+          demoModeBadge.style.display = 'none';
+          paymentProgressBarContainer.style.display = 'none';
+          paymentStatusText.textContent = 'Đang đợi giao dịch chuyển khoản thực tế của bạn...';
+          paymentStatusText.style.color = '#FF7733';
+        }
+      }, 1000); // 1-second dynamic load simulation
+    });
+  }
 
   // --- PAID BUTTON (CONFIRM PAYMENT) ---
-  btnPaid.addEventListener('click', () => {
-    // Show Loading state onPaid button
-    btnPaid.classList.add('btn-loading');
-    btnPaid.disabled = true;
+  if (btnPaid) {
+    btnPaid.addEventListener('click', () => {
+      // Show Loading state on Paid button
+      btnPaid.classList.add('btn-loading');
+      btnPaid.disabled = true;
 
-    setTimeout(() => {
-      btnPaid.classList.remove('btn-loading');
-      btnPaid.disabled = false;
+      setTimeout(() => {
+        btnPaid.classList.remove('btn-loading');
+        btnPaid.disabled = false;
 
-      // Transition to Success State
-      stepPaymentContainer.classList.remove('active');
-      stepSuccessContainer.classList.add('active');
-      
-      // Update success screen copy based on Mode
-      const successTitle = document.querySelector('#success-confirm-message h3');
-      const successDesc = document.querySelector('#success-confirm-message .success-desc');
-      
-      if (pageMode === 'demo') {
-        successTitle.textContent = 'Chào mừng bạn đến với cộng đồng 500+ AI-Native Trainers!';
-        successDesc.innerHTML = 'Hành trình đột phá sự nghiệp giảng dạy của bạn chính thức bắt đầu từ đây.<br>Yêu cầu giữ chỗ đã được <strong>xác nhận tự động thành công (Chế độ dùng thử)</strong>.';
-      } else {
-        successTitle.textContent = 'Yêu cầu đăng ký đã được tiếp nhận thành công!';
-        successDesc.innerHTML = 'Sunext đang thực hiện kiểm tra giao dịch chuyển khoản của bạn thủ công.<br><strong>Đặc quyền:</strong> Link Zalo bên dưới đã được kích hoạt để bạn vào nhóm khóa chỗ ngay trong lúc duyệt giao dịch.';
-      }
-      
-      // Update OTO upsell syntax
-      otoSyntax.textContent = `TAT ${userPhone} VIP`;
-      
-      // Trigger success checkmark animation
-      triggerSuccessAnimation();
-    }, 1500); // 1.5-second loading verification simulation
-  });
+        // Transition to Success State
+        stepPaymentContainer.classList.remove('active');
+        stepSuccessContainer.classList.add('active');
+        
+        // Update success screen copy based on Mode
+        const successTitle = document.querySelector('#success-confirm-message h3');
+        const successDesc = document.querySelector('#success-confirm-message .success-desc');
+        
+        if (pageMode === 'demo') {
+          successTitle.textContent = 'Chào mừng bạn đến với cộng đồng 500+ AI-Native Trainers!';
+          successDesc.innerHTML = 'Hành trình đột phá sự nghiệp giảng dạy của bạn chính thức bắt đầu từ đây.<br>Yêu cầu giữ chỗ đã được <strong>xác nhận tự động thành công (Chế độ dùng thử)</strong>.';
+        } else {
+          successTitle.textContent = 'Yêu cầu đăng ký đã được tiếp nhận thành công!';
+          successDesc.innerHTML = 'Sunext đang thực hiện kiểm tra giao dịch chuyển khoản của bạn thủ công.<br><strong>Đặc quyền:</strong> Link Zalo bên dưới đã được kích hoạt để bạn vào nhóm khóa chỗ ngay trong lúc duyệt giao dịch.';
+        }
+        
+        // Update OTO upsell syntax
+        otoSyntax.textContent = `TAT ${userPhone} VIP`;
+        
+        // Trigger success checkmark animation
+        triggerSuccessAnimation();
+      }, 1500); // 1.5-second loading verification simulation
+    });
+  }
 
   // --- OTO VIP COACHING UPSELL LOGIC ---
-  btnAcceptOto.addEventListener('click', () => {
-    otoPaymentDetails.style.display = 'block';
-    btnAcceptOto.style.display = 'none';
-    showToast('Cú pháp chuyển khoản VIP đã được hiển thị!');
-  });
+  if (btnAcceptOto) {
+    btnAcceptOto.addEventListener('click', () => {
+      otoPaymentDetails.style.display = 'block';
+      btnAcceptOto.style.display = 'none';
+      showToast('Cú pháp chuyển khoản VIP đã được hiển thị!');
+    });
+  }
 
   // --- SUCCESS CHECKMARK ANIMATION ---
   function triggerSuccessAnimation() {
@@ -411,6 +421,62 @@ document.addEventListener('DOMContentLoaded', () => {
     if (successIcon) {
       successIcon.classList.add('animate-success');
     }
+  }
+
+  // --- EXIT INTENT MODAL LOGIC ---
+  if (exitModal) {
+    document.addEventListener('mouseleave', (e) => {
+      // Trigger when mouse moves out through top of screen
+      if (e.clientY < 50 && !exitModalShown && !localStorage.getItem('tat_exit_modal_shown')) {
+        exitModal.classList.add('active');
+        exitModalShown = true;
+        localStorage.setItem('tat_exit_modal_shown', 'true');
+      }
+    });
+
+    if (btnCloseModal) {
+      btnCloseModal.addEventListener('click', () => {
+        exitModal.classList.remove('active');
+      });
+    }
+
+    exitModal.addEventListener('click', (e) => {
+      if (e.target === exitModal) {
+        exitModal.classList.remove('active');
+      }
+    });
+  }
+
+  if (modalLeadForm) {
+    modalLeadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const mName = document.getElementById('modal-user-name');
+      const mEmail = document.getElementById('modal-user-email');
+      const errName = document.getElementById('modal-error-name');
+      const errEmail = document.getElementById('modal-error-email');
+      
+      let valid = true;
+      
+      if (mName.value.trim().length < 2) {
+        errName.style.display = 'block';
+        valid = false;
+      } else {
+        errName.style.display = 'none';
+      }
+      
+      if (!validateEmail(mEmail.value.trim())) {
+        errEmail.style.display = 'block';
+        valid = false;
+      } else {
+        errEmail.style.display = 'none';
+      }
+      
+      if (valid) {
+        showToast('Đăng ký nhận quà thành công! Vui lòng kiểm tra Email.');
+        exitModal.classList.remove('active');
+      }
+    });
   }
 
   // --- COUNTDOWN TIMER ---
@@ -458,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- SCROLL REVEAL ANIMATION ---
   function initScrollReveal() {
     const revealElements = document.querySelectorAll(
-      '.persona-card, .pain-item, .outcome-card, .timeline-item, .deliverable-card, .testimonial-card, .claude-feature-card'
+      '.persona-card, .timeline-card, .learn-card, .day-card, .included-item, .testimonial-card'
     );
     
     const observer = new IntersectionObserver((entries) => {
