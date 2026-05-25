@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCopyAmount = document.getElementById('btn-copy-amount');
   const btnCopySyntax = document.getElementById('btn-copy-syntax');
   
-  const stickyBar = document.getElementById('sticky-bar');
+  const stickyCTA = document.getElementById('stickyCTA');
   const finalCtaSection = document.getElementById('final-cta');
   
   const btnAcceptOto = document.getElementById('btn-accept-oto');
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- SMOOTH SCROLL & AUTOFOCUS ---
-  const allScrollCtas = document.querySelectorAll('a[href="#final-cta"], .sticky-cta-btn');
+  const allScrollCtas = document.querySelectorAll('a[href="#final-cta"], .sticky-cta-btn, .btn-sticky');
   const userNameInput = document.getElementById('user-name');
   
   allScrollCtas.forEach(cta => {
@@ -123,13 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- STICKY FOOTER BAR LOGIC ---
   // Chỉ hiển thị sticky CTA khi scroll qua 50% trang
-  if (stickyBar) {
+  if (stickyCTA) {
     window.addEventListener('scroll', () => {
       const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       if (scrollPercent > 50) {
-        stickyBar.classList.add('show');
+        stickyCTA.classList.add('visible');
       } else {
-        stickyBar.classList.remove('show');
+        stickyCTA.classList.remove('visible');
       }
     });
   }
