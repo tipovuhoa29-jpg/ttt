@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCopyAmount = document.getElementById('btn-copy-amount');
   const btnCopySyntax = document.getElementById('btn-copy-syntax');
   
-  const stickyCTA = document.getElementById('stickyCTA');
   const finalCtaSection = document.getElementById('final-cta');
   
   const btnAcceptOto = document.getElementById('btn-accept-oto');
@@ -120,17 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- STICKY FOOTER BAR LOGIC ---
-  // Chỉ hiển thị sticky CTA khi scroll qua 50% trang
+  // Chỉ hiển thị sticky footer khi scroll qua 50% trang
   const stickyFooter = document.getElementById('stickyFooter');
-  if (stickyCTA || stickyFooter) {
+  if (stickyFooter) {
     window.addEventListener('scroll', () => {
       const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       if (scrollPercent > 50) {
-        if (stickyCTA) stickyCTA.classList.add('visible');
-        if (stickyFooter) stickyFooter.classList.add('visible');
+        stickyFooter.classList.add('visible');
       } else {
-        if (stickyCTA) stickyCTA.classList.remove('visible');
-        if (stickyFooter) stickyFooter.classList.remove('visible');
+        stickyFooter.classList.remove('visible');
       }
     });
   }
