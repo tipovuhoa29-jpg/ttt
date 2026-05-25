@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- STATE VARIABLES ---
   let selectedPaymentMethod = 'full'; // 'full' or 'split'
-  let pageMode = 'demo'; // 'demo' (sandbox) or 'real' (production)
+  let pageMode = 'demo'; // defaults to sandbox/demo for simulated payment checkout flow
   let userPhone = '';
   let calculatedAmount = 4997000;
   let calculatedSyntax = 'TAT';
@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const payFullRadio = document.getElementById('pay-full');
   const paySplitRadio = document.getElementById('pay-split');
   
-  const modeDemoRadio = document.getElementById('mode-demo');
-  const modeRealRadio = document.getElementById('mode-real');
-  
   const regForm = document.getElementById('reg-form');
   const stepFormContainer = document.getElementById('step-form-container');
   const stepPaymentContainer = document.getElementById('step-payment-container');
@@ -27,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const paymentQrImg = document.getElementById('payment-qr-img');
   const fallbackAmount = document.getElementById('fallback-amount');
   const fallbackSyntax = document.getElementById('fallback-syntax');
-  const demoModeBadge = document.getElementById('demo-mode-badge');
   const paymentProgressBar = document.getElementById('payment-progress-bar');
   const paymentProgressBarContainer = document.querySelector('.progress-bar-container');
   const paymentStatusText = document.getElementById('payment-status-text');
@@ -36,20 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCopyAmount = document.getElementById('btn-copy-amount');
   const btnCopySyntax = document.getElementById('btn-copy-syntax');
   
-  const toast = document.getElementById('toast');
-  
   const stickyBar = document.getElementById('sticky-bar');
   const finalCtaSection = document.getElementById('final-cta');
   
   const btnAcceptOto = document.getElementById('btn-accept-oto');
   const otoPaymentDetails = document.getElementById('oto-payment-details');
   const otoSyntax = document.getElementById('oto-syntax');
-
-  // --- EXIT INTENT MODAL ELEMENTS ---
-  const exitModal = document.getElementById('exit-modal');
-  const btnCloseModal = document.getElementById('btn-close-modal');
-  const modalLeadForm = document.getElementById('modal-lead-form');
-  let exitModalShown = false;
   
   // --- SEATS COUNT DYNAMIC DECREASE (Scarcity) ---
   let GLOBAL_SEATS_LEFT = 7; // Single source of truth
@@ -122,7 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
   allScrollCtas.forEach(cta => {
     cta.addEventListener('click', (e) => {
       e.preventDefault();
-      finalCtaSection.scrollIntoView({ behavior: 'smooth' });
+      if (finalCtaSection) {
+        finalCtaSection.scrollIntoView({ behavior: 'smooth' });
+      }
       
       // Autofocus sau khi cuộn xong
       setTimeout(() => {
@@ -132,16 +122,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- STICKY FOOTER BAR LOGIC ---
-  // Ẩn/hiện dựa trên vị trí scroll: chỉ hiện khi scroll qua Hero, và tự ẩn khi tới form đăng ký
-  const heroSection = document.querySelector('.hero-section');
-  
-  if (heroSection && finalCtaSection && stickyBar) {
+  // Chỉ hiển thị sticky CTA khi scroll qua 50% trang
+  if (stickyBar) {
     window.addEventListener('scroll', () => {
-      const heroBottom = heroSection.getBoundingClientRect().bottom + window.scrollY;
-      const finalCtaTop = finalCtaSection.getBoundingClientRect().top + window.scrollY;
-      const currentScroll = window.scrollY + window.innerHeight;
-      
-      if (window.scrollY > heroBottom - 200 && currentScroll < finalCtaTop + 100) {
+      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      if (scrollPercent > 50) {
         stickyBar.classList.add('show');
       } else {
         stickyBar.classList.remove('show');
@@ -149,23 +134,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- TOAST NOTIFICATION & COPY ---
-  function showToast(message) {
-    if (toast) {
-      toast.textContent = message;
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 2000);
-    }
-  }
-  
+  // --- COPY TO CLIPBOARD INLINE FEEDBACK ---
   const copyButtons = document.querySelectorAll('.copy-btn');
   copyButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const textToCopy = btn.getAttribute('data-copy');
+      const originalText = btn.textContent;
       navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast('Đã sao chép vào bộ nhớ tạm!');
+        btn.textContent = 'Đã copy!';
+        btn.style.backgroundColor = 'var(--green-600)';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.backgroundColor = '';
+        }, 2000);
       }).catch(err => {
         console.error('Lỗi khi copy: ', err);
       });
@@ -186,16 +167,54 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- INTERACTIVE PRICING CARD LOGIC ---
   function updatePricingCard() {
     if (!priceDisplay) return;
+    
+    const fullOptionCard = document.querySelector('#pay-full ~ .option-card');
+    const splitOptionCard = document.querySelector('#pay-split ~ .option-card');
+    
     if (selectedPaymentMethod === 'full') {
       priceDisplay.textContent = '4.997.000đ';
       if (priceUnit) priceUnit.textContent = '/trọn gói';
       if (priceBreakdown) priceBreakdown.textContent = 'Chỉ khoảng ~2.500.000đ/ngày hoặc ~208.000đ/giờ học chuyên sâu.';
       if (priceAnchoring) priceAnchoring.textContent = 'Rẻ hơn 4 lần so với việc thuê chuyên gia tư vấn giáo trình riêng lẻ.';
+      
+      if (fullOptionCard) {
+        fullOptionCard.style.borderColor = 'var(--purple-700)';
+        fullOptionCard.style.backgroundColor = 'var(--purple-50)';
+        const fullTitle = fullOptionCard.querySelector('h4');
+        if (fullTitle) fullTitle.style.color = 'var(--purple-700)';
+        const fullPrice = fullOptionCard.querySelector('.price');
+        if (fullPrice) fullPrice.style.color = 'var(--purple-700)';
+      }
+      if (splitOptionCard) {
+        splitOptionCard.style.borderColor = 'var(--gray-200)';
+        splitOptionCard.style.backgroundColor = 'var(--white)';
+        const splitTitle = splitOptionCard.querySelector('h4');
+        if (splitTitle) splitTitle.style.color = 'var(--gray-700)';
+        const splitPrice = splitOptionCard.querySelector('.price');
+        if (splitPrice) splitPrice.style.color = 'var(--gray-900)';
+      }
     } else {
       priceDisplay.textContent = '2.500.000đ';
       if (priceUnit) priceUnit.textContent = '/kỳ 1';
       if (priceBreakdown) priceBreakdown.textContent = 'Thanh toán kỳ 2 (2.500.000đ) sau khi hoàn thành Ngày 1.';
       if (priceAnchoring) priceAnchoring.textContent = 'Giúp tháo gỡ áp lực tài chính, sở hữu ngay suất học.';
+      
+      if (fullOptionCard) {
+        fullOptionCard.style.borderColor = 'var(--gray-200)';
+        fullOptionCard.style.backgroundColor = 'var(--white)';
+        const fullTitle = fullOptionCard.querySelector('h4');
+        if (fullTitle) fullTitle.style.color = 'var(--gray-700)';
+        const fullPrice = fullOptionCard.querySelector('.price');
+        if (fullPrice) fullPrice.style.color = 'var(--gray-900)';
+      }
+      if (splitOptionCard) {
+        splitOptionCard.style.borderColor = 'var(--purple-700)';
+        splitOptionCard.style.backgroundColor = 'var(--purple-50)';
+        const splitTitle = splitOptionCard.querySelector('h4');
+        if (splitTitle) splitTitle.style.color = 'var(--purple-700)';
+        const splitPrice = splitOptionCard.querySelector('.price');
+        if (splitPrice) splitPrice.style.color = 'var(--purple-700)';
+      }
     }
   }
   
@@ -213,19 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
     paySplitRadio.addEventListener('change', () => {
       selectedPaymentMethod = 'split';
       updatePricingCard();
-    });
-  }
-
-  // --- PAGE MODE TOGGLE (Sandbox vs Real) ---
-  if (modeDemoRadio) {
-    modeDemoRadio.addEventListener('change', () => {
-      pageMode = 'demo';
-    });
-  }
-  
-  if (modeRealRadio) {
-    modeRealRadio.addEventListener('change', () => {
-      pageMode = 'real';
     });
   }
 
@@ -330,7 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Setup state according to Mode (Sandbox vs Production)
         if (pageMode === 'demo') {
-          demoModeBadge.style.display = 'inline-block';
           paymentProgressBarContainer.style.display = 'block';
           paymentStatusText.textContent = 'Đang kết nối cổng thanh toán MB Bank...';
           paymentStatusText.style.color = '#F59E0B';
@@ -361,7 +366,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 100);
           
         } else {
-          demoModeBadge.style.display = 'none';
           paymentProgressBarContainer.style.display = 'none';
           paymentStatusText.textContent = 'Đang đợi giao dịch chuyển khoản thực tế của bạn...';
           paymentStatusText.style.color = '#FF7733';
@@ -411,7 +415,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btnAcceptOto.addEventListener('click', () => {
       otoPaymentDetails.style.display = 'block';
       btnAcceptOto.style.display = 'none';
-      showToast('Cú pháp chuyển khoản VIP đã được hiển thị!');
     });
   }
 
@@ -421,62 +424,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (successIcon) {
       successIcon.classList.add('animate-success');
     }
-  }
-
-  // --- EXIT INTENT MODAL LOGIC ---
-  if (exitModal) {
-    document.addEventListener('mouseleave', (e) => {
-      // Trigger when mouse moves out through top of screen
-      if (e.clientY < 50 && !exitModalShown && !localStorage.getItem('tat_exit_modal_shown')) {
-        exitModal.classList.add('active');
-        exitModalShown = true;
-        localStorage.setItem('tat_exit_modal_shown', 'true');
-      }
-    });
-
-    if (btnCloseModal) {
-      btnCloseModal.addEventListener('click', () => {
-        exitModal.classList.remove('active');
-      });
-    }
-
-    exitModal.addEventListener('click', (e) => {
-      if (e.target === exitModal) {
-        exitModal.classList.remove('active');
-      }
-    });
-  }
-
-  if (modalLeadForm) {
-    modalLeadForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const mName = document.getElementById('modal-user-name');
-      const mEmail = document.getElementById('modal-user-email');
-      const errName = document.getElementById('modal-error-name');
-      const errEmail = document.getElementById('modal-error-email');
-      
-      let valid = true;
-      
-      if (mName.value.trim().length < 2) {
-        errName.style.display = 'block';
-        valid = false;
-      } else {
-        errName.style.display = 'none';
-      }
-      
-      if (!validateEmail(mEmail.value.trim())) {
-        errEmail.style.display = 'block';
-        valid = false;
-      } else {
-        errEmail.style.display = 'none';
-      }
-      
-      if (valid) {
-        showToast('Đăng ký nhận quà thành công! Vui lòng kiểm tra Email.');
-        exitModal.classList.remove('active');
-      }
-    });
   }
 
   // --- COUNTDOWN TIMER ---
