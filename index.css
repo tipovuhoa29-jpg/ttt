@@ -3145,3 +3145,117 @@ button, input, textarea {
   font-weight: 950;
 }
 
+/* ==========================================================================
+   MARQUEE TRUST STRIP
+   ========================================================================== */
+.trust-marquee-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.trust-marquee-track {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  align-items: center;
+  animation: marquee 22s linear infinite;
+}
+.trust-marquee-wrap:hover .trust-marquee-track {
+  animation-play-state: paused;
+}
+.trust-marquee-track img {
+  height: 32px;
+  width: auto;
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.trust-marquee-track img:hover {
+  filter: grayscale(0%) opacity(1);
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   INSTRUCTOR PARTNER SUB-GROUPS
+   ========================================================================== */
+.instructor-logos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 48px;
+}
+
+.proof-block-card {
+  padding: 2rem;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+}
+
+.proof-block-card h4 {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--purple-700);
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.proof-logo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+  gap: 1.25rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.proof-logo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proof-logo-item img {
+  height: 28px;
+  width: auto;
+  max-width: 100%;
+  opacity: 0.55;
+  filter: grayscale(100%);
+  transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.proof-logo-item img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUTS FOR INSTRUCTOR & PROOFS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .instructor-logos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .instructor-card {
+    grid-template-columns: 1fr;
+  }
+  .instructor-photo {
+    border-right: none !important;
+    border-bottom: 1px solid var(--gray-200);
+    min-height: auto;
+    padding: 32px 24px;
+  }
+  .instructor-content {
+    padding: 32px 24px;
+  }
+}
+
