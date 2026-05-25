@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A2E6B" />
+      <stop offset="100%" stop-color="#2A1847" />
+    </linearGradient>
+    <linearGradient id="fadeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6B35" stop-opacity="1" />
+      <stop offset="100%" stop-color="#FF6B35" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="75" r="60" fill="url(#purpleGrad)" opacity="0.03" />
+  <!-- Brain Left Hemisphere (Solid) -->
+  <path d="M100,30 C85,30 75,40 75,55 C70,55 65,60 65,70 C65,80 72,85 75,85 C70,90 70,100 80,105 C90,110 100,105 100,95 C100,105 110,110 120,105 C125,102 128,95 125,85" fill="none" stroke="url(#purpleGrad)" stroke-width="4" stroke-linecap="round" />
+  <!-- Brain Right Hemisphere (Dotted/Fading) -->
+  <path d="M100,30 C115,30 125,40 125,55 C130,55 135,60 135,70 C135,80 128,85 125,85" fill="none" stroke="#FF6B35" stroke-dasharray="4,4" stroke-width="4" stroke-linecap="round" />
+  <path d="M125,85 C130,90 130,100 120,105" fill="none" stroke="#FF6B35" stroke-dasharray="4,4" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+  <!-- Fading Particles -->
+  <circle cx="145" cy="45" r="4" fill="#FF6B35" opacity="0.8" />
+  <circle cx="155" cy="65" r="3" fill="#FF6B35" opacity="0.5" />
+  <circle cx="140" cy="80" r="5" fill="#FF6B35" opacity="0.3" />
+  <circle cx="165" cy="85" r="2.5" fill="#FF6B35" opacity="0.2" />
+  <!-- Down Arrow -->
+  <path d="M100,60 L100,90 M90,80 L100,90 L110,80" fill="none" stroke="url(#purpleGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

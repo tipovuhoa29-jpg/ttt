@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A2E6B" />
+      <stop offset="100%" stop-color="#2A1847" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8F66" />
+      <stop offset="100%" stop-color="#FF6B35" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="80" r="70" fill="url(#purpleGrad)" opacity="0.03" />
+  
+  <!-- Podium/Stage base -->
+  <line x1="20" y1="130" x2="180" y2="130" stroke="#E5E5E5" stroke-width="3" />
+  
+  <!-- Presenter -->
+  <g transform="translate(45, 55)">
+    <circle cx="15" cy="15" r="10" fill="none" stroke="url(#purpleGrad)" stroke-width="3" />
+    <path d="M0,45 C0,33 5,30 15,30 C25,30 30,33 30,45" fill="none" stroke="url(#purpleGrad)" stroke-width="3" stroke-linecap="round" />
+    <path d="M22,38 L32,32" fill="none" stroke="url(#purpleGrad)" stroke-width="3" stroke-linecap="round" />
+  </g>
+  
+  <!-- Presentation Screen -->
+  <rect x="90" y="30" width="70" height="50" rx="4" fill="none" stroke="url(#purpleGrad)" stroke-width="3" />
+  <line x1="125" y1="80" x2="125" y2="100" stroke="url(#purpleGrad)" stroke-width="3" />
+  <line x1="105" y1="100" x2="145" y2="100" stroke="url(#purpleGrad)" stroke-width="3" stroke-linecap="round" />
+  <!-- Screen details (chart) -->
+  <path d="M100,65 L115,50 L130,55 L150,40" fill="none" stroke="url(#orangeGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Students/Audience -->
+  <g transform="translate(100, 110)" opacity="0.6">
+    <circle cx="10" cy="10" r="6" fill="none" stroke="url(#purpleGrad)" stroke-width="2" />
+    <path d="M0,20 C0,15 3,15 10,15 C17,15 20,15 20,20" fill="none" stroke="url(#purpleGrad)" stroke-width="2" />
+    
+    <circle cx="40" cy="10" r="6" fill="none" stroke="url(#purpleGrad)" stroke-width="2" />
+    <path d="M30,20 C30,15 33,15 40,15 C47,15 50,15 50,20" fill="none" stroke="url(#purpleGrad)" stroke-width="2" />
+  </g>
+</svg>

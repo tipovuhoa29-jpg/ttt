@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A2E6B" />
+      <stop offset="100%" stop-color="#2A1847" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8F66" />
+      <stop offset="100%" stop-color="#FF6B35" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="80" r="70" fill="url(#purpleGrad)" opacity="0.03" />
+  
+  <!-- Desk/Base -->
+  <line x1="20" y1="125" x2="180" y2="125" stroke="#E5E5E5" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Laptop -->
+  <rect x="60" y="70" width="80" height="50" rx="4" fill="none" stroke="url(#purpleGrad)" stroke-width="4" />
+  <line x1="50" y1="120" x2="150" y2="120" stroke="url(#purpleGrad)" stroke-width="5" stroke-linecap="round" />
+  <!-- Screen code/prompts lines -->
+  <line x1="70" y1="80" x2="110" y2="80" stroke="url(#purpleGrad)" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+  <line x1="70" y1="90" x2="120" y2="90" stroke="url(#purpleGrad)" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+  <line x1="70" y1="100" x2="100" y2="100" stroke="url(#purpleGrad)" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+  
+  <!-- AI Sparkles from Laptop -->
+  <polygon points="145,55 140,65 135,55 140,45" fill="url(#orangeGrad)" />
+  <polygon points="155,70 152,76 148,70 152,64" fill="url(#orangeGrad)" opacity="0.8" />
+  
+  <!-- Brainstorming Idea (Lightbulb) -->
+  <circle cx="100" cy="35" r="14" fill="url(#orangeGrad)" />
+  <path d="M96,49 C96,48 104,48 104,49" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+  <line x1="100" y1="15" x2="100" y2="8" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" />
+  <line x1="82" y1="24" x2="76" y2="19" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" />
+  <line x1="118" y1="24" x2="124" y2="19" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" />
+</svg>
