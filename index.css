@@ -2217,7 +2217,7 @@ button, input, textarea {
 
 .curriculum-section {
   background: var(--white);
-  padding: 96px 32px;
+  padding: 96px 0;
 }
 
 .curriculum-overview {
