@@ -2965,3 +2965,183 @@ button, input, textarea {
   }
 }
 
+/* ==========================================================================
+   CSS SVG Card Mockup & Avatar initials (Replacements for images)
+   ========================================================================== */
+
+.hero-photo-card {
+  background: linear-gradient(180deg, var(--purple-50), var(--white));
+  border: 1px solid var(--purple-100);
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.workshop-photo {
+  min-height: 500px;
+  background:
+    radial-gradient(circle at 84% 16%, rgba(249, 115, 22, 0.18), transparent 28%),
+    linear-gradient(135deg, #ffffff, #faf5ff);
+  border: 1px solid var(--gray-200);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  align-items: end;
+}
+
+.workshop-scene {
+  padding: 34px;
+  min-height: 500px;
+  display: grid;
+  align-content: space-between;
+}
+
+.scene-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.scene-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid var(--purple-100);
+  color: var(--purple-700);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 850;
+  box-shadow: var(--shadow-sm);
+}
+
+.scene-window {
+  margin-top: 28px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.scene-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.visual-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.flow-box {
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 16px 12px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+}
+
+.flow-box svg {
+  margin: 0 auto 10px;
+}
+
+.flow-box strong {
+  display: block;
+  color: var(--purple-700);
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.flow-box span {
+  display: block;
+  margin-top: 3px;
+  color: var(--gray-600);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.flow-arrow {
+  color: var(--orange-500);
+}
+
+.people-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.person-token {
+  height: 76px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: var(--purple-700);
+  box-shadow: var(--shadow-sm);
+}
+
+.visual-caption {
+  margin-top: 22px;
+  padding: 16px;
+  background: var(--orange-50);
+  border: 1px solid var(--orange-100);
+  border-radius: 12px;
+  color: var(--gray-700);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.case-person {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.case-avatar,
+.testimonial-avatar,
+.instructor-avatar {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--purple-50);
+  color: var(--purple-700);
+  border: 1px solid var(--purple-100);
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.case-avatar {
+  width: 64px;
+  height: 64px;
+}
+
+.instructor-avatar {
+  width: 230px;
+  height: 230px;
+  box-shadow: var(--shadow-md);
+  background: var(--white);
+}
+
+.testimonial-avatar {
+  width: 52px;
+  height: 52px;
+  font-weight: 950;
+}
+
